@@ -6,7 +6,13 @@
 //  Copyright (c) 2011 Solular, LLC. All rights reserved.
 //
 
+#define serverQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+#define serverURL [NSURL URLWithString:@"http://10.1.10.190/ios/retrieveProjects.php"]
+
 #import "AppDelegate.h"
+#import "SiteInformation.h"
+#import "SitePlans.h"
+#import "SiteViews.h"
 
 @implementation AppDelegate
 
@@ -14,7 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    
     return YES;
 }
 							
