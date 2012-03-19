@@ -214,6 +214,17 @@ static Sidebar *_instance;
             
             break;
             
+        case 4:
+            if (locationDisplayed == NO) {
+                
+            }
+            
+            else {
+                
+            }
+            
+            break;
+            
         default:
             NSLog(@"Default selected");
             break;
