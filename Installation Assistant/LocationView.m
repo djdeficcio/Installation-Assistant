@@ -9,6 +9,7 @@
 //  Permission granted to do anything, commercial/non-commercial with this file apart from removing the line/URL above
 
 #import "LocationView.h"
+#import "LocationServicesView.h"
 
 static LocationView *_instance;
 @implementation LocationView
@@ -17,10 +18,27 @@ static LocationView *_instance;
 #pragma mark -
 #pragma mark Custom Methods
 
+- (void)hideLocationView {
+    [mainView removeFromSuperview];
+}
 
+- (UIView *)getLocationView {
+    return mainView;
+}
 
 #pragma mark -
 #pragma mark Singleton Methods
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        mainView = [[LocationServicesView alloc] initWithFrame:CGRectMake(168, 50, 550, 760)];
+        
+        [self.view addSubview:mainView];
+    }
+    
+    return self;
+}
 
 + (LocationView *)sharedInstance
 {
@@ -28,7 +46,6 @@ static LocationView *_instance;
         
         _instance = [[super allocWithZone:NULL] init];
         
-        //Initialize instance variables
     }
 
     return _instance;

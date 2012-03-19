@@ -10,11 +10,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class LocationServicesView;
+
 @interface LocationView : UIViewController 
 {
-
+    LocationServicesView *mainView;
 }
 
 + (LocationView *) sharedInstance;
+- (void)hideLocationView;
+- (UIView *)getLocationView;
 
 @end

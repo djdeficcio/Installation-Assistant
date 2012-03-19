@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "CompassView.h"
 #import "NotesView.h"
+#import "LocationView.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 

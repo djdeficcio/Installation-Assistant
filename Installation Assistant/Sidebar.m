@@ -216,11 +216,12 @@ static Sidebar *_instance;
             
         case 4:
             if (locationDisplayed == NO) {
-                
+                [sidebarView.superview addSubview:[[LocationView sharedInstance] getLocationView]];
+                locationDisplayed = YES;
             }
             
             else {
-                
+                [self closeSidebarWindows];
             }
             
             break;
@@ -311,6 +312,12 @@ static Sidebar *_instance;
         [managerView removeFromParentViewController];
         managersDisplayed = NO;
     }
+    
+    if (locationDisplayed == YES) 
+    {
+        [[LocationView sharedInstance] hideLocationView];
+        locationDisplayed = NO;
+    }
 }
 
 - (void)closeSidebarWindowsExcluding:(NSInteger)windowID
@@ -337,6 +344,12 @@ static Sidebar *_instance;
     {
         [managerView removeFromParentViewController];
         managersDisplayed = NO;
+    }
+    
+    if (windowID != 4)
+    {
+        [[LocationView sharedInstance] hideLocationView];
+        locationDisplayed = NO;
     }
 }
 
