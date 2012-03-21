@@ -12,7 +12,9 @@
 {
     UIColor *startColor;
     UIColor *endColor;
+    UILabel *_title;
 }
+@property (retain) UILabel *title;
 
 - (void)setGradientStartColor:(UIColor *)gradientStartColor AndEndColor:(UIColor *)gradientEndColor;
 

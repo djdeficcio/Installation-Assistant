@@ -10,6 +10,7 @@
 #import "Common.h"
 
 @implementation MenuBar
+@synthesize title = _title;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -19,7 +20,12 @@
         startColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1];
         endColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:.8];
         
+        _title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, frame.size.width - 20, frame.size.height - 20)];
+        _title.font = [UIFont systemFontOfSize:26];
+        _title.textAlignment = UITextAlignmentCenter;
+        _title.backgroundColor = [UIColor clearColor];
         
+        [self addSubview:_title];
     }
     return self;
 }
