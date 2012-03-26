@@ -11,6 +11,7 @@
 #import "Quartzcore/Quartzcore.h"
 
 @implementation LocationServicesView
+@synthesize location = _location;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -33,6 +34,13 @@
         locationInfo.layer.cornerRadius = 10;
         locationInfo.layer.borderColor = [UIColor blackColor].CGColor;
         locationInfo.layer.borderWidth = 1;
+        
+        _location = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 210, 200)];
+        _location.backgroundColor = [UIColor orangeColor];
+        _location.numberOfLines = 0;
+        _location.textAlignment = UITextAlignmentCenter;
+        
+        [locationInfo addSubview:_location];
         
         [self addSubview:locationInfo];
         

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationServicesView : UIView
+{
+    UILabel *_location;
+}
+@property (retain) UILabel *location;
 
 @end

@@ -122,55 +122,57 @@ static NotesView *_instance;
 {
     self = [super init];
     
-    notes = [[NSMutableArray alloc] init];
+    if (self) {
     
-    fullNoteDisplayed = NO;
-    
-    [self retrieveNotes:[[ProjectData sharedInstance] projectID]];
-           
-    notesView = [[UIView alloc] initWithFrame:CGRectMake(168, 50, 550, 760)];
+        notes = [[NSMutableArray alloc] init];
         
-    notesView.backgroundColor = [UIColor whiteColor];
-    notesView.layer.cornerRadius = 10;
-    notesView.layer.borderColor = [UIColor blackColor].CGColor;
-    notesView.layer.borderWidth = 1;
-    notesView.layer.masksToBounds = YES;
+        fullNoteDisplayed = NO;
+        
+        [self retrieveNotes:[[ProjectData sharedInstance] projectID]];
+               
+        notesView = [[UIView alloc] initWithFrame:CGRectMake(168, 50, 550, 760)];
+            
+        notesView.backgroundColor = [UIColor whiteColor];
+        notesView.layer.cornerRadius = 10;
+        notesView.layer.borderColor = [UIColor blackColor].CGColor;
+        notesView.layer.borderWidth = 1;
+        notesView.layer.masksToBounds = YES;
 
-    cellContainer = [[NSMutableArray alloc] init];        
-    
-    menuBar = [[MenuBar alloc] initWithFrame:CGRectMake(0, 0, notesView.frame.size.width, 50)];
-    [menuBar setGradientStartColor:[UIColor colorWithRed:187.0/255.0 green:230.0/255.0 blue:252.0/255.0 alpha:1.0] AndEndColor:[UIColor colorWithRed:134.0/255.0 green:212.0/255.0 blue:253.0/255.0 alpha:1.0]];
-    
-    GlosslessButton *newNote = [[GlosslessButton alloc] initWithFrame:CGRectMake(465, 5, 80, 40)];
-    newNote.textLabel.text = @"New";
-    newNote.textLabel.textColor = [UIColor blackColor];
-    [newNote addTarget:self action:@selector(presentNewNote) forControlEvents:UIControlEventTouchDown];
-    
-    [menuBar addSubview:newNote];
-    
-    [notesView addSubview:menuBar];
-    
-    noteTable = [[UITableView alloc] initWithFrame:CGRectMake(0, menuBar.frame.size.height, notesView.frame.size.width, notesView.frame.size.height - 50) style:UITableViewStylePlain];
+        cellContainer = [[NSMutableArray alloc] init];        
+        
+        menuBar = [[MenuBar alloc] initWithFrame:CGRectMake(0, 0, notesView.frame.size.width, 50)];
+        [menuBar setGradientStartColor:[UIColor colorWithRed:187.0/255.0 green:230.0/255.0 blue:252.0/255.0 alpha:1.0] AndEndColor:[UIColor colorWithRed:134.0/255.0 green:212.0/255.0 blue:253.0/255.0 alpha:1.0]];
+        
+        GlosslessButton *newNote = [[GlosslessButton alloc] initWithFrame:CGRectMake(465, 5, 80, 40)];
+        newNote.textLabel.text = @"New";
+        newNote.textLabel.textColor = [UIColor blackColor];
+        [newNote addTarget:self action:@selector(presentNewNote) forControlEvents:UIControlEventTouchDown];
+        
+        [menuBar addSubview:newNote];
+        
+        [notesView addSubview:menuBar];
+        
+        noteTable = [[UITableView alloc] initWithFrame:CGRectMake(0, menuBar.frame.size.height, notesView.frame.size.width, notesView.frame.size.height - 50) style:UITableViewStylePlain];
 
 
-    noteTable.rowHeight = 150;
-    noteTable.contentSize = CGSizeMake(notesView.frame.size.width, noteTable.rowHeight * [notes count]);
-    noteTable.scrollEnabled = YES;
+        noteTable.rowHeight = 150;
+        noteTable.contentSize = CGSizeMake(notesView.frame.size.width, noteTable.rowHeight * [notes count]);
+        noteTable.scrollEnabled = YES;
+        
+        noteTable.delegate = self;
+        noteTable.dataSource = self;
+        
+        [notesView addSubview:noteTable];
+        
+        NSLog(@"Notes initialized!");
+        
+        UISwipeGestureRecognizer *swipeOneRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideFullNote)];
+        
+        swipeOneRight.numberOfTouchesRequired = 1;
+        swipeOneRight.direction = UISwipeGestureRecognizerDirectionRight;
+        [notesView addGestureRecognizer:swipeOneRight];
     
-    noteTable.delegate = self;
-    noteTable.dataSource = self;
-    
-    [notesView addSubview:noteTable];
-    
-    NSLog(@"Notes initialized!");
-    
-    UISwipeGestureRecognizer *swipeOneRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideFullNote)];
-    
-    swipeOneRight.numberOfTouchesRequired = 1;
-    swipeOneRight.direction = UISwipeGestureRecognizerDirectionRight;
-    [notesView addGestureRecognizer:swipeOneRight];
-    
-    
+    }
     
     return self;
 }

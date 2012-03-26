@@ -9,12 +9,15 @@
 //  Permission granted to do anything, commercial/non-commercial with this file apart from removing the line/URL above
 
 #import <Foundation/Foundation.h>
+#import "CoreLocation/CoreLocation.h"
+
 
 @class LocationServicesView;
 
-@interface LocationView : UIViewController 
+@interface LocationView : UIViewController <CLLocationManagerDelegate>
 {
     LocationServicesView *mainView;
+    CLLocationManager *locationManager;
 }
 
 + (LocationView *) sharedInstance;

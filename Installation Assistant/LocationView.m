@@ -19,11 +19,40 @@ static LocationView *_instance;
 #pragma mark Custom Methods
 
 - (void)hideLocationView {
+    [locationManager stopUpdatingLocation];
     [mainView removeFromSuperview];
 }
 
 - (UIView *)getLocationView {
+    [locationManager startUpdatingLocation];
     return mainView;
+}
+
+
+
+#pragma mark -
+#pragma mark CLLocation Delegate Methods
+- (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
+{
+    //return YES;
+    return NO;
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Coords: %@", newLocation);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        mainView.location.text = [NSString stringWithFormat:@"%@ \n%@",[[placemark.addressDictionary objectForKey:@"FormattedAddressLines"] objectAtIndex:0], [[placemark.addressDictionary objectForKey:@"FormattedAddressLines"] objectAtIndex:1]];
+    }];
+    [locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
 }
 
 #pragma mark -
@@ -35,6 +64,10 @@ static LocationView *_instance;
         mainView = [[LocationServicesView alloc] initWithFrame:CGRectMake(168, 50, 550, 760)];
         
         [self.view addSubview:mainView];
+        
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     }
     
     return self;
