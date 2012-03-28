@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35655EA215238C0700E7BAEB /* HomeScreenView.m */; };
 		3579D2F014D868B100D2E37F /* NotesFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2EF14D868B100D2E37F /* NotesFullViewController.m */; };
 		3579D2F314DC6EC400D2E37F /* NotesNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2F214DC6EC400D2E37F /* NotesNewViewController.m */; };
 		3579D2F614E16DA200D2E37F /* MaterialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2F514E16DA200D2E37F /* MaterialView.m */; };
@@ -58,6 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35655EA115238C0700E7BAEB /* HomeScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenView.h; sourceTree = "<group>"; };
+		35655EA215238C0700E7BAEB /* HomeScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenView.m; sourceTree = "<group>"; };
 		3579D2EE14D868B100D2E37F /* NotesFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesFullViewController.h; sourceTree = "<group>"; };
 		3579D2EF14D868B100D2E37F /* NotesFullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesFullViewController.m; sourceTree = "<group>"; };
 		3579D2F114DC6EC400D2E37F /* NotesNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesNewViewController.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 		35E8E6D61517C8A100B62B2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				35655EA115238C0700E7BAEB /* HomeScreenView.h */,
+				35655EA215238C0700E7BAEB /* HomeScreenView.m */,
 				35E8E6D71517C8D400B62B2B /* LocationServicesView.h */,
 				35E8E6D81517C8D400B62B2B /* LocationServicesView.m */,
 			);
@@ -406,6 +411,7 @@
 				3579D2F614E16DA200D2E37F /* MaterialView.m in Sources */,
 				35E8E6D41517C65900B62B2B /* LocationView.m in Sources */,
 				35E8E6D91517C8D400B62B2B /* LocationServicesView.m in Sources */,
+				35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
