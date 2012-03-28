@@ -7,6 +7,7 @@
 //
 
 #import "HomeScreen.h"
+#import "HomeScreenView.h"
 #import "GlosslessButton.h"
 
 @implementation HomeScreen
@@ -49,14 +50,9 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.backBarButtonItem.title = @"Home";
+    mainView = [[HomeScreenView alloc] initWithFrame:[[UIScreen mainScreen] bounds]  andParentController:self];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    GlosslessButton *selectProjectButton = [[GlosslessButton alloc] initWithFrame:CGRectMake(200, 200, 200, 200)];
-    [selectProjectButton addTarget:self action:@selector(loadProjectSelection) forControlEvents:UIControlEventTouchDown];
-    
-    [self.view addSubview:selectProjectButton];
+    [self.view addSubview:mainView];
     
 }
 
