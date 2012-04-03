@@ -71,38 +71,9 @@
     {
         
         CGContextSaveGState(context);
-        CGContextAddPath(context, innerPath);
+        CGContextAddPath(context, outerPath);
         CGContextClip(context);
-        CGContextSetFillColorWithColor(context, [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.6].CGColor);
-        CGContextFillRect(context, rect);
-        
-//        //Draw the Radial gradient
-//        
-//        CGFloat BGLocations[2] = { 0.0, 1.0 };
-//        CGFloat BgComponents[8] = { 1.0, 1.0, 1.0 , 1.0,  // Start color
-//            1.0, 1.0, 1.0, 0.1 }; // Mid color and End color
-//        CGColorSpaceRef BgRGBColorspace = CGColorSpaceCreateDeviceRGB();
-//        CGGradientRef bgRadialGradient = CGGradientCreateWithColorComponents(BgRGBColorspace, BgComponents, BGLocations, 2);
-//        
-//        
-//        CGPoint startBg = CGPointMake((innerRect.size.width / 2) + (outerMargin * 2), (innerRect.size.height / 2) + (outerMargin * 2)); 
-//        CGFloat endRadius = innerRect.size.width / 2;
-//        
-//        if (innerRect.size.width > innerRect.size.height)
-//        {
-//            endRadius = innerRect.size.height / 2;
-//        }
-//        
-//        else 
-//        {
-//            endRadius = innerRect.size.width / 2;
-//        }
-//        
-//        
-//        CGContextDrawRadialGradient(context, bgRadialGradient, startBg, 0, startBg, endRadius, kCGGradientDrawsAfterEndLocation);
-//        CGColorSpaceRelease(BgRGBColorspace);
-//        CGGradientRelease(bgRadialGradient);
-        
+        drawLinearGradient(context, outerRect, endColor.CGColor, startColor.CGColor);
         CGContextRestoreGState(context);
     }
     
