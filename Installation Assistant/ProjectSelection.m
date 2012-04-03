@@ -31,7 +31,8 @@
         
         else
         {
-            NSLog(@"Error downloading projects.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Failed to retrieve projects.  Do you have an internet connection?" delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+            [alert show];
         }
     });
 }
@@ -67,7 +68,8 @@
         
         else
         {
-            NSLog(@"Error downloading project data.");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Failed to retrieve project data.  Do you have an internet connection?" delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+            [alert show];
         }
     });
 }
@@ -90,6 +92,7 @@
     [projectData setProjectName:[jsonResult valueForKey:@"name"]];
     [projectData setPrimaryContact:[jsonResult valueForKey:@"contact"]];
     [projectData setSiteAddress:[jsonResult valueForKey:@"siteAddress"]];
+    [projectData setSiteState:[jsonResult valueForKey:@"state"]];
     [projectData setContactPhoneNumber:[jsonResult valueForKey:@"phoneNumber"]];
     [projectData setUtilityCompany:[jsonResult valueForKey:@"utilityCompany"]];
     [projectData setTownship:[jsonResult valueForKey:@"township"]];
@@ -106,8 +109,15 @@
     [projectData setInverterQuantity4:[jsonResult valueForKey:@"inverterQuantity4"]];
     [projectData setInverterType5:[jsonResult valueForKey:@"inverterType5"]];
     [projectData setInverterQuantity5:[jsonResult valueForKey:@"inverterQuantity5"]];
-    [projectData setOrientation:[jsonResult valueForKey:@"orientation"]];
+    [projectData setAzimuth:[jsonResult valueForKey:@"azimuth"]];
+    [projectData setTilt:[jsonResult valueForKey:@"tilt"]];
     [projectData setRackingType:[jsonResult valueForKey:@"rackingType"]];
+    if ([[jsonResult valueForKey:@"monitoring_system"] isEqualToString:@"0"]) {
+        [projectData setMonitoringSystem:@"No"];
+    }    
+    else {
+        [projectData setMonitoringSystem:@"Yes"];
+    }
     [projectData setProjectManager:[jsonResult valueForKey:@"projectManager"]];
     
     [projectData packageData];
@@ -115,6 +125,11 @@
     if (jsonResult != nil)
     {
         [self performSegueWithIdentifier:@"mainScreenSegue" sender:self];
+    }
+    
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" message:@"Failed to retrieve projects.  Do you have an internet connection?" delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+        [alert show];
     }
 
 }

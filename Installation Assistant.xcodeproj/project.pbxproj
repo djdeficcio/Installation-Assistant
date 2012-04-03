@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CA15239CFD00A3D284 /* DBGateway.m */; };
+		3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CD15248C4B00A3D284 /* CrewMemberData.m */; };
+		3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D31524BDDC00A3D284 /* CrewLeader.m */; };
+		3546A3D71524E10900A3D284 /* CrewLeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D61524E10900A3D284 /* CrewLeaderView.m */; };
+		3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D91529D33A00A3D284 /* CrewMembers.m */; };
+		3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3DC1529D35D00A3D284 /* CrewMembersView.m */; };
 		35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35655EA215238C0700E7BAEB /* HomeScreenView.m */; };
 		3579D2F014D868B100D2E37F /* NotesFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2EF14D868B100D2E37F /* NotesFullViewController.m */; };
 		3579D2F314DC6EC400D2E37F /* NotesNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2F214DC6EC400D2E37F /* NotesNewViewController.m */; };
@@ -59,6 +65,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3546A3C915239CFD00A3D284 /* DBGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBGateway.h; sourceTree = "<group>"; };
+		3546A3CA15239CFD00A3D284 /* DBGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGateway.m; sourceTree = "<group>"; };
+		3546A3CC15248C4B00A3D284 /* CrewMemberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMemberData.h; sourceTree = "<group>"; };
+		3546A3CD15248C4B00A3D284 /* CrewMemberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMemberData.m; sourceTree = "<group>"; };
+		3546A3D21524BDDC00A3D284 /* CrewLeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewLeader.h; sourceTree = "<group>"; };
+		3546A3D31524BDDC00A3D284 /* CrewLeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewLeader.m; sourceTree = "<group>"; };
+		3546A3D51524E10900A3D284 /* CrewLeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewLeaderView.h; sourceTree = "<group>"; };
+		3546A3D61524E10900A3D284 /* CrewLeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewLeaderView.m; sourceTree = "<group>"; };
+		3546A3D81529D33900A3D284 /* CrewMembers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMembers.h; sourceTree = "<group>"; };
+		3546A3D91529D33A00A3D284 /* CrewMembers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMembers.m; sourceTree = "<group>"; };
+		3546A3DB1529D35D00A3D284 /* CrewMembersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMembersView.h; sourceTree = "<group>"; };
+		3546A3DC1529D35D00A3D284 /* CrewMembersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMembersView.m; sourceTree = "<group>"; };
 		35655EA115238C0700E7BAEB /* HomeScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenView.h; sourceTree = "<group>"; };
 		35655EA215238C0700E7BAEB /* HomeScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenView.m; sourceTree = "<group>"; };
 		3579D2EE14D868B100D2E37F /* NotesFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesFullViewController.h; sourceTree = "<group>"; };
@@ -158,6 +176,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3546A3C715239CE400A3D284 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3546A3C915239CFD00A3D284 /* DBGateway.h */,
+				3546A3CA15239CFD00A3D284 /* DBGateway.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		358876C8146B1D2D007A157E = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +228,7 @@
 				358876FD146C3DF2007A157E /* Common.h */,
 				358876FE146C3DF3007A157E /* Common.m */,
 				358876F5146B1D71007A157E /* Singletons */,
+				3546A3C715239CE400A3D284 /* Models */,
 				358876F4146B1D4C007A157E /* View Controllers */,
 				35E8E6D61517C8A100B62B2B /* Views */,
 				358876F6146C168C007A157E /* Custom Views */,
@@ -224,22 +252,26 @@
 		358876F4146B1D4C007A157E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				358876EC146B1D2E007A157E /* ProjectSelection.h */,
-				358876ED146B1D2E007A157E /* ProjectSelection.m */,
+				3546A3D21524BDDC00A3D284 /* CrewLeader.h */,
+				3546A3D31524BDDC00A3D284 /* CrewLeader.m */,
+				3546A3D81529D33900A3D284 /* CrewMembers.h */,
+				3546A3D91529D33A00A3D284 /* CrewMembers.m */,
 				35B8A3CD1485792D000411D0 /* HomeScreen.h */,
 				35B8A3CE1485792D000411D0 /* HomeScreen.m */,
-				35B8A3D31488300F000411D0 /* SiteInformation.h */,
-				35B8A3D41488300F000411D0 /* SiteInformation.m */,
-				35B8A3DA148834C2000411D0 /* SiteViews.h */,
-				35B8A3DB148834C2000411D0 /* SiteViews.m */,
-				35B8A3DD148834E6000411D0 /* SitePlans.h */,
-				35B8A3DE148834E6000411D0 /* SitePlans.m */,
-				35B8A3E0148E6E5A000411D0 /* SiteTabController.h */,
-				35B8A3E1148E6E5B000411D0 /* SiteTabController.m */,
 				3579D2EE14D868B100D2E37F /* NotesFullViewController.h */,
 				3579D2EF14D868B100D2E37F /* NotesFullViewController.m */,
 				3579D2F114DC6EC400D2E37F /* NotesNewViewController.h */,
 				3579D2F214DC6EC400D2E37F /* NotesNewViewController.m */,
+				358876EC146B1D2E007A157E /* ProjectSelection.h */,
+				358876ED146B1D2E007A157E /* ProjectSelection.m */,
+				35B8A3D31488300F000411D0 /* SiteInformation.h */,
+				35B8A3D41488300F000411D0 /* SiteInformation.m */,
+				35B8A3DD148834E6000411D0 /* SitePlans.h */,
+				35B8A3DE148834E6000411D0 /* SitePlans.m */,
+				35B8A3E0148E6E5A000411D0 /* SiteTabController.h */,
+				35B8A3E1148E6E5B000411D0 /* SiteTabController.m */,
+				35B8A3DA148834C2000411D0 /* SiteViews.h */,
+				35B8A3DB148834C2000411D0 /* SiteViews.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -247,18 +279,20 @@
 		358876F5146B1D71007A157E /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
+				358D943E14B496CE007F4335 /* CompassView.h */,
+				358D943F14B496CE007F4335 /* CompassView.m */,
+				3546A3CC15248C4B00A3D284 /* CrewMemberData.h */,
+				3546A3CD15248C4B00A3D284 /* CrewMemberData.m */,
+				35E8E6D21517C65900B62B2B /* LocationView.h */,
+				35E8E6D31517C65900B62B2B /* LocationView.m */,
+				3579D2F414E16DA200D2E37F /* MaterialView.h */,
+				3579D2F514E16DA200D2E37F /* MaterialView.m */,
+				358D944314BB399E007F4335 /* NotesView.h */,
+				358D944414BB399E007F4335 /* NotesView.m */,
 				35F2C7F3147C5DF400DBC988 /* ProjectData.h */,
 				35F2C7F4147C5DF400DBC988 /* ProjectData.m */,
 				358D942B14A3793C007F4335 /* Sidebar.h */,
 				358D942C14A3793C007F4335 /* Sidebar.m */,
-				358D943E14B496CE007F4335 /* CompassView.h */,
-				358D943F14B496CE007F4335 /* CompassView.m */,
-				358D944314BB399E007F4335 /* NotesView.h */,
-				358D944414BB399E007F4335 /* NotesView.m */,
-				3579D2F414E16DA200D2E37F /* MaterialView.h */,
-				3579D2F514E16DA200D2E37F /* MaterialView.m */,
-				35E8E6D21517C65900B62B2B /* LocationView.h */,
-				35E8E6D31517C65900B62B2B /* LocationView.m */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -304,6 +338,10 @@
 		35E8E6D61517C8A100B62B2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3546A3D51524E10900A3D284 /* CrewLeaderView.h */,
+				3546A3D61524E10900A3D284 /* CrewLeaderView.m */,
+				3546A3DB1529D35D00A3D284 /* CrewMembersView.h */,
+				3546A3DC1529D35D00A3D284 /* CrewMembersView.m */,
 				35655EA115238C0700E7BAEB /* HomeScreenView.h */,
 				35655EA215238C0700E7BAEB /* HomeScreenView.m */,
 				35E8E6D71517C8D400B62B2B /* LocationServicesView.h */,
@@ -412,6 +450,12 @@
 				35E8E6D41517C65900B62B2B /* LocationView.m in Sources */,
 				35E8E6D91517C8D400B62B2B /* LocationServicesView.m in Sources */,
 				35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */,
+				3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */,
+				3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */,
+				3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */,
+				3546A3D71524E10900A3D284 /* CrewLeaderView.m in Sources */,
+				3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */,
+				3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

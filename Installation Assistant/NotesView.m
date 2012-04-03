@@ -57,7 +57,7 @@ static NotesView *_instance;
         fullNoteView = [NotesFullViewController alloc];
         fullNoteView.view.frame = CGRectMake(550, 50, 550, 760);
         
-        [fullNoteView setFullNoteValues:[[notes objectAtIndex:noteID] objectAtIndex:4] enteredBy:[[notes objectAtIndex:noteID] objectAtIndex:2] enteredOn:[[notes objectAtIndex:noteID] objectAtIndex:3]];
+        [fullNoteView setFullNoteValues:[[notes objectAtIndex:noteID] objectForKey:@"note_text"] enteredBy:[[notes objectAtIndex:noteID] objectForKey:@"entered_by"] enteredOn:[[notes objectAtIndex:noteID] objectForKey:@"entry_date"]];
         
         [notesView addSubview:fullNoteView.view];
         
@@ -210,10 +210,9 @@ static NotesView *_instance;
     
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
-    cell.userLabel.text = [[notes objectAtIndex:indexPath.row] objectAtIndex:2];
-    NSLog(@"%@", [[notes objectAtIndex:indexPath.row] objectAtIndex:3]);
-    cell.dateLabel.text = [[notes objectAtIndex:indexPath.row] objectAtIndex:3];
-    cell.noteLabel.text = [[notes objectAtIndex:indexPath.row] objectAtIndex:4];
+    cell.userLabel.text = [[notes objectAtIndex:indexPath.row] objectForKey:@"entered_by"];
+    cell.dateLabel.text = [[notes objectAtIndex:indexPath.row] objectForKey:@"entry_date"];
+    cell.noteLabel.text = [[notes objectAtIndex:indexPath.row] objectForKey:@"note_text"];
     
     [cellContainer addObject:cell];
     

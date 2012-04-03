@@ -21,12 +21,14 @@
     
     NSString *userName;
     
-    if ([deviceIdentifier isEqualToString:@"zPad"])
+    if ([deviceIdentifier isEqualToString:@"zPad2"])
     {
         userName = @"DJ DeFiccio";
     }
     
     user = userName;
+    deviceName = deviceIdentifier;
+    deviceId = [[UIDevice currentDevice] uniqueIdentifier];
     
     return userName;
 }
@@ -69,7 +71,7 @@
 {
     projectID = [[ProjectData sharedInstance] projectID];
     
-    NSDictionary *jsonDict = [NSDictionary dictionaryWithObjectsAndKeys: user, @"enteredBy", date, @"enteredOn", projectID, @"projectID", noteID, @"noteID", noteText.text, @"noteText", nil];
+    NSDictionary *jsonDict = [NSDictionary dictionaryWithObjectsAndKeys: user, @"enteredBy", date, @"enteredOn", projectID, @"projectID", noteID, @"noteID", noteText.text, @"noteText", deviceName, @"deviceName", deviceId, @"deviceId", nil];
     
     
     NSError *error = nil;

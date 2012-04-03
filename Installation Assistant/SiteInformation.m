@@ -74,7 +74,7 @@
     
     [self.view addSubview:dataTable];
     
-    techTable = [[DualColumnTable alloc] initWithFrame:CGRectMake(50, 400, 668, 460) AndNumberOfRows:7 WithRowHeight:100];
+    techTable = [[DualColumnTable alloc] initWithFrame:CGRectMake(50, 400, 668, 460) AndNumberOfRows:8 WithRowHeight:100];
     [techTable populateCellsWithLabels:[projectData techLabelPackage] AndValues:[projectData techPackage]];
     
     [self.view addSubview:techTable];

@@ -18,6 +18,9 @@
     NSString *noteID;
     NSString *projectID;
     NSString *noteContents;
+    NSString *deviceName;
+    NSString *deviceId;
+    
 }
 
 - (id)initWithNoteID:(int)ID;

@@ -14,7 +14,7 @@
 
 @class LocationServicesView;
 
-@interface LocationView : UIViewController <CLLocationManagerDelegate>
+@interface LocationView : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     LocationServicesView *mainView;
     CLLocationManager *locationManager;
@@ -23,5 +23,10 @@
 + (LocationView *) sharedInstance;
 - (void)hideLocationView;
 - (UIView *)getLocationView;
+- (void)refreshLocation;
+- (void)selectCrewLeader;
+- (void)updateCrewLeaderView;
+- (void)selectCrewMembers;
+- (void)updateCrewMemberView;
 
 @end

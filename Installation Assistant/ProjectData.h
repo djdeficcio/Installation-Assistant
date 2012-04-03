@@ -15,6 +15,7 @@
     NSString *projectName;
     NSString *primaryContact;
     NSString *siteAddress;
+    NSString *siteState;
     NSString *contactPhoneNumber;
     NSString *utilityCompany;
     NSString *township;
@@ -34,8 +35,10 @@
     NSString *inverterType5;
     NSString *inverterQuantity5;
     
-    NSString *orientation;
+    NSString *azimuth;
+    NSString *_tilt;
     NSString *rackingType;
+    NSString *_monitoringSystem;
     
     NSMutableArray *dataPackage;
     NSArray *dataLabelPackage;
@@ -49,6 +52,7 @@
 @property (retain) NSString *projectName;
 @property (retain) NSString *primaryContact;
 @property (retain) NSString *siteAddress;
+@property (retain) NSString *siteState;
 @property (retain) NSString *contactPhoneNumber;
 @property (retain) NSString *utilityCompany;
 @property (retain) NSString *township;
@@ -65,8 +69,10 @@
 @property (retain) NSString *inverterQuantity4;
 @property (retain) NSString *inverterType5;
 @property (retain) NSString *inverterQuantity5;
-@property (retain) NSString *orientation;
+@property (retain) NSString *azimuth;
+@property (retain) NSString *tilt;
 @property (retain) NSString *rackingType;
+@property (retain) NSString *monitoringSystem;
 @property (retain) NSMutableArray *dataPackage;
 @property (retain) NSArray *dataLabelPackage;
 @property (retain) NSMutableArray *techPackage;

@@ -8,6 +8,7 @@
 
 #import "CompassView.h"
 #import "Quartzcore/Quartzcore.h"
+#import "ProjectData.h"
 
 static CompassView *_instance;
 @implementation CompassView 
@@ -72,7 +73,10 @@ static CompassView *_instance;
         
         targetDirectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 110, 70)];
         targetDirectionLabel.backgroundColor = [UIColor clearColor];
-        targetDirectionLabel.text = @"360*";
+        targetDirectionLabel.text = [[ProjectData sharedInstance] azimuth];
+        if (targetDirectionLabel.text) {
+            targetDirectionLabel.text = @"???";
+        }
         targetDirectionLabel.textAlignment = UITextAlignmentCenter;
         targetDirectionLabel.font = [UIFont boldSystemFontOfSize:34];
         targetDirectionLabel.textColor = [UIColor whiteColor];
@@ -88,7 +92,7 @@ static CompassView *_instance;
         
         currentDirectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 110, 70)];
         currentDirectionLabel.backgroundColor = [UIColor clearColor];
-        currentDirectionLabel.text = @"270*";
+        currentDirectionLabel.text = @"???";
         currentDirectionLabel.textAlignment = UITextAlignmentCenter;
         currentDirectionLabel.font = [UIFont boldSystemFontOfSize:34];
         currentDirectionLabel.textColor = [UIColor whiteColor];
@@ -120,18 +124,14 @@ static CompassView *_instance;
 //Core location delegate methods
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
-    //return YES;
-    return NO;
+    return YES;
+    //return NO;
 }
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
 {
-    if ([CLLocationManager headingAvailable])
-    {
-        NSLog(@"We have a heading!");
-    }
-    NSLog(@"%@", newHeading);
+    NSLog(@"Heading: %@", newHeading);
     currentDirectionLabel.text = [NSString stringWithFormat:@"%f", newHeading.trueHeading];
 }
 

@@ -12,7 +12,7 @@
 
 static ProjectData *_instance;
 @implementation ProjectData
-@synthesize projectName, primaryContact, siteAddress, contactPhoneNumber, utilityCompany, township, townshipPhoneNumber, panelType, panelQuantity, inverterType1, inverterType2, inverterType3, inverterType4, inverterType5, inverterQuantity1, inverterQuantity2, inverterQuantity3, inverterQuantity4, inverterQuantity5, orientation, rackingType, dataPackage, dataLabelPackage, techPackage, techLabelPackage, projectID, projectManager
+@synthesize projectName, primaryContact, siteAddress, siteState, contactPhoneNumber, utilityCompany, township, townshipPhoneNumber, panelType, panelQuantity, inverterType1, inverterType2, inverterType3, inverterType4, inverterType5, inverterQuantity1, inverterQuantity2, inverterQuantity3, inverterQuantity4, inverterQuantity5, azimuth, tilt = _tilt, rackingType, monitoringSystem = _monitoringSystem, dataPackage, dataLabelPackage, techPackage, techLabelPackage, projectID, projectManager
 ;
 
 #pragma mark -
@@ -54,7 +54,7 @@ static ProjectData *_instance;
     
     techPackage = [[NSMutableArray alloc] init];
     
-    techLabelPackage = [[NSArray alloc] initWithObjects:@"Panel Type:", @"Orientation:", @"Inverter \nType 1:", @"Inverter \nType 2:", @"Inverter \nType 3:", @"Inverter \nType 4:", @"Inverter \nType 5:", @"Panel \nQuantity:", @"Racking \nType:", @"Inverter Quantity 1:", @"Inverter Quantity 2:", @"Inverter Quantity 3:", @"Inverter Quantity 4:", @"Inverter Quantity 5:", nil];
+    techLabelPackage = [[NSArray alloc] initWithObjects:@"Panel Type:", @"Azimuth:", @"Racking \nType:", @"Inverter \nType 1:", @"Inverter \nType 2:", @"Inverter \nType 3:", @"Inverter \nType 4:", @"Inverter \nType 5:", @"Panel \nQuantity:", @"Tilt:", @"Monitoring \nSystem:", @"Inverter Quantity 1:", @"Inverter Quantity 2:", @"Inverter Quantity 3:", @"Inverter Quantity 4:", @"Inverter Quantity 5:", nil];
     
     return self;
 }
@@ -64,7 +64,7 @@ static ProjectData *_instance;
     dataPackage = [NSMutableArray arrayWithObjects:primaryContact, contactPhoneNumber, township, siteAddress, utilityCompany, townshipPhoneNumber, nil];
         
     
-    techPackage = [NSMutableArray arrayWithObjects:panelType, orientation, inverterType1, inverterType2, inverterType3, inverterType4, inverterType5, panelQuantity, rackingType, inverterQuantity1, inverterQuantity2, inverterQuantity3, inverterQuantity4, inverterQuantity5, nil];
+    techPackage = [NSMutableArray arrayWithObjects:panelType, azimuth, rackingType, inverterType1, inverterType2, inverterType3, inverterType4, inverterType5, panelQuantity, _tilt, _monitoringSystem, inverterQuantity1, inverterQuantity2, inverterQuantity3, inverterQuantity4, inverterQuantity5, nil];
     
 }
 

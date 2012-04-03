@@ -10,6 +10,10 @@
 
 #import "LocationView.h"
 #import "LocationServicesView.h"
+#import "DBGateway.h"
+#import "CrewLeader.h"
+#import "CrewMembers.h"
+#import "CrewMemberData.h"
 
 static LocationView *_instance;
 @implementation LocationView
@@ -28,6 +32,38 @@ static LocationView *_instance;
     return mainView;
 }
 
+- (void)refreshLocation
+{
+    [mainView refreshLocationAnimation];
+    [locationManager startUpdatingLocation];
+}
+
+- (void)selectCrewLeader
+{
+    [mainView selectCrewLeaderAnimation];
+    CrewLeader *crewLeaderController = [[CrewLeader alloc] initWithNibName:nil bundle:nil andControllerToUpdate:self];
+    [mainView addSubview:crewLeaderController.view];
+    [crewLeaderController presentSelf];
+}
+
+- (void)updateCrewLeaderView
+{
+    NSLog(@"%@", [[CrewMemberData sharedInstance] crewLeaderName]);
+    [mainView.crewLeader setText:[[CrewMemberData sharedInstance] crewLeaderName]];
+}
+
+- (void)selectCrewMembers 
+{
+    [mainView selectCrewMemberAnimation];
+    CrewMembers *crewMembersController = [[CrewMembers alloc] initWithNibName:nil bundle:nil andControllerToUpdate:self];
+    [mainView addSubview:crewMembersController.view];
+    [crewMembersController presentSelf];
+}
+
+- (void)updateCrewMemberView
+{
+    [mainView.crewMemberList reloadData];
+}
 
 
 #pragma mark -
@@ -55,20 +91,47 @@ static LocationView *_instance;
     
 }
 
+#pragma mark - 
+#pragma mark Table Methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[[CrewMemberData sharedInstance] crewMembers] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell %i", indexPath.section]];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:[NSString stringWithFormat:@"Cell %i", indexPath.section]];
+    }
+    
+    cell.textLabel.text = [[[[CrewMemberData sharedInstance] crewMembers] objectAtIndex:indexPath.row] objectForKey:@"member_name"];
+    
+    return cell;
+}
+
 #pragma mark -
 #pragma mark Singleton Methods
 
 - (id)init {
     self = [super init];
     if (self) {
-        mainView = [[LocationServicesView alloc] initWithFrame:CGRectMake(168, 50, 550, 760)];
+        mainView = [[LocationServicesView alloc] initWithFrame:CGRectMake(168, 50, 550, 760) andParentController:self];
         
         [self.view addSubview:mainView];
         
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    }
+        
+}
     
     return self;
 }

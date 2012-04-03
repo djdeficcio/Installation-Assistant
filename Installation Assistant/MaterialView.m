@@ -24,7 +24,7 @@ static MaterialView *_instance;
         
         mailer.mailComposeDelegate = self;
         
-        [mailer setToRecipients:[NSArray arrayWithObject:@"tjcox@solularenergy.com"]];
+        [mailer setToRecipients:[NSArray arrayWithObject:@"dand@solularenergy.com"]];
         [mailer setSubject:[NSString stringWithFormat:@"Materials request for %@", [[ProjectData sharedInstance] projectName]]];
         
         [self presentViewController:mailer animated:NO completion:NULL];
