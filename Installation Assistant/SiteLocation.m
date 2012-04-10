@@ -7,7 +7,7 @@
 //
 
 #import "SiteLocation.h"
-#import "LocationServicesView.h"
+#import "SiteLocationView.h"
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
@@ -119,9 +119,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        locationManager = [[CLLocationManager alloc] init];
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
         
     }
     return self;
@@ -150,9 +148,15 @@
 {
     [super viewDidLoad];
     
-    mainView = [[LocationServicesView alloc] initWithFrame:CGRectMake(168, 50, 768, 1004) andParentController:self];
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    mainView = [[SiteLocationView alloc] initWithFrame:[[UIScreen mainScreen] bounds] andParentController:self];
     
     [self.view addSubview:mainView];
+    
+    [locationManager startUpdatingLocation];
 }
 
 

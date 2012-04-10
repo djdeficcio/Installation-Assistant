@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		018EA4431534EB450006FC9F /* SiteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4421534EB450006FC9F /* SiteLocation.m */; };
+		018EA4461534F17E0006FC9F /* SiteLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4451534F17E0006FC9F /* SiteLocationView.m */; };
 		3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CA15239CFD00A3D284 /* DBGateway.m */; };
 		3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CD15248C4B00A3D284 /* CrewMemberData.m */; };
 		3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D31524BDDC00A3D284 /* CrewLeader.m */; };
@@ -55,8 +56,6 @@
 		35B8A3E5148EBF8B000411D0 /* DualColumnTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8A3E4148EBF8A000411D0 /* DualColumnTable.m */; };
 		35B8A3E8148FE5CE000411D0 /* DualColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8A3E7148FE5CE000411D0 /* DualColumnCell.m */; };
 		35B8A3ED148FFE6E000411D0 /* brushedmetal.png in Resources */ = {isa = PBXBuildFile; fileRef = 35B8A3EC148FFE6E000411D0 /* brushedmetal.png */; };
-		35E8E6D41517C65900B62B2B /* LocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E8E6D31517C65900B62B2B /* LocationView.m */; };
-		35E8E6D91517C8D400B62B2B /* LocationServicesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E8E6D81517C8D400B62B2B /* LocationServicesView.m */; };
 		35F2C7E21472F63300DBC988 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2C7E11472F63300DBC988 /* CFNetwork.framework */; };
 		35F2C7E41472F63F00DBC988 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2C7E31472F63F00DBC988 /* SystemConfiguration.framework */; };
 		35F2C7E61472F64A00DBC988 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F2C7E51472F64A00DBC988 /* MobileCoreServices.framework */; };
@@ -68,6 +67,8 @@
 /* Begin PBXFileReference section */
 		018EA4411534EB450006FC9F /* SiteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocation.h; sourceTree = "<group>"; };
 		018EA4421534EB450006FC9F /* SiteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocation.m; sourceTree = "<group>"; };
+		018EA4441534F17D0006FC9F /* SiteLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocationView.h; sourceTree = "<group>"; };
+		018EA4451534F17E0006FC9F /* SiteLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocationView.m; sourceTree = "<group>"; };
 		3546A3C915239CFD00A3D284 /* DBGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBGateway.h; sourceTree = "<group>"; };
 		3546A3CA15239CFD00A3D284 /* DBGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGateway.m; sourceTree = "<group>"; };
 		3546A3CC15248C4B00A3D284 /* CrewMemberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMemberData.h; sourceTree = "<group>"; };
@@ -144,10 +145,6 @@
 		35B8A3E6148FE5CD000411D0 /* DualColumnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DualColumnCell.h; sourceTree = "<group>"; };
 		35B8A3E7148FE5CE000411D0 /* DualColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DualColumnCell.m; sourceTree = "<group>"; };
 		35B8A3EC148FFE6E000411D0 /* brushedmetal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brushedmetal.png; sourceTree = "<group>"; };
-		35E8E6D21517C65900B62B2B /* LocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationView.h; sourceTree = "<group>"; };
-		35E8E6D31517C65900B62B2B /* LocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationView.m; sourceTree = "<group>"; };
-		35E8E6D71517C8D400B62B2B /* LocationServicesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationServicesView.h; sourceTree = "<group>"; };
-		35E8E6D81517C8D400B62B2B /* LocationServicesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationServicesView.m; sourceTree = "<group>"; };
 		35F2C7E11472F63300DBC988 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		35F2C7E31472F63F00DBC988 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		35F2C7E51472F64A00DBC988 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -288,8 +285,6 @@
 				358D943F14B496CE007F4335 /* CompassView.m */,
 				3546A3CC15248C4B00A3D284 /* CrewMemberData.h */,
 				3546A3CD15248C4B00A3D284 /* CrewMemberData.m */,
-				35E8E6D21517C65900B62B2B /* LocationView.h */,
-				35E8E6D31517C65900B62B2B /* LocationView.m */,
 				3579D2F414E16DA200D2E37F /* MaterialView.h */,
 				3579D2F514E16DA200D2E37F /* MaterialView.m */,
 				358D944314BB399E007F4335 /* NotesView.h */,
@@ -349,8 +344,8 @@
 				3546A3DC1529D35D00A3D284 /* CrewMembersView.m */,
 				35655EA115238C0700E7BAEB /* HomeScreenView.h */,
 				35655EA215238C0700E7BAEB /* HomeScreenView.m */,
-				35E8E6D71517C8D400B62B2B /* LocationServicesView.h */,
-				35E8E6D81517C8D400B62B2B /* LocationServicesView.m */,
+				018EA4441534F17D0006FC9F /* SiteLocationView.h */,
+				018EA4451534F17E0006FC9F /* SiteLocationView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -452,8 +447,6 @@
 				3579D2F014D868B100D2E37F /* NotesFullViewController.m in Sources */,
 				3579D2F314DC6EC400D2E37F /* NotesNewViewController.m in Sources */,
 				3579D2F614E16DA200D2E37F /* MaterialView.m in Sources */,
-				35E8E6D41517C65900B62B2B /* LocationView.m in Sources */,
-				35E8E6D91517C8D400B62B2B /* LocationServicesView.m in Sources */,
 				35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */,
 				3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */,
 				3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */,
@@ -462,6 +455,7 @@
 				3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */,
 				3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */,
 				018EA4431534EB450006FC9F /* SiteLocation.m in Sources */,
+				018EA4461534F17E0006FC9F /* SiteLocationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

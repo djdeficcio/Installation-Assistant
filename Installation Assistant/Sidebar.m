@@ -315,7 +315,7 @@ static Sidebar *_instance;
     
     if (locationDisplayed == YES) 
     {
-        [[LocationView sharedInstance] hideLocationView];
+        //[[LocationView sharedInstance] hideLocationView];
         locationDisplayed = NO;
     }
 }
@@ -348,7 +348,7 @@ static Sidebar *_instance;
     
     if (windowID != 4)
     {
-        [[LocationView sharedInstance] hideLocationView];
+        //[[LocationView sharedInstance] hideLocationView];
         locationDisplayed = NO;
     }
 }

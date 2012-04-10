@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CoreLocation/CoreLocation.h"
 
-@class LocationServicesView;
+@class SiteLocationView;
 
 @interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
-    LocationServicesView *mainView;
+    SiteLocationView *mainView;
     CLLocationManager *locationManager;
 }
 
