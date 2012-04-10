@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class CrewLeaderView, LocationView;
+@class CrewLeaderView, SiteLocation;
 
 @interface CrewLeader : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     CrewLeaderView *mainView;
-    LocationView *controllerToUpdate;
+    SiteLocation *controllerToUpdate;
     
     NSMutableArray *crewLeaders;
     NSMutableArray *crewMembers;
     NSMutableDictionary *selectedLeader;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(LocationView *)controller;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller;
 
 - (void)presentSelf;
 - (void)removeSelf;

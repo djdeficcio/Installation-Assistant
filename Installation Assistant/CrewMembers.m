@@ -8,7 +8,7 @@
 
 #import "CrewMembers.h"
 #import "CrewMembersView.h"
-#import "LocationView.h"
+#import "SiteLocation.h"
 #import "DBGateway.h"
 #import "ProjectData.h"
 #import "CrewMemberData.h"
@@ -81,7 +81,7 @@
     NSLog(@"%@", selectedFieldCrew);
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(LocationView *)controller
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018EA4431534EB450006FC9F /* SiteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4421534EB450006FC9F /* SiteLocation.m */; };
 		3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CA15239CFD00A3D284 /* DBGateway.m */; };
 		3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CD15248C4B00A3D284 /* CrewMemberData.m */; };
 		3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D31524BDDC00A3D284 /* CrewLeader.m */; };
@@ -65,6 +66,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		018EA4411534EB450006FC9F /* SiteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocation.h; sourceTree = "<group>"; };
+		018EA4421534EB450006FC9F /* SiteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocation.m; sourceTree = "<group>"; };
 		3546A3C915239CFD00A3D284 /* DBGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBGateway.h; sourceTree = "<group>"; };
 		3546A3CA15239CFD00A3D284 /* DBGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGateway.m; sourceTree = "<group>"; };
 		3546A3CC15248C4B00A3D284 /* CrewMemberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMemberData.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				358876ED146B1D2E007A157E /* ProjectSelection.m */,
 				35B8A3D31488300F000411D0 /* SiteInformation.h */,
 				35B8A3D41488300F000411D0 /* SiteInformation.m */,
+				018EA4411534EB450006FC9F /* SiteLocation.h */,
+				018EA4421534EB450006FC9F /* SiteLocation.m */,
 				35B8A3DD148834E6000411D0 /* SitePlans.h */,
 				35B8A3DE148834E6000411D0 /* SitePlans.m */,
 				35B8A3E0148E6E5A000411D0 /* SiteTabController.h */,
@@ -456,6 +461,7 @@
 				3546A3D71524E10900A3D284 /* CrewLeaderView.m in Sources */,
 				3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */,
 				3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */,
+				018EA4431534EB450006FC9F /* SiteLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

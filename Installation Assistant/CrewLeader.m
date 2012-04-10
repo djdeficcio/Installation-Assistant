@@ -8,7 +8,7 @@
 
 #import "CrewLeader.h"
 #import "CrewLeaderView.h"
-#import "LocationView.h"
+#import "SiteLocation.h"
 #import "CrewMemberData.h"
 #import "DBGateway.h"
 #import "ProjectData.h"
@@ -103,7 +103,7 @@
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(LocationView *)controller
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {

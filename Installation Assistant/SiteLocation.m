@@ -1,23 +1,18 @@
 //
-//  LocationView.m
+//  SiteLocation.m
 //  Installation Assistant
 //
-//  Created by DJ DeFiccio on 3/19/12.
-//  Copyright 2012 Solular, LLC. All rights reserved.
-//	File created using Singleton XCode Template by Mugunth Kumar (http://blog.mugunthkumar.com)
-//  More information about this template on the post http://mk.sg/89	
-//  Permission granted to do anything, commercial/non-commercial with this file apart from removing the line/URL above
+//  Created by Solular on 4/10/12.
+//  Copyright (c) 2012 Solular, LLC. All rights reserved.
+//
 
-#import "LocationView.h"
+#import "SiteLocation.h"
 #import "LocationServicesView.h"
-#import "DBGateway.h"
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
 
-static LocationView *_instance;
-@implementation LocationView
-
+@implementation SiteLocation
 
 #pragma mark -
 #pragma mark Custom Methods
@@ -117,54 +112,61 @@ static LocationView *_instance;
     return cell;
 }
 
-#pragma mark -
-#pragma mark Singleton Methods
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         
         locationManager = [[CLLocationManager alloc] init];
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         
     }
-    
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
     
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
+
+/*
+// Implement loadView to create a view hierarchy programmatically, without using a nib.
+- (void)loadView
+{
+}
+*/
+
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     mainView = [[LocationServicesView alloc] initWithFrame:CGRectMake(168, 50, 768, 1004) andParentController:self];
-      
+    
     [self.view addSubview:mainView];
 }
 
-+ (LocationView *)sharedInstance
-{
-    if (_instance == nil) {
-        
-        _instance = [[super allocWithZone:NULL] init];
-        
-    }
 
-    return _instance;
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
-+ (id)allocWithZone:(NSZone *)zone
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return _instance; //on subsequent allocation attempts return nil	
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    return self;	
-}
-
 
 @end

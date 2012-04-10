@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class LocationView;
+@class SiteLocation;
 
 @interface LocationServicesView : UIView
 {
-    LocationView *parentController;
+    SiteLocation *parentController;
     UIView *locationInfo;
     UIView *crewLeaderInfo;
     UIView *crewMemberInfo;
@@ -26,7 +26,7 @@
 @property (retain) NSMutableArray *crewMembers;
 @property (retain) UITableView *crewMemberList;
 
-- (id)initWithFrame:(CGRect)frame andParentController:(LocationView *)parent;
+- (id)initWithFrame:(CGRect)frame andParentController:(SiteLocation *)parent;
 
 - (void)refreshAnimationForView:(UIView *)view;
 - (void)selectCrewLeaderAnimation;

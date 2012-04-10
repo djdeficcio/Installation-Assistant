@@ -8,6 +8,10 @@
 
 #import "SiteTabController.h"
 #import "ProjectData.h"
+#import "SiteInformation.h"
+#import "SiteViews.h"
+#import "SitePlans.h"
+#import "LocationView.h"
 
 @implementation SiteTabController
 
@@ -15,7 +19,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+    
     }
     return self;
 }

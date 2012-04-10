@@ -7,7 +7,7 @@
 //
 
 #import "LocationServicesView.h"
-#import "LocationView.h"
+#import "SiteLocation.h"
 #import "MenuBar.h"
 #import "Quartzcore/Quartzcore.h"
 #import "CrewMemberData.h"
@@ -42,7 +42,7 @@
 #pragma mark -
 #pragma mark Init methods
 
-- (id)initWithFrame:(CGRect)frame andParentController:(LocationView *)parent
+- (id)initWithFrame:(CGRect)frame andParentController:(SiteLocation *)parent
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -150,6 +150,7 @@
         [departureButton addTarget:parentController action:@selector(updateCrewLeaderView) forControlEvents:UIControlEventTouchDown];
         
         [self addSubview:departureButton];
+        
     }
     return self;
 }

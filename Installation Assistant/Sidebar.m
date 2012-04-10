@@ -215,14 +215,14 @@ static Sidebar *_instance;
             break;
             
         case 4:
-            if (locationDisplayed == NO) {
-                [sidebarView.superview addSubview:[[LocationView sharedInstance] getLocationView]];
-                locationDisplayed = YES;
-            }
-            
-            else {
-                [self closeSidebarWindows];
-            }
+//            if (locationDisplayed == NO) {
+//                [sidebarView.superview addSubview:[[LocationView sharedInstance] getLocationView]];
+//                locationDisplayed = YES;
+//            }
+//            
+//            else {
+//                [self closeSidebarWindows];
+//            }
             
             break;
             
