@@ -31,7 +31,6 @@
     BOOL notesDisplayed;
     BOOL materialsDisplayed;
     BOOL managersDisplayed;
-    BOOL locationDisplayed;
 }
 
 + (Sidebar *) sharedInstance:(UIViewController *)parent;

@@ -56,28 +56,29 @@ static Sidebar *_instance;
     notesDisplayed = NO;
     materialsDisplayed = NO;
     managersDisplayed = NO;
-    locationDisplayed = NO;
     
     //Create the view that holds the sidebar
-    sidebarView = [[UIView alloc] initWithFrame:CGRectMake(-162, 50, 180, 760)];
-    sidebarView.backgroundColor = [UIColor whiteColor];
-    sidebarView.layer.cornerRadius = 10;
+    sidebarView = [[UIView alloc] initWithFrame:CGRectMake(-162, 122.5, 185, 615)];
+    sidebarView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+    sidebarView.layer.cornerRadius = 20;
+    sidebarView.layer.borderColor = [UIColor blackColor].CGColor;
+    sidebarView.layer.borderWidth = 15;
     
     //Create the array to hold the icons
-    icons = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithObjects:@"compass.png", @"notes.png", @"materials.png", @"managers.png", @"location.png", nil]];
+    icons = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithObjects:@"compass.png", @"notes.png", @"materials.png", @"managers.png", nil]];
     
-    iconsPressed = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithObjects:@"compassPressed.png", @"notesPressed.png", @"materialsPressed.png", @"managersPressed.png", @"locationPressed.png", nil]];
+    iconsPressed = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithObjects:@"compassPressed.png", @"notesPressed.png", @"materialsPressed.png", @"managersPressed.png", nil]];
     
     //Initialize the array that will hold pointers for the tabbar options
     cellContainer = [[NSMutableArray alloc] init];
     iconContainer = [[NSMutableArray alloc] init];
                       
-    UIColor *sidebarBackground = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"sidebarback.png"]];
-    
-    sidebarView.backgroundColor = sidebarBackground;
+//    UIColor *sidebarBackground = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"sidebarback.png"]];
+//    
+//    sidebarView.backgroundColor = sidebarBackground;
     
     //Create the table of menu options
-    table = [[UITableView alloc] initWithFrame:CGRectMake(25, 25, 125, 760) style:UITableViewStylePlain];
+    table = [[UITableView alloc] initWithFrame:CGRectMake(30, 25, 125, 615) style:UITableViewStylePlain];
     table.backgroundColor = [UIColor clearColor];
     table.separatorColor = [UIColor clearColor];
     table.rowHeight = 145;
@@ -214,18 +215,6 @@ static Sidebar *_instance;
             
             break;
             
-        case 4:
-//            if (locationDisplayed == NO) {
-//                [sidebarView.superview addSubview:[[LocationView sharedInstance] getLocationView]];
-//                locationDisplayed = YES;
-//            }
-//            
-//            else {
-//                [self closeSidebarWindows];
-//            }
-            
-            break;
-            
         default:
             NSLog(@"Default selected");
             break;
@@ -252,7 +241,7 @@ static Sidebar *_instance;
     
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
     
-    sidebarView.transform = CGAffineTransformMakeTranslation(150, 0);
+    sidebarView.transform = CGAffineTransformMakeTranslation(145, 0);
     
     [UIView commitAnimations];
 }
@@ -312,12 +301,6 @@ static Sidebar *_instance;
         [managerView removeFromParentViewController];
         managersDisplayed = NO;
     }
-    
-    if (locationDisplayed == YES) 
-    {
-        //[[LocationView sharedInstance] hideLocationView];
-        locationDisplayed = NO;
-    }
 }
 
 - (void)closeSidebarWindowsExcluding:(NSInteger)windowID
@@ -344,12 +327,6 @@ static Sidebar *_instance;
     {
         [managerView removeFromParentViewController];
         managersDisplayed = NO;
-    }
-    
-    if (windowID != 4)
-    {
-        //[[LocationView sharedInstance] hideLocationView];
-        locationDisplayed = NO;
     }
 }
 
@@ -448,7 +425,6 @@ static Sidebar *_instance;
     
     materialsDisplayed = NO;
     managersDisplayed = NO;
-    NSLog(@"Mail protocol method");
 }
 
 @end
