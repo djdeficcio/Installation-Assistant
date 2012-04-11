@@ -13,6 +13,7 @@
 @interface CrewMembersView : UIView
 {
     CrewMembers *parentController;
+    UIView *dataView;
 }
 
 - (id)initWithFrame:(CGRect)frame andParentController:(CrewMembers *)parent;

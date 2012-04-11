@@ -13,6 +13,7 @@
 @interface CrewLeaderView : UIView
 {
     CrewLeader *parentController;
+    UIView *dataView;
 }
 
 - (void)animateEntrance;

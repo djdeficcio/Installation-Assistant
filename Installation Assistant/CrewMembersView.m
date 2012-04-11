@@ -15,17 +15,20 @@
 
 - (void)animateEntrance
 {
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    NSInteger targetY = (screenBounds.size.height - dataView.frame.size.height)/4;
     [UIView animateWithDuration:0.25 
                      animations:^{
-                         self.frame = CGRectMake(0, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+                         dataView.frame = CGRectMake(dataView.frame.origin.x, targetY + 10, dataView.frame.size.width, dataView.frame.size.height);
                      }];
 }
 
 - (void)animateExit
 {
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
     [UIView animateWithDuration:0.25
                      animations:^{
-                         self.frame = CGRectMake(550, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+                         dataView.frame = CGRectMake(dataView.frame.origin.x, screenBounds.size.height, dataView.frame.size.width, dataView.frame.size.height);
                      }
                      completion:^(BOOL finished){
                          [[parentController view] removeFromSuperview];
@@ -38,7 +41,18 @@
     if (self) {
         parentController = parent;
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+        
+        CGRect screenBounds = [[UIScreen mainScreen] bounds];
+        NSInteger dataViewWidth = 550;
+        NSInteger dataViewX = (screenBounds.size.width - dataViewWidth)/2;
+        
+        dataView = [[UIView alloc] initWithFrame:CGRectMake(dataViewX, frame.size.height, dataViewWidth, 710)];
+        dataView.layer.borderColor = [UIColor blackColor].CGColor;
+        dataView.layer.borderWidth = 1;
+        dataView.backgroundColor = [UIColor whiteColor];
+        dataView.layer.cornerRadius = 10;
+        dataView.layer.masksToBounds = YES;
         
         UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(50, 50, 450, 500) style:UITableViewStylePlain];
         table.layer.cornerRadius = 10;
@@ -48,21 +62,23 @@
         table.delegate = parentController;
         table.dataSource = parentController;
         
-        [self addSubview:table];
+        [dataView addSubview:table];
         
         GlosslessButton *close = [[GlosslessButton alloc] initWithFrame:CGRectMake(50, 600, 160, 80)];
         close.textLabel.text = @"Cancel";
         close.textLabel.font = [UIFont systemFontOfSize:24];
         [close addTarget:parentController action:@selector(removeSelf) forControlEvents:UIControlEventTouchDown];
         
-        [self addSubview:close];
+        [dataView addSubview:close];
         
         GlosslessButton *confirm = [[GlosslessButton alloc] initWithFrame:CGRectMake(340, 600, 160, 80)];
         confirm.textLabel.text = @"Confirm";
         confirm.textLabel.font = [UIFont systemFontOfSize:24];
         [confirm addTarget:parentController action:@selector(confirmSelection) forControlEvents:UIControlEventTouchDown];
         
-        [self addSubview:confirm];
+        [dataView addSubview:confirm];
+        
+        [self addSubview:dataView];
     }
     return self;
 }

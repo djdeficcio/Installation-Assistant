@@ -91,8 +91,9 @@
         
         fieldCrew = [gateway getAllFieldCrewForState:[[ProjectData sharedInstance] siteState]];
         selectedFieldCrew = [[NSMutableDictionary alloc] init];
-            
-        mainView = [[CrewMembersView alloc] initWithFrame:CGRectMake(550, 30, 550, 710) andParentController:self];
+        
+        CGRect screenBounds = [[UIScreen mainScreen] bounds];
+        mainView = [[CrewMembersView alloc] initWithFrame:CGRectMake(0, -20, screenBounds.size.width, screenBounds.size.height) andParentController:self];
         [self.view addSubview:mainView];
     }
     return self;
