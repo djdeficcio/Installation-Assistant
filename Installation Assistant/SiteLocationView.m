@@ -14,13 +14,13 @@
 #import "GlosslessButton.h"
 
 @implementation SiteLocationView
-@synthesize location = _location, crewLeader = _crewLeader, crewMembers = _crewMembers, crewMemberList = _crewMemberList;
+@synthesize location = _location, crewLeader = _crewLeader, crewMembers = _crewMembers, crewMemberList = _crewMemberList, materialList = _materialList;
 
 - (void)refreshAnimationForView:(UIView *)view
 {
     view.backgroundColor = [UIColor colorWithRed:134.0/255.0 green:212.0/255.0 blue:253.0/255.0 alpha:1.0];
     [UIView animateWithDuration:0.5 animations:^{
-        view.backgroundColor = [UIColor clearColor];
+        view.backgroundColor = [UIColor whiteColor];
     }];
 }
 
@@ -52,13 +52,13 @@
         
         parentController = parent;
         
-        locationInfo = [[UIView alloc] initWithFrame:CGRectMake(30, 80, 490, 170)];
+        locationInfo = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 380, 170)];
         locationInfo.backgroundColor = [UIColor whiteColor];
         locationInfo.layer.cornerRadius = 10;
         locationInfo.layer.borderColor = [UIColor blackColor].CGColor;
         locationInfo.layer.borderWidth = 1;
         
-        UILabel *locationInfoTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 470, 20)];
+        UILabel *locationInfoTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 360, 20)];
         locationInfoTitle.backgroundColor = [UIColor clearColor];
         locationInfoTitle.numberOfLines = 0;
         locationInfoTitle.text = @"Current Location:";
@@ -66,7 +66,7 @@
         
         [locationInfo addSubview:locationInfoTitle];
         
-        _location = [[UILabel alloc] initWithFrame:CGRectMake(30, 20, 430, 130)];
+        _location = [[UILabel alloc] initWithFrame:CGRectMake(30, 20, 320, 130)];
         _location.backgroundColor = [UIColor clearColor];
         _location.numberOfLines = 0;
         _location.font = [UIFont systemFontOfSize:24];
@@ -80,7 +80,7 @@
         
         [self addSubview:locationInfo];
         
-        crewLeaderInfo = [[UIView alloc] initWithFrame:CGRectMake(30, 280, 230, 310)];
+        crewLeaderInfo = [[UIView alloc] initWithFrame:CGRectMake(480, 50, 238, 170)];
         crewLeaderInfo.backgroundColor = [UIColor whiteColor];
         crewLeaderInfo.layer.cornerRadius = 10;
         crewLeaderInfo.layer.borderColor = [UIColor blackColor].CGColor;
@@ -90,7 +90,7 @@
         
         [crewLeaderInfo addGestureRecognizer:selectCrewLeader];
         
-        UILabel *crewLeaderTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 210, 20)];
+        UILabel *crewLeaderTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 190, 20)];
         crewLeaderTitle.backgroundColor = [UIColor clearColor];
         crewLeaderTitle.numberOfLines = 0;
         crewLeaderTitle.text = @"Crew Leader:";
@@ -98,7 +98,7 @@
         
         [crewLeaderInfo addSubview:crewLeaderTitle];
         
-        _crewLeader = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 170, 250)];
+        _crewLeader = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 158, 110)];
         _crewLeader.backgroundColor = [UIColor clearColor];
         _crewLeader.numberOfLines = 0;
         _crewLeader.text = [[CrewMemberData sharedInstance] crewLeaderName];
@@ -109,7 +109,7 @@
         
         [self addSubview:crewLeaderInfo];
         
-        crewMemberInfo = [[UIView alloc] initWithFrame:CGRectMake(290, 280, 230, 450)];
+        crewMemberInfo = [[UIView alloc] initWithFrame:CGRectMake(480, 270, 238, 450)];
         crewMemberInfo.backgroundColor = [UIColor whiteColor];
         crewMemberInfo.layer.cornerRadius = 10;
         crewMemberInfo.layer.borderColor = [UIColor blackColor].CGColor;
@@ -127,6 +127,7 @@
         _crewMemberList = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, crewMemberInfo.frame.size.width, crewMemberInfo.frame.size.height) style:UITableViewStylePlain];
         _crewMemberList.delegate = parentController;
         _crewMemberList.dataSource = parentController;
+        _crewMemberList.tag = CREWMEMBERS;
         
         [crewMemberInfo addSubview:_crewMemberList];
         
@@ -136,7 +137,37 @@
         
         [crewMemberInfo addGestureRecognizer:selectCrewMembers];
         
-        GlosslessButton *departureButton = [[GlosslessButton alloc] initWithFrame:CGRectMake(30, 620, 230, 110)];
+        materialListInfo = [[UIView alloc] initWithFrame:CGRectMake(50, 270, 380, 400)];
+        materialListInfo.backgroundColor = [UIColor whiteColor];
+        materialListInfo.layer.cornerRadius = 10;
+        materialListInfo.layer.borderColor = [UIColor blackColor].CGColor;
+        materialListInfo.layer.borderWidth = 1;
+        materialListInfo.layer.masksToBounds = YES;
+        
+        UILabel *materialListTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280, 20)];
+        materialListTitle.backgroundColor = [UIColor clearColor];
+        materialListTitle.numberOfLines = 1;
+        materialListTitle.text = @"Material Requests:";
+        materialListTitle.textColor = [UIColor grayColor];
+        
+        [materialListInfo addSubview:materialListTitle];
+        
+//        _materialList = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, materialListInfo.frame.size.width, materialListInfo.frame.size.height) style:UITableViewStylePlain];
+//        _materialList.delegate = parentController;
+//        _materialList.dataSource = parentController;
+//        _materialList.tag = MATERIALS;
+//        _materialList.allowsSelection = NO;
+//        
+//        [materialListInfo addSubview:_materialList];
+        
+        UITapGestureRecognizer *selectMaterialList = [[UITapGestureRecognizer alloc] initWithTarget:parentController action:@selector(selectMaterials)];
+        
+        [materialListInfo addGestureRecognizer:selectMaterialList];
+        
+        [self addSubview:materialListInfo];
+        
+        GlosslessButton *departureButton = [[GlosslessButton alloc] initWithFrame:CGRectMake(475, 765, 248, 100)];
+        [departureButton setButtonStartColor:[UIColor colorWithRed:94.0/255.0 green:222.0/255.0 blue:68.0/255.0 alpha:1.0] AndEndColor:[UIColor colorWithRed:81.0/255.0 green:192.0/255.0 blue:58.0/255.0 alpha:1.0] AndBorderColor:[UIColor colorWithRed:71.0/255.0 green:118.0/255.0 blue:51.0/255.0 alpha:1.0]];
         departureButton.textLabel.text = @"Continue";
         departureButton.textLabel.font = [UIFont systemFontOfSize:30];
         [departureButton addTarget:parentController action:@selector(updateCrewLeaderView) forControlEvents:UIControlEventTouchDown];

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#define CREWMEMBERS 0
+#define MATERIALS 1
 
 @class SiteLocation;
 
@@ -16,15 +18,18 @@
     UIView *locationInfo;
     UIView *crewLeaderInfo;
     UIView *crewMemberInfo;
+    UIView *materialListInfo;
     UILabel *_location;
     UILabel *_crewLeader;
     NSMutableArray *_crewMembers;
     UITableView *_crewMemberList;
+    UITableView *_materialList;
 }
 @property (retain) UILabel *location;
 @property (retain) UILabel *crewLeader;
 @property (retain) NSMutableArray *crewMembers;
 @property (retain) UITableView *crewMemberList;
+@property (retain) UITableView *materialList;
 
 - (id)initWithFrame:(CGRect)frame andParentController:(SiteLocation *)parent;
 
