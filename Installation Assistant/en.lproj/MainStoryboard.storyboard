@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="40J-GD-NjT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="40J-GD-NjT">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Home Screen-->
         <scene sceneID="pSV-wr-WwJ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYS-M7-DqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,6 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-318" y="-236"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="lK4-d4-kaD">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXb-yg-PXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,6 +40,7 @@
             </objects>
             <point key="canvasLocation" x="-1298" y="-236"/>
         </scene>
+        <!--Project Selection-->
         <scene sceneID="BHZ-U5-D39">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ie-VK-rVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,6 +60,7 @@
             </objects>
             <point key="canvasLocation" x="654" y="-236"/>
         </scene>
+        <!--Site Views - Views-->
         <scene sceneID="Qiw-aN-Nc1">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n3d-gY-R4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,6 +85,7 @@
             </objects>
             <point key="canvasLocation" x="3235" y="-214"/>
         </scene>
+        <!--Site Plans - Plans-->
         <scene sceneID="IkK-8Y-NxS">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cA-wK-BFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,6 +100,7 @@
             </objects>
             <point key="canvasLocation" x="3235" y="1007"/>
         </scene>
+        <!--Site Location - Location-->
         <scene sceneID="2gJ-6D-mFy">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEe-eH-piE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,10 +111,189 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Location" id="sYd-YT-L3F"/>
+                    <connections>
+                        <segue destination="v3d-ps-UvN" kind="modal" identifier="ViewMaterials" modalPresentationStyle="fullScreen" id="pLy-BI-0Ko"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="3258" y="-2745"/>
         </scene>
+        <!--Material Select - Requested Materials-->
+        <scene sceneID="6DZ-0t-LSx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-sS-xGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="eNs-ri-Snd" customClass="MaterialSelect" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="X04-gc-vsu">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MaterialCell" rowHeight="100" id="rlM-bk-Kg1" customClass="MaterialListCell">
+                                <rect key="frame" x="0.0" y="22" width="768" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="748" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Material Name" lineBreakMode="tailTruncation" minimumFontSize="10" id="7lD-zC-QAC">
+                                            <rect key="frame" x="14" y="13" width="529" height="74"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="K7I-DC-Oq3">
+                                            <rect key="frame" x="551" y="0.0" width="177" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Needed" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="LNl-1M-wrN">
+                                            <rect key="frame" x="551" y="51" width="177" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="date" destination="LNl-1M-wrN" id="iN7-6f-UDT"/>
+                                    <outlet property="name" destination="7lD-zC-QAC" id="gT3-AW-6eH"/>
+                                    <outlet property="quantity" destination="K7I-DC-Oq3" id="rfq-BC-INb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eNs-ri-Snd" id="WAe-fB-TcS"/>
+                            <outlet property="delegate" destination="eNs-ri-Snd" id="C01-fW-sVM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Requested Materials" id="mwp-tz-64t">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Do-T8-9cI">
+                            <connections>
+                                <action selector="cancel:" destination="eNs-ri-Snd" id="7Tw-kL-IbW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Of5-8J-elA">
+                            <connections>
+                                <action selector="done:" destination="eNs-ri-Snd" id="lyt-hv-amd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="CtK-VA-DYp" kind="modal" identifier="AddMaterial" modalPresentationStyle="formSheet" id="P55-Ww-BiB"/>
+                        <segue destination="QDE-Kn-lba" kind="modal" identifier="EditMaterial" modalPresentationStyle="formSheet" id="OSN-sC-3oy"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="5508" y="-2745"/>
+        </scene>
+        <!--Add Material - Add a Material-->
+        <scene sceneID="6wD-Vs-aaU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hq1-qf-hmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="CtK-VA-DYp" customClass="AddMaterial" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gxp-50-H13">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" id="EGd-Gy-1mB">
+                                <rect key="frame" x="65" y="91" width="104" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="20" id="MRX-cN-fDk">
+                                <rect key="frame" x="65" y="126" width="410" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity:" lineBreakMode="tailTruncation" minimumFontSize="10" id="tjx-T2-l8C">
+                                <rect key="frame" x="65" y="188" width="138" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="14" id="dgT-b3-MT2">
+                                <rect key="frame" x="65" y="230" width="143" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Needed:" lineBreakMode="tailTruncation" minimumFontSize="10" id="KWg-UR-MGq">
+                                <rect key="frame" x="65" y="293" width="182" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="cCR-nZ-6CC">
+                                <rect key="frame" x="65" y="335" width="410" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="355953033.78820002">
+                                    <!--2012-04-12 19:50:33 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                            </datePicker>
+                            <navigationBar contentMode="scaleToFill" id="vlB-rQ-2Su">
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="New Material" id="Wrv-Rs-HdH">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9lw-By-Hqk">
+                                            <connections>
+                                                <action selector="cancel:" destination="CtK-VA-DYp" id="XO7-Ag-oBY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8p7-tJ-1if">
+                                            <connections>
+                                                <action selector="save:" destination="CtK-VA-DYp" id="B11-Kc-jB7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92391304350000003" green="0.92391304350000003" blue="0.92391304350000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add a Material" id="UMy-D6-ixq"/>
+                    <connections>
+                        <outlet property="date" destination="cCR-nZ-6CC" id="MNR-jV-tmP"/>
+                        <outlet property="name" destination="MRX-cN-fDk" id="NRv-7E-Ckl"/>
+                        <outlet property="quantity" destination="dgT-b3-MT2" id="Rei-Gz-CMU"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="6694" y="-3041"/>
+        </scene>
+        <!--Site Information - Information-->
         <scene sceneID="vCu-sh-9Xf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElW-vC-T1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,6 +308,7 @@
             </objects>
             <point key="canvasLocation" x="3235" y="-1466"/>
         </scene>
+        <!--Site Tab Controller - Project-->
         <scene sceneID="izI-ac-AOq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZ3-x1-2kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,10 +331,166 @@
             </objects>
             <point key="canvasLocation" x="1851" y="-324"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dle-Qe-gbK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMv-7K-FbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="v3d-ps-UvN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="WbN-Vu-nuU">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eNs-ri-Snd" kind="relationship" relationship="rootViewController" id="UaG-M5-2j9"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="4350" y="-2745"/>
+        </scene>
+        <!--Edit Material - Add a Material-->
+        <scene sceneID="9Ld-AF-bzB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ET0-WY-fOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="QDE-Kn-lba" customClass="EditMaterial" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gAJ-f1-iP3">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" id="Um2-HO-71r">
+                                <rect key="frame" x="65" y="91" width="104" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="14" background="brushedmetal.png" id="15p-MS-LPS">
+                                <rect key="frame" x="65" y="126" width="410" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardAppearance="alert"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity:" lineBreakMode="tailTruncation" minimumFontSize="10" id="OBg-ny-AUk">
+                                <rect key="frame" x="65" y="188" width="138" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="14" id="bbH-F1-Jlt">
+                                <rect key="frame" x="65" y="230" width="143" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Needed:" lineBreakMode="tailTruncation" minimumFontSize="10" id="6vH-ed-H4U">
+                                <rect key="frame" x="65" y="293" width="182" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="sxf-iz-dz6">
+                                <rect key="frame" x="65" y="335" width="410" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="355953033.78820002">
+                                    <!--2012-04-12 19:50:33 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_US"/>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                            </datePicker>
+                            <navigationBar contentMode="scaleToFill" id="w0Z-8C-I16">
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Edit Material" id="o7t-Ly-g5z">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Uxg-A5-fxA">
+                                            <connections>
+                                                <action selector="cancel:" destination="QDE-Kn-lba" id="Oj8-9e-HIc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gdz-Pg-hO5">
+                                            <connections>
+                                                <action selector="save:" destination="QDE-Kn-lba" id="c97-KY-pdL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92391304350000003" green="0.92391304350000003" blue="0.92391304350000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add a Material" id="xmd-cM-zbR"/>
+                    <connections>
+                        <outlet property="date" destination="sxf-iz-dz6" id="lhj-db-qkq"/>
+                        <outlet property="name" destination="15p-MS-LPS" id="N6R-h3-IOM"/>
+                        <outlet property="quantity" destination="bbH-F1-Jlt" id="Eqx-fX-3pf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="6694" y="-2248"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="brushedmetal.png" width="768" height="1024"/>
+    </resources>
     <classes>
+        <class className="AddMaterial" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMaterial.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="quantity" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="EditMaterial" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditMaterial.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="quantity" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="HomeScreen" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeScreen.h"/>
+        </class>
+        <class className="MaterialListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MaterialListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="quantity" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MaterialSelect" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MaterialSelect.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+            </relationships>
         </class>
         <class className="ProjectSelection" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectSelection.h"/>
