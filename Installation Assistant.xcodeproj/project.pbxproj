@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0153CAA215376EFA00E35905 /* EditMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153CAA115376EFA00E35905 /* EditMaterial.m */; };
 		018EA4431534EB450006FC9F /* SiteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4421534EB450006FC9F /* SiteLocation.m */; };
 		018EA4461534F17E0006FC9F /* SiteLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4451534F17E0006FC9F /* SiteLocationView.m */; };
+		018EA44C1535C5500006FC9F /* MaterialList.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA44B1535C5500006FC9F /* MaterialList.m */; };
+		018EA44F1535D9970006FC9F /* MaterialSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA44E1535D9960006FC9F /* MaterialSelect.m */; };
+		018EA4521535D9AC0006FC9F /* MaterialSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4511535D9AC0006FC9F /* MaterialSelectView.m */; };
+		01EAEA42153763170047842F /* MaterialListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAEA41153763170047842F /* MaterialListCell.m */; };
+		01EAEA461537667C0047842F /* AddMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAEA451537667B0047842F /* AddMaterial.m */; };
 		3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CA15239CFD00A3D284 /* DBGateway.m */; };
 		3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CD15248C4B00A3D284 /* CrewMemberData.m */; };
 		3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D31524BDDC00A3D284 /* CrewLeader.m */; };
@@ -65,10 +71,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0153CAA015376EFA00E35905 /* EditMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMaterial.h; sourceTree = "<group>"; };
+		0153CAA115376EFA00E35905 /* EditMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMaterial.m; sourceTree = "<group>"; };
 		018EA4411534EB450006FC9F /* SiteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocation.h; sourceTree = "<group>"; };
 		018EA4421534EB450006FC9F /* SiteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocation.m; sourceTree = "<group>"; };
 		018EA4441534F17D0006FC9F /* SiteLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocationView.h; sourceTree = "<group>"; };
 		018EA4451534F17E0006FC9F /* SiteLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocationView.m; sourceTree = "<group>"; };
+		018EA44A1535C5500006FC9F /* MaterialList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialList.h; sourceTree = "<group>"; };
+		018EA44B1535C5500006FC9F /* MaterialList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialList.m; sourceTree = "<group>"; };
+		018EA44D1535D9960006FC9F /* MaterialSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialSelect.h; sourceTree = "<group>"; };
+		018EA44E1535D9960006FC9F /* MaterialSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialSelect.m; sourceTree = "<group>"; };
+		018EA4501535D9AC0006FC9F /* MaterialSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialSelectView.h; sourceTree = "<group>"; };
+		018EA4511535D9AC0006FC9F /* MaterialSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialSelectView.m; sourceTree = "<group>"; };
+		01EAEA40153763170047842F /* MaterialListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialListCell.h; sourceTree = "<group>"; };
+		01EAEA41153763170047842F /* MaterialListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialListCell.m; sourceTree = "<group>"; };
+		01EAEA441537667B0047842F /* AddMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMaterial.h; sourceTree = "<group>"; };
+		01EAEA451537667B0047842F /* AddMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMaterial.m; sourceTree = "<group>"; };
 		3546A3C915239CFD00A3D284 /* DBGateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBGateway.h; sourceTree = "<group>"; };
 		3546A3CA15239CFD00A3D284 /* DBGateway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBGateway.m; sourceTree = "<group>"; };
 		3546A3CC15248C4B00A3D284 /* CrewMemberData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMemberData.h; sourceTree = "<group>"; };
@@ -252,12 +270,18 @@
 		358876F4146B1D4C007A157E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01EAEA441537667B0047842F /* AddMaterial.h */,
+				01EAEA451537667B0047842F /* AddMaterial.m */,
 				3546A3D21524BDDC00A3D284 /* CrewLeader.h */,
 				3546A3D31524BDDC00A3D284 /* CrewLeader.m */,
 				3546A3D81529D33900A3D284 /* CrewMembers.h */,
 				3546A3D91529D33A00A3D284 /* CrewMembers.m */,
+				0153CAA015376EFA00E35905 /* EditMaterial.h */,
+				0153CAA115376EFA00E35905 /* EditMaterial.m */,
 				35B8A3CD1485792D000411D0 /* HomeScreen.h */,
 				35B8A3CE1485792D000411D0 /* HomeScreen.m */,
+				018EA44D1535D9960006FC9F /* MaterialSelect.h */,
+				018EA44E1535D9960006FC9F /* MaterialSelect.m */,
 				3579D2EE14D868B100D2E37F /* NotesFullViewController.h */,
 				3579D2EF14D868B100D2E37F /* NotesFullViewController.m */,
 				3579D2F114DC6EC400D2E37F /* NotesNewViewController.h */,
@@ -293,6 +317,8 @@
 				35F2C7F4147C5DF400DBC988 /* ProjectData.m */,
 				358D942B14A3793C007F4335 /* Sidebar.h */,
 				358D942C14A3793C007F4335 /* Sidebar.m */,
+				018EA44A1535C5500006FC9F /* MaterialList.h */,
+				018EA44B1535C5500006FC9F /* MaterialList.m */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -344,8 +370,12 @@
 				3546A3DC1529D35D00A3D284 /* CrewMembersView.m */,
 				35655EA115238C0700E7BAEB /* HomeScreenView.h */,
 				35655EA215238C0700E7BAEB /* HomeScreenView.m */,
+				018EA4501535D9AC0006FC9F /* MaterialSelectView.h */,
+				018EA4511535D9AC0006FC9F /* MaterialSelectView.m */,
 				018EA4441534F17D0006FC9F /* SiteLocationView.h */,
 				018EA4451534F17E0006FC9F /* SiteLocationView.m */,
+				01EAEA40153763170047842F /* MaterialListCell.h */,
+				01EAEA41153763170047842F /* MaterialListCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -376,7 +406,7 @@
 		358876CA146B1D2D007A157E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Solular, LLC";
 			};
 			buildConfigurationList = 358876CD146B1D2D007A157E /* Build configuration list for PBXProject "Installation Assistant" */;
@@ -456,6 +486,12 @@
 				3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */,
 				018EA4431534EB450006FC9F /* SiteLocation.m in Sources */,
 				018EA4461534F17E0006FC9F /* SiteLocationView.m in Sources */,
+				018EA44C1535C5500006FC9F /* MaterialList.m in Sources */,
+				018EA44F1535D9970006FC9F /* MaterialSelect.m in Sources */,
+				018EA4521535D9AC0006FC9F /* MaterialSelectView.m in Sources */,
+				01EAEA42153763170047842F /* MaterialListCell.m in Sources */,
+				01EAEA461537667C0047842F /* AddMaterial.m in Sources */,
+				0153CAA215376EFA00E35905 /* EditMaterial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

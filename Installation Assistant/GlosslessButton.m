@@ -55,9 +55,9 @@
     CGMutablePathRef outerPath = createRoundedRectForRect(outerRect, 6.0);
     
     //create the inner path
-    CGFloat innerMargin = 3.0f;
-    CGRect innerRect = CGRectInset(outerRect, innerMargin, innerMargin);
-    CGMutablePathRef innerPath = createRoundedRectForRect(innerRect, 6.0);    
+//    CGFloat innerMargin = 3.0f;
+//    CGRect innerRect = CGRectInset(outerRect, innerMargin, innerMargin);
+//    CGMutablePathRef innerPath = createRoundedRectForRect(innerRect, 6.0);    
     
     //create the button gradient
     CGContextSaveGState(context);

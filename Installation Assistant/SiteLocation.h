@@ -8,19 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreLocation/CoreLocation.h"
+#import "MaterialSelect.h"
 
 @class SiteLocationView;
 
-@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate>
 {
     SiteLocationView *mainView;
     CLLocationManager *locationManager;
+    
+    NSMutableArray *_materialList;
 }
+
+@property (retain, nonatomic) NSMutableArray *materialList;
 
 - (void)refreshLocation;
 - (void)selectCrewLeader;
 - (void)updateCrewLeaderView;
 - (void)selectCrewMembers;
 - (void)updateCrewMemberView;
+- (void)selectMaterials;
+- (void)updateMaterials;
 
 @end

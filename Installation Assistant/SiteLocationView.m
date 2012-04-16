@@ -137,14 +137,14 @@
         
         [crewMemberInfo addGestureRecognizer:selectCrewMembers];
         
-        materialListInfo = [[UIView alloc] initWithFrame:CGRectMake(50, 270, 380, 400)];
+        materialListInfo = [[UIView alloc] initWithFrame:CGRectMake(50, 270, 380, 100)];
         materialListInfo.backgroundColor = [UIColor whiteColor];
         materialListInfo.layer.cornerRadius = 10;
         materialListInfo.layer.borderColor = [UIColor blackColor].CGColor;
         materialListInfo.layer.borderWidth = 1;
         materialListInfo.layer.masksToBounds = YES;
         
-        UILabel *materialListTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280, 20)];
+        UILabel *materialListTitle = [[UILabel alloc] initWithFrame:CGRectMake(20, materialListInfo.bounds.size.height, 280, 20)];
         materialListTitle.backgroundColor = [UIColor clearColor];
         materialListTitle.numberOfLines = 1;
         materialListTitle.text = @"Material Requests:";

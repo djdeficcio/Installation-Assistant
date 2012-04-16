@@ -11,21 +11,13 @@
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
+#import "MaterialList.h"
 
 @implementation SiteLocation
+@synthesize materialList = _materialList;
 
 #pragma mark -
 #pragma mark Custom Methods
-
-- (void)hideLocationView {
-    [locationManager stopUpdatingLocation];
-    [mainView removeFromSuperview];
-}
-
-- (UIView *)getLocationView {
-    [locationManager startUpdatingLocation];
-    return mainView;
-}
 
 - (void)refreshLocation
 {
@@ -35,7 +27,7 @@
 
 - (void)selectCrewLeader
 {
-    [mainView selectCrewLeaderAnimation];
+    //[mainView selectCrewLeaderAnimation];
     CrewLeader *crewLeaderController = [[CrewLeader alloc] initWithNibName:nil bundle:nil andControllerToUpdate:self];
     [mainView addSubview:crewLeaderController.view];
     [crewLeaderController presentSelf];
@@ -43,13 +35,12 @@
 
 - (void)updateCrewLeaderView
 {
-    NSLog(@"%@", [[CrewMemberData sharedInstance] crewLeaderName]);
     [mainView.crewLeader setText:[[CrewMemberData sharedInstance] crewLeaderName]];
 }
 
 - (void)selectCrewMembers 
 {
-    [mainView selectCrewMemberAnimation];
+    //[mainView selectCrewMemberAnimation];
     CrewMembers *crewMembersController = [[CrewMembers alloc] initWithNibName:nil bundle:nil andControllerToUpdate:self];
     [mainView addSubview:crewMembersController.view];
     [crewMembersController presentSelf];
@@ -60,6 +51,43 @@
     [mainView.crewMemberList reloadData];
 }
 
+- (void)selectMaterials 
+{
+    [self performSegueWithIdentifier:@"ViewMaterials" sender:self];
+}
+
+- (void)updateMaterials
+{
+    
+}
+
+#pragma mark -
+#pragma mark Material Select Delegate Methods
+
+- (void)materialSelectControllerDidCancel:(MaterialSelect *)controller
+{
+    NSLog(@"Dismissing modal view");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)materialSelectController:(MaterialSelect *)controller updatedWithMaterials:(NSMutableArray *)materials
+{
+    _materialList = materials;
+    [mainView.materialList reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ViewMaterials"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        MaterialSelect *materialSelectController = [[navigationController viewControllers] objectAtIndex:0];
+        materialSelectController.delegate = self;
+        materialSelectController.materials = _materialList;
+    }
+}
 
 #pragma mark -
 #pragma mark CLLocation Delegate Methods
@@ -96,18 +124,39 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[CrewMemberData sharedInstance] crewMembers] count];
+    if (tableView.tag == CREWMEMBERS) {
+        return [[[CrewMemberData sharedInstance] crewMembers] count];
+    }
+    
+    if (tableView.tag == MATERIALS) {
+        return [_materialList count];
+    }
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"Cell %i", indexPath.section]];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:[NSString stringWithFormat:@"Cell %i", indexPath.section]];
+    if (tableView.tag == CREWMEMBERS) {
+    
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:[NSString stringWithFormat:@"Cell %i", indexPath.section]];
+        }
+        
+        cell.textLabel.text = [[[[CrewMemberData sharedInstance] crewMembers] objectAtIndex:indexPath.row] objectForKey:@"member_name"];
     }
     
-    cell.textLabel.text = [[[[CrewMemberData sharedInstance] crewMembers] objectAtIndex:indexPath.row] objectForKey:@"member_name"];
+    if (tableView.tag == MATERIALS) {
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:[NSString stringWithFormat:@"Cell %i", indexPath.section]];
+        }
+        
+        cell.textLabel.text = [[_materialList objectAtIndex:indexPath.row] objectForKey:@"name"];
+        
+    }
     
     return cell;
 }
