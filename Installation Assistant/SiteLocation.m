@@ -7,7 +7,6 @@
 //
 
 #import "SiteLocation.h"
-#import "SiteLocationView.h"
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
@@ -37,42 +36,6 @@
     [locationManager startUpdatingLocation];
 }
 
-- (void)selectCrewLeader
-{
-    //[mainView selectCrewLeaderAnimation];
-    CrewLeader *crewLeaderController = [[CrewLeader alloc] initWithNibName:nil bundle:nil andControllerToUpdate:self];
-    [mainView addSubview:crewLeaderController.view];
-    [crewLeaderController presentSelf];
-}
-
-- (void)updateCrewLeaderView
-{
-    [mainView.crewLeader setText:[[CrewMemberData sharedInstance] crewLeaderName]];
-}
-
-- (void)selectCrewMembers 
-{
-    //[mainView selectCrewMemberAnimation];
-    CrewMembers *crewMembersController = [[CrewMembers alloc] initWithNibName:nil bundle:nil andControllerToUpdate:self];
-    [mainView addSubview:crewMembersController.view];
-    [crewMembersController presentSelf];
-}
-
-- (void)updateCrewMemberView
-{
-    [mainView.crewMemberList reloadData];
-}
-
-- (void)selectMaterials 
-{
-    [self performSegueWithIdentifier:@"ViewMaterials" sender:self];
-}
-
-- (void)updateMaterials
-{
-    
-}
-
 #pragma mark -
 #pragma mark Material Select Delegate Methods
 
@@ -99,29 +62,24 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark -
+#pragma mark Crew Member Select Delegate Methods
+
+- (void)crewMembersControllerDidCancel:(CrewMembers *)controller
 {
-    if ([segue.identifier isEqualToString:@"ViewMaterials"])
-    {
-        UINavigationController *navigationController = segue.destinationViewController;
-        
-        MaterialSelect *materialSelectController = [[navigationController viewControllers] objectAtIndex:0];
-        materialSelectController.delegate = self;
-        materialSelectController.materials = _materialList;
-    }
-    
-    if ([segue.identifier isEqualToString:@"SelectCrewLeader"]) {
-        CrewLeader *crewLeaderController = segue.destinationViewController;
-        
-        crewLeaderController.delegate = self;
-    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)crewMembersControllerDidSave:(CrewMembers *)controller
+{
+    [self.crewListTable reloadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
 #pragma mark CLLocation Delegate Methods
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
-    //return YES;
     return NO;
 }
 
@@ -139,7 +97,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    
+    NSLog(@"Location Manager Error: %@", error);
 }
 
 #pragma mark - 
@@ -266,15 +224,26 @@
 
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if ([segue.identifier isEqualToString:@"ViewMaterials"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
         
-        
-        
+        MaterialSelect *materialSelectController = [[navigationController viewControllers] objectAtIndex:0];
+        materialSelectController.delegate = self;
+        materialSelectController.materials = _materialList;
     }
-    return self;
+    
+    if ([segue.identifier isEqualToString:@"SelectCrewLeader"]) {
+        CrewLeader *crewLeaderController = segue.destinationViewController;
+        crewLeaderController.delegate = self;
+    }
+    
+    if ([segue.identifier isEqualToString:@"SelectCrewMembers"]) {
+        CrewMembers *crewMembersController = segue.destinationViewController;
+        crewMembersController.delegate = self;
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)coder
@@ -298,14 +267,6 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
@@ -319,9 +280,9 @@
     self.TaskList.layer.borderColor = [UIColor blackColor].CGColor;
     self.TaskList.layer.borderWidth = 1;
     
-    self.crewListTable.layer.cornerRadius = 10;
-    self.crewListTable.layer.borderColor = [UIColor blackColor].CGColor;
-    self.crewListTable.layer.borderWidth = 1;
+//    self.crewListTable.layer.cornerRadius = 10;
+//    self.crewListTable.layer.borderColor = [UIColor blackColor].CGColor;
+//    self.crewListTable.layer.borderWidth = 1;
     
     UITapGestureRecognizer *refreshLocation = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshLocation)];
     [self.currentLocationView addGestureRecognizer:refreshLocation];

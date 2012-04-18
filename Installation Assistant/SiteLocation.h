@@ -10,15 +10,14 @@
 #import "CoreLocation/CoreLocation.h"
 #import "MaterialSelect.h"
 #import "CrewLeader.h"
+#import "CrewMembers.h"
 #define CREWMEMBERS 100
 #define TASKS 101
 
-@class SiteLocationView;
 @class RoundedUIView;
 
-@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate>
+@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate>
 {
-    SiteLocationView *mainView;
     CLLocationManager *locationManager;
     
     NSMutableArray *_materialList;
@@ -35,11 +34,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (void)refreshLocation;
-- (void)selectCrewLeader;
-- (void)updateCrewLeaderView;
-- (void)selectCrewMembers;
-- (void)updateCrewMemberView;
-- (void)selectMaterials;
-- (void)updateMaterials;
 
 @end
