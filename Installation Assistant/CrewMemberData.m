@@ -58,6 +58,7 @@ static CrewMemberData *_instance;
     self = [super init];
     if (self) {
         _crewMembers = [[NSMutableArray alloc] init];
+        _crewLeaderName = @"Not Selected";
     }
     
     return self;
