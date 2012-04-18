@@ -7,16 +7,9 @@
 //
 
 #import "HomeScreen.h"
-#import "HomeScreenView.h"
-#import "GlosslessButton.h"
 
 @implementation HomeScreen
 
-
-- (void)loadProjectSelection
-{
-    [self performSegueWithIdentifier:@"selectProjectSegue" sender:self];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,10 +42,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    mainView = [[HomeScreenView alloc] initWithFrame:[[UIScreen mainScreen] bounds]  andParentController:self];
-    
-    [self.view addSubview:mainView];
     
 }
 

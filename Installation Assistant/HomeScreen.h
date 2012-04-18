@@ -8,13 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class HomeScreenView;
-
 @interface HomeScreen : UIViewController
-{
-    HomeScreenView *mainView;
-}
 
-- (void)loadProjectSelection;
 
 @end
