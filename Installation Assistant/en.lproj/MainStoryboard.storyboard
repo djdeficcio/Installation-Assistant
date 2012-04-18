@@ -84,7 +84,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="3235" y="-214"/>
+            <point key="canvasLocation" x="3235" y="-236"/>
         </scene>
         <!--Site Plans - Plans-->
         <scene sceneID="IkK-8Y-NxS">
@@ -136,12 +136,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
-                            <tableView clipsSubviews="YES" tag="100" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="22" id="hVI-Tp-ir5" userLabel="Crew Members">
+                            <tableView clipsSubviews="YES" tag="100" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="22" id="hVI-Tp-ir5" userLabel="Crew Members" customClass="RoundedUITableView">
                                 <rect key="frame" x="428" y="127" width="320" height="484"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="J3y-gE-NKf" style="IBUITableViewCellStyleDefault" id="lcA-gu-GXo">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="J3y-gE-NKf" style="IBUITableViewCellStyleDefault" id="lcA-gu-GXo">
                                         <rect key="frame" x="0.0" y="30" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -186,7 +186,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <tableView opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="22" id="cUk-XT-wqK" userLabel="Task List">
+                            <tableView opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="30" sectionFooterHeight="22" id="cUk-XT-wqK" userLabel="Task List" customClass="RoundedUITableView">
                                 <rect key="frame" x="20" y="216" width="388" height="395"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,12 +264,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="qh5-aE-jbG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsMultipleSelection="YES" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="qh5-aE-jbG">
                                 <rect key="frame" x="0.0" y="44" width="540" height="576"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="WMY-2p-USo">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="WMY-2p-USo">
                                         <rect key="frame" x="0.0" y="22" width="540" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -279,6 +279,10 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wYC-L3-cJh" id="fu7-Ig-HyJ"/>
+                                    <outlet property="delegate" destination="wYC-L3-cJh" id="h6E-SI-wEL"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" id="JHP-rm-Lnl">
                                 <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
@@ -517,7 +521,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="1851" y="-324"/>
+            <point key="canvasLocation" x="1867" y="-236"/>
         </scene>
         <!--Crew Leader-->
         <scene sceneID="hwv-4d-C2P">
@@ -533,7 +537,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="SCG-iT-YQw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="SCG-iT-YQw">
                                         <rect key="frame" x="0.0" y="22" width="540" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -755,6 +759,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="ProjectSelection" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectSelection.h"/>
+        </class>
+        <class className="RoundedUITableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedUITableView.h"/>
         </class>
         <class className="RoundedUIView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedUIView.h"/>
