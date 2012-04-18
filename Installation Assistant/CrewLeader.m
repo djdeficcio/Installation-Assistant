@@ -7,32 +7,13 @@
 //
 
 #import "CrewLeader.h"
-#import "CrewLeaderView.h"
-#import "SiteLocation.h"
 #import "CrewMemberData.h"
 #import "DBGateway.h"
 #import "ProjectData.h"
+#import "Quartzcore/Quartzcore.h"
 
 @implementation CrewLeader
-
-- (void)presentSelf
-{
-    [mainView animateEntrance];
-}
-
-- (void)removeSelf
-{
-    [controllerToUpdate updateCrewLeaderView];
-    [mainView animateExit];
-}
-
-- (void)confirmSelection
-{
-    if ([selectedLeader count] > 0) {
-        [[CrewMemberData sharedInstance] setCrewLeaderWithFirstName:[selectedLeader objectForKey:@"first_name"] LastName:[selectedLeader objectForKey:@"last_name"] AndId:[selectedLeader objectForKey:@"member_id"]];
-    }
-    [self removeSelf];
-}
+@synthesize crewLeaderList, delegate;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -103,12 +84,21 @@
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
+    if ([selectedLeader count] > 0) {
+        [[CrewMemberData sharedInstance] setCrewLeaderWithFirstName:[selectedLeader objectForKey:@"first_name"] LastName:[selectedLeader objectForKey:@"last_name"] AndId:[selectedLeader objectForKey:@"member_id"]];
+    }
+    [self.delegate crewLeaderControllerDidSave:self];
+}
+
+- (id)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:coder];
     if (self) {
-        
-        controllerToUpdate = controller;
         
         crewLeaders = [[NSMutableArray alloc] init];
         crewMembers = [[NSMutableArray alloc] init];
@@ -118,13 +108,6 @@
         
         crewLeaders = [gateway getCrewLeadersForState:[[ProjectData sharedInstance] siteState]];
         crewMembers = [gateway getCrewMembersForState:[[ProjectData sharedInstance] siteState]];
-        
-        NSLog(@"%@", crewLeaders);
-        
-        
-        CGRect screenBounds = [[UIScreen mainScreen] bounds];
-        mainView = [[CrewLeaderView alloc] initWithFrame:CGRectMake(0, -20, screenBounds.size.width, screenBounds.size.height) andParentController:self];
-        [self.view addSubview:mainView];
     }
     return self;
 }
@@ -142,6 +125,7 @@
 
 - (void)viewDidUnload
 {
+    [self setCrewLeaderList:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

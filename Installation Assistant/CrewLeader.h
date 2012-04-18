@@ -8,22 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@class CrewLeaderView, SiteLocation;
+@class CrewLeader;
+
+@protocol CrewLeaderControllerDelegate <NSObject>
+
+- (void)crewLeaderControllerDidSave:(CrewLeader *)controller;
+
+@end
 
 @interface CrewLeader : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    CrewLeaderView *mainView;
-    SiteLocation *controllerToUpdate;
-    
     NSMutableArray *crewLeaders;
     NSMutableArray *crewMembers;
     NSMutableDictionary *selectedLeader;
 }
+@property (weak, nonatomic) id <CrewLeaderControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UITableView *crewLeaderList;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller;
-
-- (void)presentSelf;
-- (void)removeSelf;
-- (void)confirmSelection;
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end
