@@ -7,24 +7,12 @@
 //
 
 #import "CrewMembers.h"
-#import "CrewMembersView.h"
-#import "SiteLocation.h"
 #import "DBGateway.h"
 #import "ProjectData.h"
 #import "CrewMemberData.h"
 
 @implementation CrewMembers
-
-- (void)presentSelf
-{
-    [mainView animateEntrance];
-}
-
-- (void)removeSelf
-{
-    [controllerToUpdate updateCrewMemberView];
-    [mainView animateExit];
-}
+@synthesize delegate;
 
 - (void)confirmSelection
 {
@@ -40,7 +28,6 @@
         }
     }
     NSLog(@"Selected: %@", [[CrewMemberData sharedInstance] crewMembers]);
-    [self removeSelf];
 }
 
 #pragma mark -
@@ -81,20 +68,25 @@
     NSLog(@"%@", selectedFieldCrew);
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller
+- (IBAction)cancel:(id)sender {
+    [self.delegate crewMembersControllerDidCancel:self];
+}
+
+- (IBAction)save:(id)sender {
+    [self confirmSelection];
+    [self.delegate crewMembersControllerDidSave:self];
+}
+
+- (id)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:coder];
     if (self) {
-        controllerToUpdate = controller;
         
         DBGateway *gateway = [[DBGateway alloc] init];
         
         fieldCrew = [gateway getAllFieldCrewForState:[[ProjectData sharedInstance] siteState]];
         selectedFieldCrew = [[NSMutableDictionary alloc] init];
         
-        CGRect screenBounds = [[UIScreen mainScreen] bounds];
-        mainView = [[CrewMembersView alloc] initWithFrame:CGRectMake(0, -20, screenBounds.size.width, screenBounds.size.height) andParentController:self];
-        [self.view addSubview:mainView];
     }
     return self;
 }

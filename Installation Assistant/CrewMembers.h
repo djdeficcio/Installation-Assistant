@@ -8,21 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@class CrewMembersView, SiteLocation;
+@class CrewMembers;
+
+@protocol crewMembersControllerDelegate <NSObject>
+
+- (void)crewMembersControllerDidCancel:(CrewMembers *)controller;
+- (void)crewMembersControllerDidSave:(CrewMembers *)controller;
+
+@end
 
 @interface CrewMembers : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    CrewMembersView *mainView;
-    SiteLocation *controllerToUpdate;
-    
     NSMutableArray *fieldCrew;
     NSMutableDictionary *selectedFieldCrew;
 }
+@property (weak, nonatomic) id<crewMembersControllerDelegate> delegate;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andControllerToUpdate:(SiteLocation *)controller;
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
 
-- (void)presentSelf;
-- (void)removeSelf;
 - (void)confirmSelection;
 
 @end
