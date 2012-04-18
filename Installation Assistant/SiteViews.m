@@ -63,10 +63,6 @@
     
     
     googleView.backgroundColor = [UIColor clearColor];
-    googleView.layer.borderColor = [UIColor blackColor].CGColor;
-    googleView.layer.borderWidth = 1;
-    googleView.layer.cornerRadius = 10;
-    googleView.clipsToBounds = YES;
     
     [self displayCurrentLocation];
 }
