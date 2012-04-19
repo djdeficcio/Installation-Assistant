@@ -116,6 +116,32 @@
 }
 
 #pragma mark -
+#pragma mark Manager Update Delegate Methods
+
+- (void)managerUpdateControllerDidCancel:(ManagerUpdate *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)managerUpdateController:(ManagerUpdate *)controller didSaveMessage:(NSString *)message
+{
+    managerUpdateMessage = message;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self updateTableCellAccessoryAtRow:2 inSection:0];
+}
+
+#pragma mark - 
+#pragma mark Weather Select Delegate Methods
+
+- (void)weatherSelectController:(WeatherSelect *)controller didSelectWeather:(NSString *)weather
+{
+    selectedWeather = weather;
+    [self updateTableCellAccessoryAtRow:3 inSection:0 withDetail:selectedWeather];
+    [popoverController dismissPopoverAnimated:YES];
+    popoverController = nil;
+}
+
+#pragma mark -
 #pragma mark CLLocation Delegate Methods
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
@@ -264,6 +290,18 @@
                 [popoverController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
                 break;
                 
+            case 2:
+                [self performSegueWithIdentifier:@"UpdateManager" sender:self];
+                break;
+                
+            case 3:
+                weatherSelectController = [[WeatherSelect alloc] initWithStyle:UITableViewStylePlain];
+                weatherSelectController.delegate = self;
+                popoverController = [[UIPopoverController alloc] initWithContentViewController:weatherSelectController];
+                popoverController.popoverContentSize = CGSizeMake(150, 264);
+                [popoverController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+                break;
+                
             default:
                 break;
         }
@@ -290,6 +328,12 @@
     if ([segue.identifier isEqualToString:@"SelectCrewMembers"]) {
         CrewMembers *crewMembersController = segue.destinationViewController;
         crewMembersController.delegate = self;
+    }
+    
+    if ([segue.identifier isEqualToString:@"UpdateManager"]) {
+        ManagerUpdate *managerUpdateController = segue.destinationViewController;
+        managerUpdateController.delegate = self;
+        managerUpdateController.updateTextView.text = managerUpdateMessage;
     }
     
 }

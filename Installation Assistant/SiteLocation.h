@@ -12,23 +12,31 @@
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CompletedPercentage.h"
+#import "ManagerUpdate.h"
+#import "WeatherSelect.h"
+
 #define CREWMEMBERS 100
 #define TASKS 101
 
 @class RoundedUIView;
 
-@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate, completedPercentageControllerDelegate>
+@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate, completedPercentageControllerDelegate, managerUpdateControllerDelegate, weatherSelectControllerDelegate>
 {
     CLLocationManager *locationManager;
+    UIPopoverController *popoverController;
     
-    NSMutableArray *_materialList;
     NSMutableArray *taskList;
     UITableView *_taskTable;
     
-    UIPopoverController *popoverController;
-    CompletedPercentage *completedPercentageController;
+    NSMutableArray *_materialList;
     
+    CompletedPercentage *completedPercentageController;
     NSString  *completionPercentage;
+    
+    NSString *managerUpdateMessage;
+    
+    WeatherSelect *weatherSelectController;
+    NSString *selectedWeather;
     
 }
 

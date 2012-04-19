@@ -15,6 +15,9 @@
 		01DBF394153F4623009B6FAE /* RoundedUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF393153F4623009B6FAE /* RoundedUITableView.m */; };
 		01DBF396153F5E43009B6FAE /* solular logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DBF395153F5E43009B6FAE /* solular logo.png */; };
 		01DBF39C15404678009B6FAE /* CompletedPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF39B15404678009B6FAE /* CompletedPercentage.m */; };
+		01DBF3AE15409AB1009B6FAE /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DBF3A915409AB1009B6FAE /* button_back.png */; };
+		01DBF3AF15409AB1009B6FAE /* ManagerUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF3AB15409AB1009B6FAE /* ManagerUpdate.m */; };
+		01DBF3B015409AB1009B6FAE /* WeatherSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF3AD15409AB1009B6FAE /* WeatherSelect.m */; };
 		01EAEA42153763170047842F /* MaterialListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAEA41153763170047842F /* MaterialListCell.m */; };
 		01EAEA461537667C0047842F /* AddMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAEA451537667B0047842F /* AddMaterial.m */; };
 		3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CA15239CFD00A3D284 /* DBGateway.m */; };
@@ -86,6 +89,11 @@
 		01DBF395153F5E43009B6FAE /* solular logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "solular logo.png"; sourceTree = "<group>"; };
 		01DBF39A15404678009B6FAE /* CompletedPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedPercentage.h; sourceTree = "<group>"; };
 		01DBF39B15404678009B6FAE /* CompletedPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedPercentage.m; sourceTree = "<group>"; };
+		01DBF3A915409AB1009B6FAE /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
+		01DBF3AA15409AB1009B6FAE /* ManagerUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUpdate.h; sourceTree = "<group>"; };
+		01DBF3AB15409AB1009B6FAE /* ManagerUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUpdate.m; sourceTree = "<group>"; };
+		01DBF3AC15409AB1009B6FAE /* WeatherSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherSelect.h; sourceTree = "<group>"; };
+		01DBF3AD15409AB1009B6FAE /* WeatherSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherSelect.m; sourceTree = "<group>"; };
 		01EAEA40153763170047842F /* MaterialListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialListCell.h; sourceTree = "<group>"; };
 		01EAEA41153763170047842F /* MaterialListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialListCell.m; sourceTree = "<group>"; };
 		01EAEA441537667B0047842F /* AddMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMaterial.h; sourceTree = "<group>"; };
@@ -269,6 +277,10 @@
 		358876F4146B1D4C007A157E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01DBF3AA15409AB1009B6FAE /* ManagerUpdate.h */,
+				01DBF3AB15409AB1009B6FAE /* ManagerUpdate.m */,
+				01DBF3AC15409AB1009B6FAE /* WeatherSelect.h */,
+				01DBF3AD15409AB1009B6FAE /* WeatherSelect.m */,
 				01EAEA441537667B0047842F /* AddMaterial.h */,
 				01EAEA451537667B0047842F /* AddMaterial.m */,
 				01DBF39A15404678009B6FAE /* CompletedPercentage.h */,
@@ -350,6 +362,7 @@
 		35B8A3E9148FFCDE000411D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				01DBF3A915409AB1009B6FAE /* button_back.png */,
 				35B8A3EC148FFE6E000411D0 /* brushedmetal.png */,
 				358D942114A37898007F4335 /* compass.png */,
 				358D943014AA5BCD007F4335 /* compassPressed.png */,
@@ -444,6 +457,7 @@
 				358D943814AB6174007F4335 /* materialsPressed.png in Resources */,
 				358D943914AB6174007F4335 /* notesPressed.png in Resources */,
 				01DBF396153F5E43009B6FAE /* solular logo.png in Resources */,
+				01DBF3AE15409AB1009B6FAE /* button_back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +504,8 @@
 				01DBF389153F1FBD009B6FAE /* RoundedUIView.m in Sources */,
 				01DBF394153F4623009B6FAE /* RoundedUITableView.m in Sources */,
 				01DBF39C15404678009B6FAE /* CompletedPercentage.m in Sources */,
+				01DBF3AF15409AB1009B6FAE /* ManagerUpdate.m in Sources */,
+				01DBF3B015409AB1009B6FAE /* WeatherSelect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
