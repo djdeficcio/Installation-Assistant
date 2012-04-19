@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		0153CAA215376EFA00E35905 /* EditMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153CAA115376EFA00E35905 /* EditMaterial.m */; };
 		018EA4431534EB450006FC9F /* SiteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4421534EB450006FC9F /* SiteLocation.m */; };
-		018EA4461534F17E0006FC9F /* SiteLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4451534F17E0006FC9F /* SiteLocationView.m */; };
 		018EA44C1535C5500006FC9F /* MaterialList.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA44B1535C5500006FC9F /* MaterialList.m */; };
 		018EA44F1535D9970006FC9F /* MaterialSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA44E1535D9960006FC9F /* MaterialSelect.m */; };
-		018EA4521535D9AC0006FC9F /* MaterialSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4511535D9AC0006FC9F /* MaterialSelectView.m */; };
+		01DBF389153F1FBD009B6FAE /* RoundedUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF388153F1FBD009B6FAE /* RoundedUIView.m */; };
+		01DBF394153F4623009B6FAE /* RoundedUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF393153F4623009B6FAE /* RoundedUITableView.m */; };
+		01DBF396153F5E43009B6FAE /* solular logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DBF395153F5E43009B6FAE /* solular logo.png */; };
+		01DBF39C15404678009B6FAE /* CompletedPercentage.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF39B15404678009B6FAE /* CompletedPercentage.m */; };
 		01EAEA42153763170047842F /* MaterialListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAEA41153763170047842F /* MaterialListCell.m */; };
 		01EAEA461537667C0047842F /* AddMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAEA451537667B0047842F /* AddMaterial.m */; };
 		3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CA15239CFD00A3D284 /* DBGateway.m */; };
 		3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CD15248C4B00A3D284 /* CrewMemberData.m */; };
 		3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D31524BDDC00A3D284 /* CrewLeader.m */; };
-		3546A3D71524E10900A3D284 /* CrewLeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D61524E10900A3D284 /* CrewLeaderView.m */; };
 		3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D91529D33A00A3D284 /* CrewMembers.m */; };
-		3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3DC1529D35D00A3D284 /* CrewMembersView.m */; };
 		35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35655EA215238C0700E7BAEB /* HomeScreenView.m */; };
 		3579D2F014D868B100D2E37F /* NotesFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2EF14D868B100D2E37F /* NotesFullViewController.m */; };
 		3579D2F314DC6EC400D2E37F /* NotesNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2F214DC6EC400D2E37F /* NotesNewViewController.m */; };
@@ -75,14 +75,17 @@
 		0153CAA115376EFA00E35905 /* EditMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMaterial.m; sourceTree = "<group>"; };
 		018EA4411534EB450006FC9F /* SiteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocation.h; sourceTree = "<group>"; };
 		018EA4421534EB450006FC9F /* SiteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocation.m; sourceTree = "<group>"; };
-		018EA4441534F17D0006FC9F /* SiteLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocationView.h; sourceTree = "<group>"; };
-		018EA4451534F17E0006FC9F /* SiteLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocationView.m; sourceTree = "<group>"; };
 		018EA44A1535C5500006FC9F /* MaterialList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialList.h; sourceTree = "<group>"; };
 		018EA44B1535C5500006FC9F /* MaterialList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialList.m; sourceTree = "<group>"; };
 		018EA44D1535D9960006FC9F /* MaterialSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialSelect.h; sourceTree = "<group>"; };
 		018EA44E1535D9960006FC9F /* MaterialSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialSelect.m; sourceTree = "<group>"; };
-		018EA4501535D9AC0006FC9F /* MaterialSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialSelectView.h; sourceTree = "<group>"; };
-		018EA4511535D9AC0006FC9F /* MaterialSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialSelectView.m; sourceTree = "<group>"; };
+		01DBF387153F1FBD009B6FAE /* RoundedUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedUIView.h; sourceTree = "<group>"; };
+		01DBF388153F1FBD009B6FAE /* RoundedUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedUIView.m; sourceTree = "<group>"; };
+		01DBF392153F4623009B6FAE /* RoundedUITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedUITableView.h; sourceTree = "<group>"; };
+		01DBF393153F4623009B6FAE /* RoundedUITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedUITableView.m; sourceTree = "<group>"; };
+		01DBF395153F5E43009B6FAE /* solular logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "solular logo.png"; sourceTree = "<group>"; };
+		01DBF39A15404678009B6FAE /* CompletedPercentage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedPercentage.h; sourceTree = "<group>"; };
+		01DBF39B15404678009B6FAE /* CompletedPercentage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedPercentage.m; sourceTree = "<group>"; };
 		01EAEA40153763170047842F /* MaterialListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialListCell.h; sourceTree = "<group>"; };
 		01EAEA41153763170047842F /* MaterialListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialListCell.m; sourceTree = "<group>"; };
 		01EAEA441537667B0047842F /* AddMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMaterial.h; sourceTree = "<group>"; };
@@ -93,12 +96,8 @@
 		3546A3CD15248C4B00A3D284 /* CrewMemberData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMemberData.m; sourceTree = "<group>"; };
 		3546A3D21524BDDC00A3D284 /* CrewLeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewLeader.h; sourceTree = "<group>"; };
 		3546A3D31524BDDC00A3D284 /* CrewLeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewLeader.m; sourceTree = "<group>"; };
-		3546A3D51524E10900A3D284 /* CrewLeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewLeaderView.h; sourceTree = "<group>"; };
-		3546A3D61524E10900A3D284 /* CrewLeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewLeaderView.m; sourceTree = "<group>"; };
 		3546A3D81529D33900A3D284 /* CrewMembers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMembers.h; sourceTree = "<group>"; };
 		3546A3D91529D33A00A3D284 /* CrewMembers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMembers.m; sourceTree = "<group>"; };
-		3546A3DB1529D35D00A3D284 /* CrewMembersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMembersView.h; sourceTree = "<group>"; };
-		3546A3DC1529D35D00A3D284 /* CrewMembersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMembersView.m; sourceTree = "<group>"; };
 		35655EA115238C0700E7BAEB /* HomeScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenView.h; sourceTree = "<group>"; };
 		35655EA215238C0700E7BAEB /* HomeScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenView.m; sourceTree = "<group>"; };
 		3579D2EE14D868B100D2E37F /* NotesFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesFullViewController.h; sourceTree = "<group>"; };
@@ -272,6 +271,8 @@
 			children = (
 				01EAEA441537667B0047842F /* AddMaterial.h */,
 				01EAEA451537667B0047842F /* AddMaterial.m */,
+				01DBF39A15404678009B6FAE /* CompletedPercentage.h */,
+				01DBF39B15404678009B6FAE /* CompletedPercentage.m */,
 				3546A3D21524BDDC00A3D284 /* CrewLeader.h */,
 				3546A3D31524BDDC00A3D284 /* CrewLeader.m */,
 				3546A3D81529D33900A3D284 /* CrewMembers.h */,
@@ -338,6 +339,10 @@
 				35B8A3E4148EBF8A000411D0 /* DualColumnTable.m */,
 				35B8A3E6148FE5CD000411D0 /* DualColumnCell.h */,
 				35B8A3E7148FE5CE000411D0 /* DualColumnCell.m */,
+				01DBF387153F1FBD009B6FAE /* RoundedUIView.h */,
+				01DBF388153F1FBD009B6FAE /* RoundedUIView.m */,
+				01DBF392153F4623009B6FAE /* RoundedUITableView.h */,
+				01DBF393153F4623009B6FAE /* RoundedUITableView.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -345,18 +350,19 @@
 		35B8A3E9148FFCDE000411D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				358D943214AB6174007F4335 /* locationPressed.png */,
-				358D943314AB6174007F4335 /* managersPressed.png */,
-				358D943414AB6174007F4335 /* materialsPressed.png */,
-				358D943514AB6174007F4335 /* notesPressed.png */,
-				358D943014AA5BCD007F4335 /* compassPressed.png */,
-				358D942E14A3C5DD007F4335 /* sidebarback.png */,
-				358D942114A37898007F4335 /* compass.png */,
-				358D942214A37898007F4335 /* location.png */,
-				358D942314A37898007F4335 /* managers.png */,
-				358D942414A37898007F4335 /* materials.png */,
-				358D942514A37898007F4335 /* notes.png */,
 				35B8A3EC148FFE6E000411D0 /* brushedmetal.png */,
+				358D942114A37898007F4335 /* compass.png */,
+				358D943014AA5BCD007F4335 /* compassPressed.png */,
+				358D942214A37898007F4335 /* location.png */,
+				358D943214AB6174007F4335 /* locationPressed.png */,
+				358D942314A37898007F4335 /* managers.png */,
+				358D943314AB6174007F4335 /* managersPressed.png */,
+				358D942414A37898007F4335 /* materials.png */,
+				358D943414AB6174007F4335 /* materialsPressed.png */,
+				358D942514A37898007F4335 /* notes.png */,
+				358D943514AB6174007F4335 /* notesPressed.png */,
+				358D942E14A3C5DD007F4335 /* sidebarback.png */,
+				01DBF395153F5E43009B6FAE /* solular logo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -364,16 +370,8 @@
 		35E8E6D61517C8A100B62B2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3546A3D51524E10900A3D284 /* CrewLeaderView.h */,
-				3546A3D61524E10900A3D284 /* CrewLeaderView.m */,
-				3546A3DB1529D35D00A3D284 /* CrewMembersView.h */,
-				3546A3DC1529D35D00A3D284 /* CrewMembersView.m */,
 				35655EA115238C0700E7BAEB /* HomeScreenView.h */,
 				35655EA215238C0700E7BAEB /* HomeScreenView.m */,
-				018EA4501535D9AC0006FC9F /* MaterialSelectView.h */,
-				018EA4511535D9AC0006FC9F /* MaterialSelectView.m */,
-				018EA4441534F17D0006FC9F /* SiteLocationView.h */,
-				018EA4451534F17E0006FC9F /* SiteLocationView.m */,
 				01EAEA40153763170047842F /* MaterialListCell.h */,
 				01EAEA41153763170047842F /* MaterialListCell.m */,
 			);
@@ -445,6 +443,7 @@
 				358D943714AB6174007F4335 /* managersPressed.png in Resources */,
 				358D943814AB6174007F4335 /* materialsPressed.png in Resources */,
 				358D943914AB6174007F4335 /* notesPressed.png in Resources */,
+				01DBF396153F5E43009B6FAE /* solular logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,17 +480,16 @@
 				3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */,
 				3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */,
 				3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */,
-				3546A3D71524E10900A3D284 /* CrewLeaderView.m in Sources */,
 				3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */,
-				3546A3DD1529D35D00A3D284 /* CrewMembersView.m in Sources */,
 				018EA4431534EB450006FC9F /* SiteLocation.m in Sources */,
-				018EA4461534F17E0006FC9F /* SiteLocationView.m in Sources */,
 				018EA44C1535C5500006FC9F /* MaterialList.m in Sources */,
 				018EA44F1535D9970006FC9F /* MaterialSelect.m in Sources */,
-				018EA4521535D9AC0006FC9F /* MaterialSelectView.m in Sources */,
 				01EAEA42153763170047842F /* MaterialListCell.m in Sources */,
 				01EAEA461537667C0047842F /* AddMaterial.m in Sources */,
 				0153CAA215376EFA00E35905 /* EditMaterial.m in Sources */,
+				01DBF389153F1FBD009B6FAE /* RoundedUIView.m in Sources */,
+				01DBF394153F4623009B6FAE /* RoundedUITableView.m in Sources */,
+				01DBF39C15404678009B6FAE /* CompletedPercentage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

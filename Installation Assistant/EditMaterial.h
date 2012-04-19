@@ -29,4 +29,6 @@
 @property (assign, nonatomic) IBOutlet UIDatePicker *date;
 @property (retain, nonatomic) NSMutableDictionary *selectedMaterial;
 
+- (IBAction)save:(id)sender;
+
 @end

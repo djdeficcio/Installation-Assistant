@@ -11,18 +11,24 @@
 #import "MaterialSelect.h"
 #import "CrewLeader.h"
 #import "CrewMembers.h"
+#import "CompletedPercentage.h"
 #define CREWMEMBERS 100
 #define TASKS 101
 
 @class RoundedUIView;
 
-@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate>
+@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate, completedPercentageControllerDelegate>
 {
     CLLocationManager *locationManager;
     
     NSMutableArray *_materialList;
     NSMutableArray *taskList;
     UITableView *_taskTable;
+    
+    UIPopoverController *popoverController;
+    CompletedPercentage *completedPercentageController;
+    
+    NSString  *completionPercentage;
     
 }
 
@@ -34,5 +40,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (void)refreshLocation;
+- (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section;
+- (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section withDetail:(NSString *)detail;
+
 
 @end

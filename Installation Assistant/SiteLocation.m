@@ -11,9 +11,9 @@
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
 #import "MaterialList.h"
-#import "TaskListTable.h"
 #import "Quartzcore/Quartzcore.h"
 #import "RoundedUIView.h"
+
 
 @implementation SiteLocation
 @synthesize materialList = _materialList;
@@ -36,6 +36,23 @@
     [locationManager startUpdatingLocation];
 }
 
+- (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    [[self.TaskList cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+}
+
+- (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section withDetail:(NSString *)detail
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    UITableViewCell *cell = [self.TaskList cellForRowAtIndexPath:indexPath];
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    
+    if (detail) {
+        cell.detailTextLabel.text = detail;
+    }
+}
+
 #pragma mark -
 #pragma mark Material Select Delegate Methods
 
@@ -47,9 +64,19 @@
 - (void)materialSelectController:(MaterialSelect *)controller updatedWithMaterials:(NSMutableArray *)materials
 {
     _materialList = materials;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    [[self.TaskList cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
-    [self.TaskList setNeedsDisplay];
+    
+    NSString *countText;
+    
+    if ([_materialList count] == 1) {
+        countText = [NSString stringWithFormat:@"1 Item"];
+    }
+    
+    else {
+        countText = [NSString stringWithFormat:@"%i Items", [_materialList count]];
+    }
+    
+    [self updateTableCellAccessoryAtRow:0 inSection:0 withDetail:countText];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -74,6 +101,18 @@
 {
     [self.crewListTable reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark Completed Percentage Delegate Methods
+
+- (void)completedPercentageController:(CompletedPercentage *)controller updatedWithValue:(NSString *)percentage
+{
+    completionPercentage = percentage;
+    [self updateTableCellAccessoryAtRow:1 inSection:0 withDetail:[NSString stringWithFormat:@"%@", completionPercentage]];
+    [popoverController dismissPopoverAnimated:YES];
+    popoverController = nil;
+    
 }
 
 #pragma mark -
@@ -211,9 +250,18 @@
     }
     
     if (tableView.tag == TASKS) {
+        
         switch (indexPath.row) {
             case 0:
                 [self performSegueWithIdentifier:@"ViewMaterials" sender:self];
+                break;
+                
+            case 1:
+                completedPercentageController = [[CompletedPercentage alloc] initWithStyle:UITableViewStylePlain];
+                completedPercentageController.delegate = self;
+                popoverController = [[UIPopoverController alloc] initWithContentViewController:completedPercentageController];
+                popoverController.popoverContentSize = CGSizeMake(100, 480);
+                [popoverController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
                 break;
                 
             default:
@@ -227,9 +275,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ViewMaterials"])
-    {
+    {        
         UINavigationController *navigationController = segue.destinationViewController;
-        
         MaterialSelect *materialSelectController = [[navigationController viewControllers] objectAtIndex:0];
         materialSelectController.delegate = self;
         materialSelectController.materials = _materialList;
@@ -244,6 +291,7 @@
         CrewMembers *crewMembersController = segue.destinationViewController;
         crewMembersController.delegate = self;
     }
+    
 }
 
 - (id)initWithCoder:(NSCoder *)coder
@@ -275,14 +323,6 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    self.TaskList.layer.cornerRadius = 10;
-    self.TaskList.layer.borderColor = [UIColor blackColor].CGColor;
-    self.TaskList.layer.borderWidth = 1;
-    
-//    self.crewListTable.layer.cornerRadius = 10;
-//    self.crewListTable.layer.borderColor = [UIColor blackColor].CGColor;
-//    self.crewListTable.layer.borderWidth = 1;
     
     UITapGestureRecognizer *refreshLocation = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshLocation)];
     [self.currentLocationView addGestureRecognizer:refreshLocation];

@@ -272,9 +272,9 @@
                         <outlet property="currentLocationLabel" destination="Nbz-ix-euS" id="Jrc-Eb-ukf"/>
                         <outlet property="currentLocationView" destination="tYR-IV-62p" id="Uk7-Xv-oSy"/>
                         <outlet property="dateLabel" destination="gxD-Zb-W8h" id="ypP-44-808"/>
-                        <segue destination="v3d-ps-UvN" kind="modal" identifier="ViewMaterials" id="cVm-EK-Xdh"/>
                         <segue destination="HCP-WX-Ded" kind="modal" identifier="SelectCrewLeader" modalPresentationStyle="formSheet" id="UkH-ia-Eh1"/>
                         <segue destination="wYC-L3-cJh" kind="modal" identifier="SelectCrewMembers" modalPresentationStyle="formSheet" id="niV-hi-aI9"/>
+                        <segue destination="vHw-tc-cCo" kind="modal" identifier="ViewMaterials" modalPresentationStyle="formSheet" id="wwJ-I9-z1g"/>
                     </connections>
                 </viewController>
             </objects>
@@ -335,41 +335,41 @@
             </objects>
             <point key="canvasLocation" x="4378" y="-3603"/>
         </scene>
-        <!--Material Select - Requested Materials-->
+        <!--Material Select - Materials-->
         <scene sceneID="6DZ-0t-LSx">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-sS-xGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="eNs-ri-Snd" customClass="MaterialSelect" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="X04-gc-vsu">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="X04-gc-vsu">
+                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MaterialCell" rowHeight="100" id="rlM-bk-Kg1" customClass="MaterialListCell">
-                                <rect key="frame" x="0.0" y="22" width="768" height="100"/>
+                                <rect key="frame" x="0.0" y="22" width="540" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="748" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="520" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Material Name" lineBreakMode="tailTruncation" minimumFontSize="10" id="7lD-zC-QAC">
-                                            <rect key="frame" x="14" y="13" width="529" height="74"/>
+                                            <rect key="frame" x="20" y="0.0" width="318" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Quantity" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="K7I-DC-Oq3">
-                                            <rect key="frame" x="551" y="0.0" width="177" height="53"/>
+                                            <rect key="frame" x="323" y="0.0" width="177" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Needed" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="LNl-1M-wrN">
-                                            <rect key="frame" x="551" y="51" width="177" height="36"/>
+                                            <rect key="frame" x="346" y="24" width="154" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -388,25 +388,25 @@
                             <outlet property="delegate" destination="eNs-ri-Snd" id="C01-fW-sVM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Requested Materials" id="mwp-tz-64t">
+                    <navigationItem key="navigationItem" title="Materials" id="mwp-tz-64t">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Do-T8-9cI">
                             <connections>
-                                <action selector="cancel:" destination="eNs-ri-Snd" id="7Tw-kL-IbW"/>
+                                <action selector="cancel:" destination="eNs-ri-Snd" id="Xo7-jS-hrm"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Of5-8J-elA">
                             <connections>
-                                <action selector="done:" destination="eNs-ri-Snd" id="lyt-hv-amd"/>
+                                <action selector="done:" destination="eNs-ri-Snd" id="Zze-Ip-W0U"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="CtK-VA-DYp" kind="modal" identifier="AddMaterial" modalPresentationStyle="formSheet" id="P55-Ww-BiB"/>
-                        <segue destination="QDE-Kn-lba" kind="modal" identifier="EditMaterial" modalPresentationStyle="formSheet" id="OSN-sC-3oy"/>
+                        <segue destination="CtK-VA-DYp" kind="push" identifier="AddMaterial" id="P55-Ww-BiB"/>
+                        <segue destination="QDE-Kn-lba" kind="push" identifier="EditMaterial" id="OSN-sC-3oy"/>
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="5536" y="-2729"/>
+            <point key="canvasLocation" x="5352" y="-2725"/>
         </scene>
         <!--Add Material - Add a Material-->
         <scene sceneID="6wD-Vs-aaU">
@@ -414,7 +414,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hq1-qf-hmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="CtK-VA-DYp" customClass="AddMaterial" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxp-50-H13">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" id="EGd-Gy-1mB">
@@ -479,28 +479,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
-                            <navigationBar contentMode="scaleToFill" id="vlB-rQ-2Su">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="New Material" id="Wrv-Rs-HdH">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9lw-By-Hqk">
-                                            <connections>
-                                                <action selector="cancel:" destination="CtK-VA-DYp" id="XO7-Ag-oBY"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8p7-tJ-1if">
-                                            <connections>
-                                                <action selector="save:" destination="CtK-VA-DYp" id="B11-Kc-jB7"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.92391304350000003" green="0.92391304350000003" blue="0.92391304350000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Material" id="UMy-D6-ixq"/>
+                    <navigationItem key="navigationItem" title="Add a Material" id="UMy-D6-ixq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2oA-qG-xhO">
+                            <connections>
+                                <action selector="save:" destination="CtK-VA-DYp" id="3ra-JU-HlN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="date" destination="cCR-nZ-6CC" id="MNR-jV-tmP"/>
                         <outlet property="name" destination="MRX-cN-fDk" id="NRv-7E-Ckl"/>
@@ -508,7 +496,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="6722" y="-3025"/>
+            <point key="canvasLocation" x="6538" y="-3021"/>
         </scene>
         <!--Site Information - Information-->
         <scene sceneID="vCu-sh-9Xf">
@@ -606,31 +594,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="4378" y="-4451"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Dle-Qe-gbK">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OMv-7K-FbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="v3d-ps-UvN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="WbN-Vu-nuU">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="eNs-ri-Snd" kind="relationship" relationship="rootViewController" id="UaG-M5-2j9"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="4378" y="-2729"/>
-        </scene>
         <!--Edit Material - Add a Material-->
         <scene sceneID="9Ld-AF-bzB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ET0-WY-fOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QDE-Kn-lba" customClass="EditMaterial" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAJ-f1-iP3">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" id="Um2-HO-71r">
@@ -695,28 +665,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
                             </datePicker>
-                            <navigationBar contentMode="scaleToFill" id="w0Z-8C-I16">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Edit Material" id="o7t-Ly-g5z">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Uxg-A5-fxA">
-                                            <connections>
-                                                <action selector="cancel:" destination="QDE-Kn-lba" id="Oj8-9e-HIc"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gdz-Pg-hO5">
-                                            <connections>
-                                                <action selector="save:" destination="QDE-Kn-lba" id="c97-KY-pdL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.92391304350000003" green="0.92391304350000003" blue="0.92391304350000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Material" id="xmd-cM-zbR"/>
+                    <navigationItem key="navigationItem" title="Add a Material" id="xmd-cM-zbR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wnY-HF-0fi">
+                            <connections>
+                                <action selector="save:" destination="QDE-Kn-lba" id="ijr-9q-9Fb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="date" destination="sxf-iz-dz6" id="lhj-db-qkq"/>
                         <outlet property="name" destination="15p-MS-LPS" id="N6R-h3-IOM"/>
@@ -724,7 +682,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="6722" y="-2232"/>
+            <point key="canvasLocation" x="6538" y="-2228"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zUA-rk-JXL">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmd-P5-zfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="vHw-tc-cCo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1dm-Cz-Alx">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eNs-ri-Snd" kind="relationship" relationship="rootViewController" id="LIn-rz-kCc"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="4378" y="-2725"/>
         </scene>
     </scenes>
     <resources>
@@ -760,6 +736,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="EditMaterial" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditMaterial.h"/>
             <relationships>
+                <relationship kind="action" name="save:"/>
                 <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="quantity" candidateClass="UITextField"/>

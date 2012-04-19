@@ -36,12 +36,12 @@
 {
     NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", materialDate, @"date", nil];
     [_materials addObject:materialEntry];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+        
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[_materials count] -1 inSection:0];
     
     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Edit Material Delegate Methods
@@ -55,11 +55,10 @@
 {
     NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", materialDate, @"date", nil];
     [_materials replaceObjectAtIndex:indexPath.row withObject:materialEntry];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+        
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
