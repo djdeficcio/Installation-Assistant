@@ -115,7 +115,7 @@
 		3579D2F414E16DA200D2E37F /* MaterialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialView.h; sourceTree = "<group>"; };
 		3579D2F514E16DA200D2E37F /* MaterialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialView.m; sourceTree = "<group>"; };
 		3579D2F714E1796500D2E37F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		358876D3146B1D2D007A157E /* Field Tech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Field Tech.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		358876D3146B1D2D007A157E /* Installation Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Installation Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		358876D7146B1D2D007A157E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		358876D9146B1D2D007A157E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		358876DB146B1D2D007A157E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,7 +222,7 @@
 		358876D4146B1D2D007A157E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				358876D3146B1D2D007A157E /* Field Tech.app */,
+				358876D3146B1D2D007A157E /* Installation Assistant.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 			);
 			name = "Installation Assistant";
 			productName = "Installation Assistant";
-			productReference = 358876D3146B1D2D007A157E /* Field Tech.app */;
+			productReference = 358876D3146B1D2D007A157E /* Installation Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -584,7 +584,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Installation Assistant/Installation Assistant-Prefix.pch";
 				INFOPLIST_FILE = "Installation Assistant/Installation Assistant-Info.plist";
-				PRODUCT_NAME = "Field Tech";
+				PRODUCT_NAME = "Installation Assistant";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -595,7 +595,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Installation Assistant/Installation Assistant-Prefix.pch";
 				INFOPLIST_FILE = "Installation Assistant/Installation Assistant-Info.plist";
-				PRODUCT_NAME = "Field Tech";
+				PRODUCT_NAME = "Installation Assistant";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
