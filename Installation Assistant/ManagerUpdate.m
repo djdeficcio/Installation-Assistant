@@ -16,6 +16,7 @@
 @implementation ManagerUpdate
 @synthesize updateTextView;
 @synthesize delegate;
+@synthesize updatedMessage = _updateMessage;
 
 - (IBAction)save:(id)sender {
     [self.delegate managerUpdateController:self didSaveMessage:[self.updateTextView text]];
@@ -25,11 +26,10 @@
     [self.delegate managerUpdateControllerDidCancel:self];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:coder];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -42,6 +42,7 @@
     self.updateTextView.layer.cornerRadius = 10;
     self.updateTextView.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.updateTextView.layer.borderWidth = 2;
+    self.updateTextView.text = _updateMessage;
 }
 
 - (void)viewDidUnload

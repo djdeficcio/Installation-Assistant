@@ -18,9 +18,14 @@
 @end
 
 @interface ManagerUpdate : UIViewController
+{
+    NSString *_updateMessage;
+}
 
 @property (weak, nonatomic) id<managerUpdateControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITextView *updateTextView;
+
+@property (retain, nonatomic) NSString *updatedMessage;
 
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
