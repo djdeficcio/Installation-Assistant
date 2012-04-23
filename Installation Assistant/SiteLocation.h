@@ -14,13 +14,15 @@
 #import "CompletedPercentage.h"
 #import "ManagerUpdate.h"
 #import "WeatherSelect.h"
+#import "TemperatureSelect.h"
+#import "UpdateClient.h"
 
 #define CREWMEMBERS 100
 #define TASKS 101
 
 @class RoundedUIView;
 
-@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate, completedPercentageControllerDelegate, managerUpdateControllerDelegate, weatherSelectControllerDelegate>
+@interface SiteLocation : UIViewController <CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, MaterialSelectDelegate, CrewLeaderControllerDelegate, crewMembersControllerDelegate, completedPercentageControllerDelegate, managerUpdateControllerDelegate, weatherSelectControllerDelegate, temperatureSelectControllerDelegate, updateClientControllerDelegate>
 {
     CLLocationManager *locationManager;
     UIPopoverController *popoverController;
@@ -38,6 +40,11 @@
     WeatherSelect *weatherSelectController;
     NSString *selectedWeather;
     
+    TemperatureSelect *temperatureSelectController;
+    NSString *selectedTemperature;
+    
+    NSInteger clientUpdated;
+    NSString *clientUpdateNotes;
 }
 
 @property (retain, nonatomic) NSMutableArray *materialList;
@@ -46,6 +53,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @property (strong, nonatomic) IBOutlet RoundedUIView *currentLocationView;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+
+- (IBAction)submit:(id)sender;
 
 - (void)refreshLocation;
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section;

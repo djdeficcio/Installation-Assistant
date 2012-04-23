@@ -26,6 +26,10 @@
 #pragma mark -
 #pragma mark Custom Methods
 
+- (IBAction)submit:(id)sender {
+    [self.view setNeedsDisplay];
+}
+
 - (void)refreshLocation
 {
     self.currentLocationView.backgroundColor = [UIColor colorWithRed:134.0/255.0 green:212.0/255.0 blue:253.0/255.0 alpha:1.0];
@@ -139,6 +143,33 @@
     [self updateTableCellAccessoryAtRow:3 inSection:0 withDetail:selectedWeather];
     [popoverController dismissPopoverAnimated:YES];
     popoverController = nil;
+}
+
+#pragma mark - 
+#pragma mark Temperature Select Delegate Methods
+
+- (void)temperatureSelectController:(TemperatureSelect *)controller didUpdateWithTemperature:(NSString *)temperature
+{
+    selectedTemperature = temperature;
+    [self updateTableCellAccessoryAtRow:4 inSection:0 withDetail:selectedTemperature];
+    [popoverController dismissPopoverAnimated:YES];
+    popoverController = nil;
+}
+
+#pragma mark -
+#pragma mark Update Client Delegate Methods
+
+- (void)updateClientControllerDidCancel:(UpdateClient *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)updateClientController:(UpdateClient *)controller didUpdateCustomer:(NSInteger)updated withNotes:(NSString *)notes
+{
+    clientUpdated = updated;
+    clientUpdateNotes = notes;
+    [self updateTableCellAccessoryAtRow:5 inSection:0];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -
@@ -302,6 +333,19 @@
                 [popoverController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
                 break;
                 
+            case 4:
+                temperatureSelectController = [[TemperatureSelect alloc] initWithNibName:nil bundle:nil];
+                temperatureSelectController.delegate = self;
+                temperatureSelectController.selectedTemperature = selectedTemperature;
+                popoverController = [[UIPopoverController alloc] initWithContentViewController:temperatureSelectController];
+                popoverController.popoverContentSize = CGSizeMake(245, 60);
+                [popoverController presentPopoverFromRect:[tableView rectForRowAtIndexPath:indexPath] inView:tableView permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+                break;
+                
+            case 5:
+                [self performSegueWithIdentifier:@"UpdateClient" sender:self];
+                break;
+                
             default:
                 break;
         }
@@ -333,7 +377,14 @@
     if ([segue.identifier isEqualToString:@"UpdateManager"]) {
         ManagerUpdate *managerUpdateController = segue.destinationViewController;
         managerUpdateController.delegate = self;
-        managerUpdateController.updateTextView.text = managerUpdateMessage;
+        managerUpdateController.updatedMessage = managerUpdateMessage;
+    }
+    
+    if ([segue.identifier isEqualToString:@"UpdateClient"]) {
+        UpdateClient *updateClientController = segue.destinationViewController;
+        updateClientController.delegate = self;
+        updateClientController.updatedIndex = clientUpdated;
+        updateClientController.updatedNotes = clientUpdateNotes;
     }
     
 }
