@@ -47,15 +47,18 @@
     NSString *clientUpdateNotes;
 }
 
+- (IBAction)submit:(id)sender;
 @property (retain, nonatomic) NSMutableArray *materialList;
 @property (strong, nonatomic) IBOutlet UITableView *TaskList;
 @property (strong, nonatomic) IBOutlet UITableView *crewListTable;
 @property (strong, nonatomic) IBOutlet UILabel *currentLocationLabel;
 @property (strong, nonatomic) IBOutlet RoundedUIView *currentLocationView;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UITextView *noteTextView;
 
 - (IBAction)submit:(id)sender;
 
+- (NSMutableDictionary *)packageReport;
 - (void)refreshLocation;
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section;
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section withDetail:(NSString *)detail;

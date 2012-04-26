@@ -22,12 +22,52 @@
 @synthesize currentLocationLabel;
 @synthesize currentLocationView;
 @synthesize dateLabel;
+@synthesize noteTextView;
 
 #pragma mark -
 #pragma mark Custom Methods
 
 - (IBAction)submit:(id)sender {
-    [self.view setNeedsDisplay];
+    NSMutableDictionary *dataPackage = [self packageReport];
+    NSLog(@"Data Package: %@", dataPackage);
+}
+
+- (NSMutableDictionary *)packageReport
+{
+    NSMutableDictionary *report = [[NSMutableDictionary alloc] init];
+    [report setObject:self.currentLocationLabel.text forKey:@"location"];
+    [report setObject:self.dateLabel.text forKey:@"date"];
+    [report setObject:self.noteTextView.text forKey:@"notes"];
+    if (_materialList) {
+        [report setObject:_materialList forKey:@"materials"];
+    }
+    if (completionPercentage) {
+        [report setObject:completionPercentage forKey:@"completion_percentage"];
+    }
+    if (managerUpdateMessage) {
+        [report setObject:managerUpdateMessage forKey:@"manager_update"];
+    }
+    if (selectedWeather) {
+        [report setObject:selectedWeather forKey:@"weather"];
+    }
+    if (selectedTemperature) {
+        [report setObject:selectedTemperature forKey:@"temperature"];
+    }
+    if (clientUpdated) {
+        if (clientUpdated == 0) {
+            [report setObject:@"No" forKey:@"client_updated"];
+        }
+        else {
+            [report setObject:@"Yes" forKey:@"client_updated"];
+        }
+    }
+    if (clientUpdateNotes) {
+        [report setObject:clientUpdateNotes forKey:@"client_notes"];
+    }
+    [report setObject:[[CrewMemberData sharedInstance] crewLeaderId] forKey:@"crew_leader"];
+    [report setObject:[[CrewMemberData sharedInstance] crewMembers] forKey:@"crew_members"];
+    
+    return report;    
 }
 
 - (void)refreshLocation
@@ -396,6 +436,8 @@
         
         
          taskList = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithObjects:@"Materials", @"Completed", @"Manager Update", @"Weather", @"Temperature", @"Client Updated", nil]];
+        
+        _materialList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -440,7 +482,8 @@
     [self setCurrentLocationLabel:nil];
     [self setCurrentLocationView:nil];
     [self setDateLabel:nil];
-    [self setCrewListTable:nil];
+    [self setCrewListTable:nil];         [self setNoteTextView:nil];
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

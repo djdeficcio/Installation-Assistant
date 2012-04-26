@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="40J-GD-NjT">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -298,6 +297,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submit:" destination="sHs-hq-4xs" eventType="touchDown" id="7kV-ky-M5j"/>
+                                    <action selector="submit:" destination="sHs-hq-4xs" eventType="touchUpInside" id="e31-si-Aei"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="8uy-rq-1Ed" customClass="RoundedUITableView">
@@ -333,6 +333,7 @@
                         <outlet property="currentLocationLabel" destination="Nbz-ix-euS" id="Jrc-Eb-ukf"/>
                         <outlet property="currentLocationView" destination="tYR-IV-62p" id="Uk7-Xv-oSy"/>
                         <outlet property="dateLabel" destination="gxD-Zb-W8h" id="ypP-44-808"/>
+                        <outlet property="noteTextView" destination="Y8n-zx-FJO" id="SW6-fz-gSf"/>
                         <segue destination="HCP-WX-Ded" kind="modal" identifier="SelectCrewLeader" modalPresentationStyle="formSheet" id="UkH-ia-Eh1"/>
                         <segue destination="wYC-L3-cJh" kind="modal" identifier="SelectCrewMembers" modalPresentationStyle="formSheet" id="niV-hi-aI9"/>
                         <segue destination="vHw-tc-cCo" kind="modal" identifier="ViewMaterials" modalPresentationStyle="formSheet" id="wwJ-I9-z1g"/>
@@ -968,6 +969,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="currentLocationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="currentLocationView" candidateClass="RoundedUIView"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="SitePlans" superclassName="UIViewController">
