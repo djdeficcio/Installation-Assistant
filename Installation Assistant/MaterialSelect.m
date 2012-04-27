@@ -34,7 +34,9 @@
 
 - (void)addMaterialController:(AddMaterial *)controller didAddMaterial:(NSString *)materialName withQuantity:(NSString *)materialQuantity forDate:(NSDate *)materialDate
 {
-    NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", materialDate, @"date", nil];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", [dateFormatter stringFromDate:materialDate], @"date", nil];
     [_materials addObject:materialEntry];
         
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[_materials count] -1 inSection:0];
