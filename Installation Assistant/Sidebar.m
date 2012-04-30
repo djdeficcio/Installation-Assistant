@@ -367,7 +367,7 @@ static Sidebar *_instance;
         
         mailer.mailComposeDelegate = self;
         
-        [mailer setToRecipients:[NSArray arrayWithObject:[[ProjectData sharedInstance] projectManager]]];
+        [mailer setToRecipients:[NSArray arrayWithObject:[NSString stringWithFormat:@"%@@solularenergy.com", [[ProjectData sharedInstance] projectManager]]]];
         [mailer setSubject:[NSString stringWithFormat:@"Manager update for %@", [[ProjectData sharedInstance] projectName]]];
         mailer.modalPresentationStyle = UIModalPresentationPageSheet;
         
