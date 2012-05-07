@@ -36,6 +36,12 @@ static CrewMemberData *_instance;
     return _crewMembers;
 }
 
+- (void)resetCrewLeader
+{
+    _crewLeaderId = @"Not Selected";
+    _crewLeaderName = @"Not Selected";
+}
+
 - (void)resetCrewMembers
 {
     [_crewMembers removeAllObjects];
@@ -59,6 +65,7 @@ static CrewMemberData *_instance;
     if (self) {
         _crewMembers = [[NSMutableArray alloc] init];
         _crewLeaderName = @"Not Selected";
+        _crewLeaderId = @"Not Selected";
     }
     
     return self;

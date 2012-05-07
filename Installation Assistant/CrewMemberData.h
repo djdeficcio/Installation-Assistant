@@ -21,6 +21,7 @@
 - (NSString *)crewLeaderName;
 - (NSString *)crewLeaderId;
 - (NSMutableArray *)crewMembers;
+- (void)resetCrewLeader;
 - (void)resetCrewMembers;
 - (void)setCrewLeaderWithFirstName:(NSString *)firstname LastName:(NSString *)lastname AndId:(NSString *)leaderId;
 - (void)setCrewMemberWithFirstName:(NSString *)firstname LastName:(NSString *)lastname AndId:(NSString *)memberId;
