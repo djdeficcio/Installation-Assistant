@@ -7,12 +7,14 @@
 //
 
 #import "SiteLocation.h"
+#import "ProjectData.h"
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
 #import "MaterialList.h"
 #import "Quartzcore/Quartzcore.h"
 #import "RoundedUIView.h"
+#import "DBGateway.h"
 
 
 @implementation SiteLocation
@@ -30,15 +32,23 @@
 - (IBAction)submit:(id)sender {
     NSMutableDictionary *dataPackage = [self packageReport];
     NSLog(@"Data Package: %@", dataPackage);
+    DBGateway *gateway = [[DBGateway alloc] init];
+    [gateway submitReport:dataPackage];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your report was successfully submitted" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+    [alert show];
+    [self clearReportForm];
 }
 
 - (NSMutableDictionary *)packageReport
 {
     NSMutableDictionary *report = [[NSMutableDictionary alloc] init];
     [report setObject:self.currentLocationLabel.text forKey:@"location"];
-    [report setObject:self.dateLabel.text forKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *submittedTime = [dateFormatter stringFromDate:[NSDate date]];
+    [report setObject:submittedTime forKey:@"time_submitted"];
     [report setObject:self.noteTextView.text forKey:@"notes"];
-    if (_materialList) {
+    if (_materialList && [_materialList count] > 0) {
         [report setObject:_materialList forKey:@"materials"];
     }
     if (completionPercentage) {
@@ -53,7 +63,7 @@
     if (selectedTemperature) {
         [report setObject:selectedTemperature forKey:@"temperature"];
     }
-    if (clientUpdated) {
+    if (clientUpdated >= 0) {
         if (clientUpdated == 0) {
             [report setObject:@"No" forKey:@"client_updated"];
         }
@@ -66,8 +76,32 @@
     }
     [report setObject:[[CrewMemberData sharedInstance] crewLeaderId] forKey:@"crew_leader"];
     [report setObject:[[CrewMemberData sharedInstance] crewMembers] forKey:@"crew_members"];
+    [report setObject:[[ProjectData sharedInstance] projectID] forKey:@"project_id"];
+    [report setObject:[[UIDevice currentDevice] name] forKey:@"device_name"];
+    [report setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"device_id"];
+    [report setObject:[[ProjectData sharedInstance] projectManager] forKey:@"project_manager"];
     
     return report;    
+}
+
+- (void)clearReportForm
+{
+    self.noteTextView.text = nil;
+    [_materialList removeAllObjects];
+    completionPercentage = nil;
+    managerUpdateMessage = nil;
+    selectedWeather = nil;
+    selectedTemperature = nil;
+    clientUpdated = 0;
+    clientUpdateNotes = nil;
+    [[CrewMemberData sharedInstance] resetCrewLeader];
+    [[CrewMemberData sharedInstance] resetCrewMembers];
+    [self.crewListTable reloadData];
+    
+    for (int i=0;i<[self.TaskList numberOfRowsInSection:0]; i++) {
+        [[self.TaskList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        [[[self.TaskList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] detailTextLabel] setText:nil];
+    }
 }
 
 - (void)refreshLocation
@@ -473,6 +507,7 @@
     self.dateLabel.text = todaysDate;
     
     [locationManager startUpdatingLocation];
+    
 }
 
 

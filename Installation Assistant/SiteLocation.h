@@ -59,6 +59,7 @@
 - (IBAction)submit:(id)sender;
 
 - (NSMutableDictionary *)packageReport;
+- (void)clearReportForm;
 - (void)refreshLocation;
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section;
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section withDetail:(NSString *)detail;
