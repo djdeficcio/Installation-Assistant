@@ -8,7 +8,6 @@
 
 
 #define serverQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//#define requestProjects [NSURL URLWithString:@"http://10.1.10.190/ios/retrieveProjects.php"]
 #define requestProjects [NSURL URLWithString:@"http://173.61.46.253/ios/retrieveProjects.php"]
 #define requestProjectData [NSURL URLWithString:@"http://173.61.46.253/ios/retrieveProjectData.php"]
 
@@ -18,8 +17,9 @@
 {
     NSMutableArray *projects;
     NSMutableArray *cells;
-    UITableView *projectTable;
 }
+@property (strong, nonatomic) IBOutlet UITableView *projectTable;
+- (IBAction)refresh:(id)sender;
 
 - (void)loadProjectNames;
 - (void)processProjectNames:(NSData *)responseData;

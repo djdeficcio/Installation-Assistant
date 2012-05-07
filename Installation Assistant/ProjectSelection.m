@@ -16,6 +16,11 @@
 
 
 @implementation ProjectSelection
+@synthesize projectTable;
+
+- (IBAction)refresh:(id)sender {
+    [self loadProjectNames];
+}
 
 - (void)loadProjectNames
 {
@@ -59,7 +64,6 @@
     
     dispatch_sync(serverQueue, ^{
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://173.61.46.253/ios/retrieveProjectData.php?id=%@", [[ProjectData sharedInstance] projectID]]]];
-        //NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://10.1.10.190/ios/retrieveProjectData.php?id=%@", [[projects valueForKey:@"id"] objectAtIndex:projectRow]]]];
         
         if (data != NULL && data != nil) 
         {
@@ -118,7 +122,7 @@
     else {
         [projectData setMonitoringSystem:@"Yes"];
     }
-    [projectData setProjectManager:[jsonResult valueForKey:@"projectManager"]];
+    [projectData setProjectManager:[jsonResult valueForKey:@"project_manager"]];
     
     [projectData packageData];
     
@@ -182,13 +186,7 @@
     
     self.title = @"Select a Project";
     self.navigationItem.backBarButtonItem.title = @"Projects";
-
     
-    UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStyleBordered target:self action:@selector(loadProjectNames)];
-    self.navigationItem.rightBarButtonItem = refresh;
-    
-    UIColor *brushedMetal = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"brushedmetal.png"]];
-    self.view.backgroundColor = brushedMetal;
     
     //Initialize arrays
     projects = [[NSMutableArray alloc] init];    
@@ -197,19 +195,10 @@
     //Create a synchronous call to retrieve the list of projects
     [self loadProjectNames];
     
-    //Create and populate a table with that list of projects
-    projectTable = [[UITableView alloc] initWithFrame:CGRectMake(50, 70, 668, 820) style:UITableViewStylePlain];
-    
-    projectTable.backgroundColor = [UIColor whiteColor];
-    projectTable.layer.cornerRadius = 10;
-    projectTable.layer.borderColor = [UIColor blackColor].CGColor;
-    projectTable.layer.borderWidth = 1;
-    projectTable.rowHeight = 80;
-    
-    projectTable.delegate = self;
-    projectTable.dataSource = self;
-    
-    [self.view addSubview:projectTable];
+    self.projectTable.layer.cornerRadius = 10;
+    self.projectTable.layer.borderColor = [UIColor blackColor].CGColor;
+    self.projectTable.layer.borderWidth = 1;
+
     
     
     
@@ -217,6 +206,7 @@
 
 - (void)viewDidUnload
 {
+    [self setProjectTable:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
