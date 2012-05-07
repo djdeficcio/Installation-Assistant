@@ -10,4 +10,14 @@
 
 @interface SitePlans : UIViewController 
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *planSelector;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) IBOutlet UIWebView *s1View;
+@property (strong, nonatomic) IBOutlet UIWebView *e1View;
+- (IBAction)changePlanView:(id)sender;
+
+- (void)showOrHideMenu;
+- (void)showS1View;
+- (void)showE1View;
+
 @end

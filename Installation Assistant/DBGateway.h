@@ -13,10 +13,14 @@
 
 - (NSMutableArray *)executeScript:(NSString *)script;
 - (NSMutableArray *)executeScript:(NSString *)script withPOSTData:(NSData *)data;
+- (void)executeNonReturningScript:(NSString *)script;
+- (void)executeNonReturningScript:(NSString *)script withPOSTData:(NSData *)data;
 - (NSMutableArray *)getJSONDataForDict:(NSDictionary *)JSONdict fromScriptFile:(NSString *)scriptFile;
 - (NSMutableArray *)getCrewLeadersForState:(NSString *)state;
 - (NSMutableArray *)getCrewMembersForState:(NSString *)state;
 - (NSMutableArray *)getAllFieldCrewForState:(NSString *)state;
-
+- (void)submitReport:(NSDictionary *)report;
+- (NSURLRequest *)getProjectS1Request:(NSString *)projectID;
+- (NSURLRequest *)getProjectE1Request:(NSString *)projectID;
 
 @end
