@@ -60,7 +60,9 @@
     
     self.name.text = [_selectedMaterial objectForKey:@"name"];
     self.quantity.text = [_selectedMaterial objectForKey:@"quantity"];    
-    self.date.date = [_selectedMaterial objectForKey:@"date"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.date.date = [formatter dateFromString:[_selectedMaterial objectForKey:@"date"]];
 }
 
 

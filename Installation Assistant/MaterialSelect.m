@@ -35,7 +35,7 @@
 - (void)addMaterialController:(AddMaterial *)controller didAddMaterial:(NSString *)materialName withQuantity:(NSString *)materialQuantity forDate:(NSDate *)materialDate
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", [dateFormatter stringFromDate:materialDate], @"date", nil];
     [_materials addObject:materialEntry];
         
@@ -55,7 +55,9 @@
 
 - (void)editMaterialController:(EditMaterial *)controller updatedMaterial:(NSString *)materialName withQuantity:(NSString *)materialQuantity forDate:(NSDate *)materialDate atRow:(NSIndexPath *)indexPath
 {
-    NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", materialDate, @"date", nil];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSMutableDictionary *materialEntry = [NSMutableDictionary dictionaryWithObjectsAndKeys:materialName, @"name", materialQuantity, @"quantity", [dateFormatter stringFromDate:materialDate], @"date", nil];
     [_materials replaceObjectAtIndex:indexPath.row withObject:materialEntry];
         
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
@@ -93,9 +95,7 @@
     {
         cell.name.text = [[_materials objectAtIndex:indexPath.row] objectForKey:@"name"];
         cell.quantity.text = [[_materials objectAtIndex:indexPath.row] objectForKey:@"quantity"];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MM-dd-yyyy"];
-        cell.date.text = [dateFormatter stringFromDate:[[_materials objectAtIndex:indexPath.row] objectForKey:@"date"]];
+        cell.date.text = [[_materials objectAtIndex:indexPath.row] objectForKey:@"date"];
     }
     
     return cell;
