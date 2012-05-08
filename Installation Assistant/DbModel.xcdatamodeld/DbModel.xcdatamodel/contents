@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MaterialsEn" representedClassName="MaterialsEn" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="report" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ReportsEn" inverseName="materials" inverseEntity="ReportsEn" syncable="YES"/>
+    </entity>
+    <entity name="ReportsEn" representedClassName="ReportsEn" syncable="YES">
+        <attribute name="author_ctid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author_username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="client_notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="client_updated" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completion_percentage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crew_leader" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="device_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="manager_update" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="project_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="project_manager" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time_submitted" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weather" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MaterialsEn" inverseName="report" inverseEntity="MaterialsEn" syncable="YES"/>
+    </entity>
     <entity name="Users" representedClassName="Users" syncable="YES">
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,5 +33,7 @@
     </entity>
     <elements>
         <element name="Users" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="ReportsEn" positionX="160" positionY="192" width="128" height="285"/>
+        <element name="MaterialsEn" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

@@ -13,10 +13,12 @@
 		018EA44F1535D9970006FC9F /* MaterialSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA44E1535D9960006FC9F /* MaterialSelect.m */; };
 		01BD2F4815580E1A006043D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BD2F4715580E19006043D2 /* CoreData.framework */; };
 		01BD2F5C1558301F006043D2 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F5A1558301F006043D2 /* Users.m */; };
-		01BD2F5E1558309B006043D2 /* AssistantUsers.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 01BD2F5D1558309B006043D2 /* AssistantUsers.sqlite */; };
 		01BD2F6915586781006043D2 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F6815586781006043D2 /* UserData.m */; };
-		01BD2F6C15586C9C006043D2 /* DbModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F6A15586C9C006043D2 /* DbModel.xcdatamodeld */; };
 		01BD2F7315598654006043D2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F7215598654006043D2 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01BD2F7D15599C79006043D2 /* DbModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F7B15599C79006043D2 /* DbModel.xcdatamodeld */; };
+		01BD2F8215599CBE006043D2 /* MaterialsEn.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F7F15599CBE006043D2 /* MaterialsEn.m */; };
+		01BD2F8315599CBE006043D2 /* ReportsEn.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2F8115599CBE006043D2 /* ReportsEn.m */; };
+		01BD2F8715599FA9006043D2 /* AssistantUsers.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 01BD2F8615599FA8006043D2 /* AssistantUsers.sqlite */; };
 		01DBF389153F1FBD009B6FAE /* RoundedUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF388153F1FBD009B6FAE /* RoundedUIView.m */; };
 		01DBF394153F4623009B6FAE /* RoundedUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF393153F4623009B6FAE /* RoundedUITableView.m */; };
 		01DBF396153F5E43009B6FAE /* solular logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DBF395153F5E43009B6FAE /* solular logo.png */; };
@@ -103,12 +105,16 @@
 		01BD2F4715580E19006043D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		01BD2F591558301F006043D2 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		01BD2F5A1558301F006043D2 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
-		01BD2F5D1558309B006043D2 /* AssistantUsers.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssistantUsers.sqlite; sourceTree = "<group>"; };
 		01BD2F6715586781006043D2 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		01BD2F6815586781006043D2 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
-		01BD2F6B15586C9C006043D2 /* DbModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DbModel.xcdatamodel; sourceTree = "<group>"; };
 		01BD2F7115598654006043D2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		01BD2F7215598654006043D2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		01BD2F7C15599C79006043D2 /* DbModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DbModel.xcdatamodel; sourceTree = "<group>"; };
+		01BD2F7E15599CBE006043D2 /* MaterialsEn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MaterialsEn.h; path = ../../AssistantUsers/MaterialsEn.h; sourceTree = "<group>"; };
+		01BD2F7F15599CBE006043D2 /* MaterialsEn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MaterialsEn.m; path = ../../AssistantUsers/MaterialsEn.m; sourceTree = "<group>"; };
+		01BD2F8015599CBE006043D2 /* ReportsEn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsEn.h; path = ../../AssistantUsers/ReportsEn.h; sourceTree = "<group>"; };
+		01BD2F8115599CBE006043D2 /* ReportsEn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsEn.m; path = ../../AssistantUsers/ReportsEn.m; sourceTree = "<group>"; };
+		01BD2F8615599FA8006043D2 /* AssistantUsers.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssistantUsers.sqlite; sourceTree = "<group>"; };
 		01DBF387153F1FBD009B6FAE /* RoundedUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedUIView.h; sourceTree = "<group>"; };
 		01DBF388153F1FBD009B6FAE /* RoundedUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedUIView.m; sourceTree = "<group>"; };
 		01DBF392153F4623009B6FAE /* RoundedUITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedUITableView.h; sourceTree = "<group>"; };
@@ -247,8 +253,12 @@
 		01BD2F1E155800A3006043D2 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				01BD2F6A15586C9C006043D2 /* DbModel.xcdatamodeld */,
-				01BD2F5D1558309B006043D2 /* AssistantUsers.sqlite */,
+				01BD2F8615599FA8006043D2 /* AssistantUsers.sqlite */,
+				01BD2F7B15599C79006043D2 /* DbModel.xcdatamodeld */,
+				01BD2F7E15599CBE006043D2 /* MaterialsEn.h */,
+				01BD2F7F15599CBE006043D2 /* MaterialsEn.m */,
+				01BD2F8015599CBE006043D2 /* ReportsEn.h */,
+				01BD2F8115599CBE006043D2 /* ReportsEn.m */,
 				01BD2F591558301F006043D2 /* Users.h */,
 				01BD2F5A1558301F006043D2 /* Users.m */,
 			);
@@ -558,7 +568,7 @@
 				01DBF3DF1545A3FA009B6FAE /* 101-gameplan@2x.png in Resources */,
 				01DBF3E21545AE77009B6FAE /* 40-inbox.png in Resources */,
 				01DBF3E31545AE77009B6FAE /* 40-inbox@2x.png in Resources */,
-				01BD2F5E1558309B006043D2 /* AssistantUsers.sqlite in Resources */,
+				01BD2F8715599FA9006043D2 /* AssistantUsers.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,8 +622,10 @@
 				01DBF3CE1541E1CF009B6FAE /* UpdateClient.m in Sources */,
 				01BD2F5C1558301F006043D2 /* Users.m in Sources */,
 				01BD2F6915586781006043D2 /* UserData.m in Sources */,
-				01BD2F6C15586C9C006043D2 /* DbModel.xcdatamodeld in Sources */,
 				01BD2F7315598654006043D2 /* Reachability.m in Sources */,
+				01BD2F7D15599C79006043D2 /* DbModel.xcdatamodeld in Sources */,
+				01BD2F8215599CBE006043D2 /* MaterialsEn.m in Sources */,
+				01BD2F8315599CBE006043D2 /* ReportsEn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,12 +744,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		01BD2F6A15586C9C006043D2 /* DbModel.xcdatamodeld */ = {
+		01BD2F7B15599C79006043D2 /* DbModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				01BD2F6B15586C9C006043D2 /* DbModel.xcdatamodel */,
+				01BD2F7C15599C79006043D2 /* DbModel.xcdatamodel */,
 			);
-			currentVersion = 01BD2F6B15586C9C006043D2 /* DbModel.xcdatamodel */;
+			currentVersion = 01BD2F7C15599C79006043D2 /* DbModel.xcdatamodel */;
 			path = DbModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
