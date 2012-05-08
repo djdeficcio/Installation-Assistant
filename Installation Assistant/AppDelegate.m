@@ -13,7 +13,6 @@
 #import "SiteInformation.h"
 #import "SitePlans.h"
 #import "SiteViews.h"
-#import "Users.h"
 
 @implementation AppDelegate
 
@@ -23,9 +22,7 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    
-    
+{    
     return YES;
 }
 							
