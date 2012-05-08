@@ -215,7 +215,6 @@
                                     <segment title="S-1"/>
                                     <segment title="E-1"/>
                                 </segments>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="changePlanView:" destination="2hP-W3-fnq" eventType="valueChanged" id="Yw9-aq-bZL"/>
                                 </connections>
