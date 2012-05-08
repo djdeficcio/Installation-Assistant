@@ -402,7 +402,7 @@ static Sidebar *_instance;
             break;
             
         case MFMailComposeResultSent:
-            [alert initWithTitle:@"Success!"
+            (void)[alert initWithTitle:@"Success!"
                          message:@"Mail successfully sent."
                         delegate:nil
                cancelButtonTitle:@"Close" 
@@ -411,7 +411,7 @@ static Sidebar *_instance;
             break;
             
         case MFMailComposeResultFailed:
-            [alert initWithTitle:@"Failure"
+            (void)[alert initWithTitle:@"Failure"
                          message:@"Message failed to send."
                         delegate:nil
                cancelButtonTitle:@"Close"
@@ -422,7 +422,7 @@ static Sidebar *_instance;
         default:
             break;
     }
-    
+        
     materialsDisplayed = NO;
     managersDisplayed = NO;
 }
