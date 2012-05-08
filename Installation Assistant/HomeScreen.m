@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Users.h"
 #import "UserData.h"
+#import "Reachability.h"
 
 @implementation HomeScreen
 @synthesize username;
@@ -76,6 +77,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    Reachability *wifi = [Reachability reachabilityForLocalWiFi];
+    if ([wifi currentReachabilityStatus] == ReachableViaWiFi) {
+        NSLog(@"Wifi enabled!");
+    }
+    
+    else {
+        NSLog(@"Wifi not available");
+    }
     
 }
 
