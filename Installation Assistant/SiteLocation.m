@@ -15,6 +15,7 @@
 #import "Quartzcore/Quartzcore.h"
 #import "RoundedUIView.h"
 #import "DBGateway.h"
+#import "UserData.h"
 
 
 @implementation SiteLocation
@@ -78,7 +79,8 @@
     [report setObject:[[CrewMemberData sharedInstance] crewMembers] forKey:@"crew_members"];
     [report setObject:[[ProjectData sharedInstance] projectID] forKey:@"project_id"];
     [report setObject:[[UIDevice currentDevice] name] forKey:@"device_name"];
-    [report setObject:[[UIDevice currentDevice] uniqueIdentifier] forKey:@"device_id"];
+    [report setObject:[[UserData sharedInstance] username] forKey:@"author_username"];
+    [report setObject:[[UserData sharedInstance] ctid] forKey:@"author_ctid"];
     [report setObject:[[ProjectData sharedInstance] projectManager] forKey:@"project_manager"];
     
     return report;    
