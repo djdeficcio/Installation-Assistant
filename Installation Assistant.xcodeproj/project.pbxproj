@@ -466,15 +466,15 @@
 		35B8A3E9148FFCDE000411D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				01DBF3CF15459FE6009B6FAE /* Tabbar Icons */,
+				01DBF3E41545E890009B6FAE /* Sidebar Icons */,
+				01DBF3BA1540A422009B6FAE /* app_icon.png */,
+				01DBF3BC1540A427009B6FAE /* app_icon_retina.png */,
+				35B8A3EC148FFE6E000411D0 /* brushedmetal.png */,
+				01DBF3A915409AB1009B6FAE /* button_back.png */,
+				01DBF3C71541DFAD009B6FAE /* button_highlighted_back.png */,
 				01BD2FB8155ACE42006043D2 /* compassrose.png */,
 				01BD2FB9155ACE42006043D2 /* compassrose@2x.png */,
-				01DBF3E41545E890009B6FAE /* Sidebar Icons */,
-				01DBF3CF15459FE6009B6FAE /* Tabbar Icons */,
-				01DBF3C71541DFAD009B6FAE /* button_highlighted_back.png */,
-				01DBF3BC1540A427009B6FAE /* app_icon_retina.png */,
-				01DBF3BA1540A422009B6FAE /* app_icon.png */,
-				01DBF3A915409AB1009B6FAE /* button_back.png */,
-				35B8A3EC148FFE6E000411D0 /* brushedmetal.png */,
 				358D942E14A3C5DD007F4335 /* sidebarback.png */,
 				01DBF395153F5E43009B6FAE /* solular logo.png */,
 			);
