@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DualColumnTable.h"
+
+@class DualColumnTable;
 
 @interface SiteInformation : UIViewController <UIGestureRecognizerDelegate>
 {
     NSArray *dataPackage;
     DualColumnTable *techTable;
 }
-
-- (void)showSideMenu;
-- (void)hideSideMenu;
 
 @end

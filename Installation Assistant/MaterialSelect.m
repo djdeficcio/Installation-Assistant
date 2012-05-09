@@ -7,7 +7,6 @@
 //
 
 #import "MaterialSelect.h"
-#import "MaterialList.h"
 #import "MaterialListCell.h"
 
 @implementation MaterialSelect

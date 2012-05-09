@@ -11,7 +11,6 @@
 #import "CrewLeader.h"
 #import "CrewMembers.h"
 #import "CrewMemberData.h"
-#import "MaterialList.h"
 #import "Quartzcore/Quartzcore.h"
 #import "RoundedUIView.h"
 #import "DBGateway.h"

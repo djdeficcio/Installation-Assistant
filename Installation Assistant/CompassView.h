@@ -11,22 +11,17 @@
 
 @interface CompassView : UIViewController <CLLocationManagerDelegate>
 {
-    UIView *compassView;
-    UIView *targetDirectionView;
-    UIView *currentDirectionView;
-    UILabel *targetDirectionLabel;
-    UILabel *currentDirectionLabel;
     NSInteger targetDirection;
-    NSInteger currentDirection;
+    CGFloat currentDirection;
     
     CLLocationManager *locationManager;
     CLLocation *currentLocation;
 }
+@property (strong, nonatomic) IBOutlet UILabel *targetLabel;
+@property (strong, nonatomic) IBOutlet UILabel *currentLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *compassImage;
 
-+ (CompassView *)sharedInstance;
-
-- (UIView *)getCompassView;
-- (void)hideCompassView;
+- (IBAction)close:(id)sender;
 
 
 
