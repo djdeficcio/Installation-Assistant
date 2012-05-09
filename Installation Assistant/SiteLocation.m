@@ -16,6 +16,7 @@
 #import "RoundedUIView.h"
 #import "DBGateway.h"
 #import "UserData.h"
+#import "Reachability.h"
 
 
 @implementation SiteLocation
@@ -31,13 +32,20 @@
 #pragma mark Custom Methods
 
 - (IBAction)submit:(id)sender {
-    NSMutableDictionary *dataPackage = [self packageReport];
-    NSLog(@"Data Package: %@", dataPackage);
-    DBGateway *gateway = [[DBGateway alloc] init];
-    [gateway submitReport:dataPackage];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your report was successfully submitted" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
-    [alert show];
-    [self clearReportForm];
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    if ([reachability currentReachabilityStatus] != NotReachable) {
+        NSMutableDictionary *dataPackage = [self packageReport];
+        NSLog(@"Data Package: %@", dataPackage);
+        DBGateway *gateway = [[DBGateway alloc] init];
+        [gateway submitReport:dataPackage];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your report was successfully submitted." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [alert show];
+        [self clearReportForm];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You do not have a valid internet connection.  Please try again later." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (NSMutableDictionary *)packageReport
@@ -374,11 +382,25 @@
     
     if (tableView.tag == CREWMEMBERS) {
         if (indexPath.section == 0) {
-            [self performSegueWithIdentifier:@"SelectCrewLeader" sender:self];
+            Reachability *reachability = [Reachability reachabilityForInternetConnection];
+            if ([reachability currentReachabilityStatus] != NotReachable) {
+                [self performSegueWithIdentifier:@"SelectCrewLeader" sender:self];
+            }
+            else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"That action requires a valid internet connection.  Please try again later." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                [alert show];
+            }
         }
         
         else {
-            [self performSegueWithIdentifier:@"SelectCrewMembers" sender:self];
+            Reachability *reachability = [Reachability reachabilityForInternetConnection];
+            if ([reachability currentReachabilityStatus] != NotReachable) {
+                [self performSegueWithIdentifier:@"SelectCrewMembers" sender:self];
+            }
+            else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"That action requires a valid internet connection.  Please try again later." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
+                [alert show];
+            }
         }
     }
     

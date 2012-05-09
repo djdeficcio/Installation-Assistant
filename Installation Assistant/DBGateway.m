@@ -7,7 +7,8 @@
 //
 
 #import "DBGateway.h"
-
+#import "Reachability.h"
+#import "LocalReportManager.h"
 
 @implementation DBGateway
 
@@ -141,7 +142,6 @@
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:report options:kNilOptions error:nil];
     
     [self executeNonReturningScript:scriptString withPOSTData:jsonData];
-
 }
 
 - (NSURLRequest *)getProjectS1Request:(NSString *)projectID
