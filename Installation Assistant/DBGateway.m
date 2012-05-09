@@ -8,7 +8,6 @@
 
 #import "DBGateway.h"
 #import "Reachability.h"
-#import "LocalReportManager.h"
 
 @implementation DBGateway
 
