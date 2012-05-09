@@ -643,13 +643,106 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="3235" y="-1466"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3EL-n8-PdF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmf-Jn-C8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Oj5-rQ-wdi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ALp-HV-96S">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1100" y="-2694"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="4Nh-7z-Nca">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBh-Aw-S9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="qPq-1J-5ve" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Of-kz-kI9">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="LUi-H2-O4w">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Wm4-Me-Anl">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="compass.png" id="QtG-vA-YEH">
+                                                    <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Compass" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yly-xC-3DO">
+                                                    <rect key="frame" x="56" y="4" width="704" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="Oj5-rQ-wdi" kind="modal" modalPresentationStyle="formSheet" id="9nd-bc-Tps"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bud-0j-YkD">
+                                        <rect key="frame" x="0.0" y="60" width="768" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="notes.png" id="b9H-s6-37B">
+                                                    <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ruy-Ws-kSZ">
+                                                    <rect key="frame" x="56" y="4" width="704" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="qPq-1J-5ve" id="lVU-I2-SHb"/>
+                            <outlet property="delegate" destination="qPq-1J-5ve" id="5bF-75-fVy"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="120"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1478" y="-1782"/>
+        </scene>
         <!--Site Tab Controller - Project-->
         <scene sceneID="izI-ac-AOq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZ3-x1-2kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="rYz-qu-Fyw" customClass="SiteTabController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Project" id="I62-FU-cS3">
-                        <barButtonItem key="rightBarButtonItem" title="Tools" id="yeq-Ra-CHW"/>
+                        <barButtonItem key="rightBarButtonItem" title="Tools" id="yeq-Ra-CHW">
+                            <connections>
+                                <segue destination="qPq-1J-5ve" kind="popover" popoverAnchorBarButtonItem="yeq-Ra-CHW" id="gGb-Hp-xcW">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -945,6 +1038,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="40-inbox.png" width="24" height="24"/>
         <image name="brushedmetal.png" width="768" height="1024"/>
         <image name="button_highlighted_back.png" width="59" height="21"/>
+        <image name="compass.png" width="50" height="50"/>
+        <image name="notes.png" width="50" height="50"/>
         <image name="solular logo.png" width="689" height="378"/>
     </resources>
     <classes>
