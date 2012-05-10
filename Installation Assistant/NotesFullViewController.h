@@ -10,11 +10,16 @@
 
 @interface NotesFullViewController : UIViewController
 {
-    UILabel *enteredBy;
-    UILabel *enterDate;
-    UILabel *noteText;
+    NSString *_enteredBy;
+    NSString *_enterDate;
+    NSString *_noteText;
 }
+@property (retain, nonatomic) NSString *enteredBy;
+@property (retain, nonatomic) NSString *enterDate;
+@property (retain, nonatomic) NSString *noteText;
+@property (strong, nonatomic) IBOutlet UILabel *userLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *noteTextLabel;
 
-- (void)setFullNoteValues:(NSString *)noteValue enteredBy:(NSString *)userValue enteredOn:(NSString *)dateValue;
 
 @end

@@ -11,29 +11,14 @@
 #import "NotesFullViewController.h"
 #import "NotesNewViewController.h"
 
-@interface NotesView : UIViewController <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
+@interface NotesView : UITableViewController <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 {
-    UIView *notesView;
-    NotesFullViewController *fullNoteView;
-    NotesNewViewController *newNoteView;
-    MenuBar *menuBar;
-    NSMutableArray *cellContainer;
-    NSMutableArray *notes;
-    UITableView *noteTable;
-    BOOL fullNoteDisplayed;
+    NSArray *_notes;
+    NSIndexPath *selectedNotePath;
 }
-@property (retain) NSMutableArray *notes;
+@property (retain, nonatomic) NSArray *notes;
 
-+ (NotesView *)sharedInstance;
-
+- (IBAction)close:(id)sender;
 - (void)retrieveNotes:(NSString *)projectID;
 - (void)refreshNotes:(NSString *)projectID;
-- (UIView *)getNotesView;
-- (void)hideNotesView;
-- (void)presentFullNote:(NSInteger)noteID;
-- (void)hideFullNote;
-- (void)processSingleRightSwipe;
-- (void)presentNewNote;
-- (void)hideNewNote;
-
 @end

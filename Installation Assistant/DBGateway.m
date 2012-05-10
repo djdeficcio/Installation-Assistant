@@ -75,15 +75,13 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
     
-    NSHTTPURLResponse *response;
     
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
     
-//    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init]completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-//        if (error) {
-//            NSLog(@"Error: %@", error);
-//        }
-//    }];    
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init]completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+        if (error) {
+            NSLog(@"Error: %@", error);
+        }
+    }];    
     
     
     
@@ -163,6 +161,23 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     return request;
+}
+
+- (void)enterNewNote:(NSDictionary *)note
+{
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:note options:kNilOptions error:&error];
+    
+    [self executeNonReturningScript:@"notesViewNewEntry.php" withPOSTData:jsonData];
+}
+
+- (NSArray *)getNotesForProject:(NSString *)projectID
+{
+    NSString *urlString = [NSString stringWithFormat:@"notesViewNoteRetrieval.php?id=%@", projectID];
+    
+    NSArray *notes = [self executeScript:urlString];
+    
+    return notes;
 }
 
 

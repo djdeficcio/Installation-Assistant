@@ -7,30 +7,27 @@
 //
 
 #import "NotesNewViewController.h"
-#import "MenuBar.h"
-#import "GlosslessButton.h"
+#import "UserData.h"
 #import "ProjectData.h"
-#import "NotesView.h"
+#import "DBGateway.h"
 
 @implementation NotesNewViewController
+@synthesize userLabel;
+@synthesize dateLabel;
+@synthesize noteText;
+@synthesize noteID = _noteID;
+
+- (IBAction)save:(id)sender {
+    [self saveNewNote];
+}
 
 - (NSString *)getUser
 {
-    id deviceIdentifier = [[UIDevice currentDevice] name];
-    //NSLog(@"Identifier: %@", deviceIdentifier);
+    user = [NSString stringWithFormat:@"%@ %@", [[UserData sharedInstance] firstname], [[UserData sharedInstance] lastname]];
+    deviceName = [[UIDevice currentDevice] name];
+    userID = [[UserData sharedInstance] ctid];
     
-    NSString *userName;
-    
-    if ([deviceIdentifier isEqualToString:@"zPad2"])
-    {
-        userName = @"DJ DeFiccio";
-    }
-    
-    user = userName;
-    deviceName = deviceIdentifier;
-    deviceId = [[UIDevice currentDevice] uniqueIdentifier];
-    
-    return userName;
+    return user;
 }
 
 - (NSString *)getDate
@@ -56,47 +53,22 @@
     return dateString;
 }
 
-- (void)cancelNewNote
-{
-    [UIView animateWithDuration:.25 
-                          delay:0.0 
-                        options:UIViewAnimationCurveLinear 
-                     animations:^{ self.view.frame = CGRectMake(550, 50, self.view.frame.size.width, self.view.frame.size.height);}
-                     completion:^(BOOL finished) {
-                         [self.view removeFromSuperview];
-                     }];
-}
-
 - (void)saveNewNote
 {
     projectID = [[ProjectData sharedInstance] projectID];
     
-    NSDictionary *jsonDict = [NSDictionary dictionaryWithObjectsAndKeys: user, @"enteredBy", date, @"enteredOn", projectID, @"projectID", noteID, @"noteID", noteText.text, @"noteText", deviceName, @"deviceName", deviceId, @"deviceId", nil];
+    NSDictionary *note = [NSDictionary dictionaryWithObjectsAndKeys: user, @"entered_by", date, @"entered_on", projectID, @"project_id", _noteID, @"note_id", self.noteText.text, @"note_text", deviceName, @"device_name", userID, @"entered_by_id", nil];
     
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict options:kNilOptions error:&error];
-    
-    NSURL *url = [[NSURL alloc] initWithString:@"http://173.61.46.253/ios/notesViewNewEntry.php"];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:jsonData];
-    
-    NSHTTPURLResponse *response;
-    
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
-    
-    [[NotesView sharedInstance] refreshNotes:projectID];
-    [self cancelNewNote];
+    DBGateway *gateway = [[DBGateway alloc] init];
+    [gateway enterNewNote:note];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:coder];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -111,68 +83,24 @@
 
 #pragma mark - View lifecycle
 
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(550, 50, 550, 760)];
-    self.view.backgroundColor = [UIColor whiteColor];
-        
-    MenuBar *heading = [[MenuBar alloc] initWithFrame:CGRectMake(0, 0, 550, 25)];
-    
-    userLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 2.5, 200, 20)];
-    userLabel.numberOfLines = 0;
-    userLabel.backgroundColor = [UIColor clearColor];
-    userLabel.text = [self getUser];
-    
-    [heading addSubview:userLabel];
-    
-    dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(290, 2.5, 250, 20)];
-    dateLabel.numberOfLines = 0;
-    dateLabel.backgroundColor = [UIColor clearColor];
-    dateLabel.textAlignment = UITextAlignmentRight;
-    dateLabel.text = [self getDate];
-    
-    [heading addSubview:dateLabel];
-    
-    [self.view addSubview:heading];
-    
-    noteText = [[UITextView alloc] initWithFrame:CGRectMake(20, 45, 510, 590)];
-    noteText.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.05];
-    noteText.font = [UIFont systemFontOfSize:24.0];
-    
-    [self.view addSubview:noteText];
-    
-    GlosslessButton *cancel = [[GlosslessButton alloc] initWithFrame:CGRectMake(17, 645, 100, 50)];
-    cancel.textLabel.text = @"Cancel";
-    [cancel addTarget:self action:@selector(cancelNewNote) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:cancel];
-    
-    GlosslessButton *save = [[GlosslessButton alloc] initWithFrame:CGRectMake(433, 645, 100, 50)];
-    save.textLabel.text = @"Save";
-    [save addTarget:self action:@selector(saveNewNote) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:save];
-}
-
-- (id)initWithNoteID:(int)ID
-{
-    self = [super init];
-    
-    noteID = [NSString stringWithFormat:@"%d", ID];
-    
-    return self;
-}
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self getUser];
+    [self getDate];
+    
+    self.userLabel.text = user;
+    self.dateLabel.text = date;
 }
-*/
+
 
 - (void)viewDidUnload
 {
+    [self setUserLabel:nil];
+    [self setDateLabel:nil];
+    [self setNoteText:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

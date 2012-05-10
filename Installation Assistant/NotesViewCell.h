@@ -10,13 +10,15 @@
 
 @interface NotesViewCell : UITableViewCell
 {
-    UILabel *userLabel;
-    UILabel *dateLabel;
-    UILabel *noteLabel;
+    UILabel *_userLabel;
+    UILabel *_dateLabel;
+    UILabel *_noteLabel;
+    NSString *_noteID;
 }
 
-@property (retain) UILabel *userLabel;
-@property (retain) UILabel *dateLabel;
-@property (retain) UILabel *noteLabel;
+@property (retain, nonatomic) IBOutlet UILabel *userLabel;
+@property (retain, nonatomic) IBOutlet UILabel *dateLabel;
+@property (retain, nonatomic) IBOutlet UILabel *noteLabel;
+@property (retain, nonatomic) NSString *noteID;
 
 @end

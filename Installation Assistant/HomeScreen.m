@@ -34,7 +34,7 @@
     
     for (Users *user in users) {
         if ([user.username isEqualToString:usernameI] && [user.password isEqualToString:passwordI]) {
-            [[UserData sharedInstance] assignUsername:user.username withFirstName:user.firstname andLastName:user.lastname andCtid:[NSString stringWithFormat:@"%@", user.user_id]];
+            [[UserData sharedInstance] assignUsername:user.username withFirstName:user.firstname andLastName:user.lastname andCtid:[user.user_id stringValue]];
             loggedIn = YES;
             [self performSegueWithIdentifier:@"selectProjectSegue" sender:self];
         }

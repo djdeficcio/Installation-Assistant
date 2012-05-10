@@ -10,24 +10,24 @@
 
 @interface NotesNewViewController : UIViewController
 {
-    UILabel *userLabel;
-    UILabel *dateLabel;
     UITextView *noteText;
     NSString *user;
     NSString *date;
-    NSString *noteID;
+    NSString *_noteID;
     NSString *projectID;
     NSString *noteContents;
     NSString *deviceName;
-    NSString *deviceId;
+    NSString *userID;
     
 }
+@property (strong, nonatomic) IBOutlet UILabel *userLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UITextView *noteText;
+@property (retain, nonatomic) NSString *noteID;
 
-- (id)initWithNoteID:(int)ID;
-
+- (IBAction)save:(id)sender;
 - (NSString *)getUser;
 - (NSString *)getDate;
-- (void)cancelNewNote;
 - (void)saveNewNote;
 
 @end

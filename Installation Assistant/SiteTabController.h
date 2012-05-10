@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToolsMenu.h"
 
-@interface SiteTabController : UITabBarController <UITabBarControllerDelegate>
+@interface SiteTabController : UITabBarController <UITabBarControllerDelegate, ToolsMenuDelegate>
+{
+    UIPopoverController *popoverController;
+}
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *toolsButton;
+- (IBAction)showToolsMenu:(id)sender;
 @end

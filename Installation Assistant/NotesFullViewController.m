@@ -11,16 +11,10 @@
 #import "QuartzCore/QuartzCore.h"
 
 @implementation NotesFullViewController
-
-- (void)setFullNoteValues:(NSString *)noteValue enteredBy:(NSString *)userValue enteredOn:(NSString *)dateValue
-{
-    enteredBy.text = userValue;
-    enterDate.text = dateValue;
-    noteText.text = noteValue;
-    [noteText sizeToFit];
-    
-    [self.view setNeedsDisplay];
-}
+@synthesize userLabel = _userLabel;
+@synthesize dateLabel = _dateLabel;
+@synthesize noteTextLabel = _noteTextLabel;
+@synthesize enteredBy = _enteredBy, enterDate = _enterDate, noteText = _noteText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,49 +35,22 @@
 
 #pragma mark - View lifecycle
 
-
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(550, 50, 550, 760)];
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    MenuBar *heading = [[MenuBar alloc] initWithFrame:CGRectMake(0, 0, 550, 25)];
-    
-    enteredBy = [[UILabel alloc] initWithFrame:CGRectMake(10, 2.5, 200, 20)];
-    enteredBy.numberOfLines = 0;
-    enteredBy.backgroundColor = [UIColor clearColor];
-    
-    [heading addSubview:enteredBy];
-    
-    enterDate = [[UILabel alloc] initWithFrame:CGRectMake(290, 2.5, 250, 20)];
-    enterDate.numberOfLines = 0;
-    enterDate.backgroundColor = [UIColor clearColor];
-    enterDate.textAlignment = UITextAlignmentRight;
-    
-    [heading addSubview:enterDate];
-    
-    [self.view addSubview:heading];
-    
-    noteText = [[UILabel alloc] initWithFrame:CGRectMake(25, 50, 500, 635)];
-    noteText.numberOfLines = 0;
-    noteText.backgroundColor = [UIColor clearColor];
-    noteText.textAlignment = UITextAlignmentLeft;
-    
-    [self.view addSubview:noteText];
-    
-}
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.userLabel.text = _enteredBy;
+    self.dateLabel.text = _enterDate;
+    self.noteTextLabel.text = _noteText;
 }
-*/
+
 
 - (void)viewDidUnload
 {
+    [self setUserLabel:nil];
+    [self setDateLabel:nil];
+    [self setNoteTextLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

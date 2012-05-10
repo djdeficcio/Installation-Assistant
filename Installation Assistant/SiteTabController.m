@@ -12,8 +12,32 @@
 #import "SiteViews.h"
 #import "SitePlans.h"
 #import "LocationView.h"
+#import "ToolsMenu.h"
 
 @implementation SiteTabController
+@synthesize toolsButton;
+
+- (IBAction)showToolsMenu:(id)sender {
+    ToolsMenu *toolsMenuController = [[ToolsMenu alloc] initWithStyle:UITableViewStylePlain];
+    toolsMenuController.delegate = self;
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:toolsMenuController];    
+    popoverController.popoverContentSize = CGSizeMake(150, 264);
+    [popoverController setPopoverContentSize:CGSizeMake(200, 59)];
+    [popoverController presentPopoverFromRect:CGRectMake(730, 0, toolsButton.width, 1) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+}
+
+- (void)toolsMenuToolSelected:(NSInteger)toolRow
+{
+    [popoverController dismissPopoverAnimated:YES];
+    switch (toolRow) {
+        case 0:
+            [self performSegueWithIdentifier:@"NotesSegue" sender:self];
+            break;
+            
+        default:
+            break;
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +79,7 @@
 
 - (void)viewDidUnload
 {
+    [self setToolsButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

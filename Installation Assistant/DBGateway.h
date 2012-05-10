@@ -22,5 +22,7 @@
 - (void)submitReport:(NSDictionary *)report;
 - (NSURLRequest *)getProjectS1Request:(NSString *)projectID;
 - (NSURLRequest *)getProjectE1Request:(NSString *)projectID;
+- (void)enterNewNote:(NSDictionary *)note;
+- (NSArray *)getNotesForProject:(NSString *)projectID;
 
 @end

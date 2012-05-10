@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0153CAA215376EFA00E35905 /* EditMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153CAA115376EFA00E35905 /* EditMaterial.m */; };
+		0165965C155BF7AD00DFB419 /* ToolsMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0165965B155BF7AD00DFB419 /* ToolsMenuCell.m */; };
 		018EA4431534EB450006FC9F /* SiteLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA4421534EB450006FC9F /* SiteLocation.m */; };
 		018EA44F1535D9970006FC9F /* MaterialSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 018EA44E1535D9960006FC9F /* MaterialSelect.m */; };
 		01BD2F4815580E1A006043D2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01BD2F4715580E19006043D2 /* CoreData.framework */; };
@@ -25,6 +26,7 @@
 		01BD2FB7155AC5D2006043D2 /* notes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD2FB5155AC5D2006043D2 /* notes@2x.png */; };
 		01BD2FBA155ACE43006043D2 /* compassrose.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD2FB8155ACE42006043D2 /* compassrose.png */; };
 		01BD2FBB155ACE43006043D2 /* compassrose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01BD2FB9155ACE42006043D2 /* compassrose@2x.png */; };
+		01BD2FBE155B11C9006043D2 /* ToolsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD2FBD155B11C8006043D2 /* ToolsMenu.m */; };
 		01DBF389153F1FBD009B6FAE /* RoundedUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF388153F1FBD009B6FAE /* RoundedUIView.m */; };
 		01DBF394153F4623009B6FAE /* RoundedUITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF393153F4623009B6FAE /* RoundedUITableView.m */; };
 		01DBF396153F5E43009B6FAE /* solular logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DBF395153F5E43009B6FAE /* solular logo.png */; };
@@ -98,6 +100,8 @@
 /* Begin PBXFileReference section */
 		0153CAA015376EFA00E35905 /* EditMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMaterial.h; sourceTree = "<group>"; };
 		0153CAA115376EFA00E35905 /* EditMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMaterial.m; sourceTree = "<group>"; };
+		0165965A155BF7AD00DFB419 /* ToolsMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsMenuCell.h; sourceTree = "<group>"; };
+		0165965B155BF7AD00DFB419 /* ToolsMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsMenuCell.m; sourceTree = "<group>"; };
 		018EA4411534EB450006FC9F /* SiteLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteLocation.h; sourceTree = "<group>"; };
 		018EA4421534EB450006FC9F /* SiteLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteLocation.m; sourceTree = "<group>"; };
 		018EA44D1535D9960006FC9F /* MaterialSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialSelect.h; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 		01BD2FB5155AC5D2006043D2 /* notes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notes@2x.png"; sourceTree = "<group>"; };
 		01BD2FB8155ACE42006043D2 /* compassrose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compassrose.png; sourceTree = "<group>"; };
 		01BD2FB9155ACE42006043D2 /* compassrose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compassrose@2x.png"; sourceTree = "<group>"; };
+		01BD2FBC155B11C7006043D2 /* ToolsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolsMenu.h; sourceTree = "<group>"; };
+		01BD2FBD155B11C8006043D2 /* ToolsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolsMenu.m; sourceTree = "<group>"; };
 		01DBF387153F1FBD009B6FAE /* RoundedUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedUIView.h; sourceTree = "<group>"; };
 		01DBF388153F1FBD009B6FAE /* RoundedUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedUIView.m; sourceTree = "<group>"; };
 		01DBF392153F4623009B6FAE /* RoundedUITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedUITableView.h; sourceTree = "<group>"; };
@@ -403,6 +409,8 @@
 				3579D2EF14D868B100D2E37F /* NotesFullViewController.m */,
 				3579D2F114DC6EC400D2E37F /* NotesNewViewController.h */,
 				3579D2F214DC6EC400D2E37F /* NotesNewViewController.m */,
+				358D944314BB399E007F4335 /* NotesView.h */,
+				358D944414BB399E007F4335 /* NotesView.m */,
 				358876EC146B1D2E007A157E /* ProjectSelection.h */,
 				358876ED146B1D2E007A157E /* ProjectSelection.m */,
 				35B8A3D31488300F000411D0 /* SiteInformation.h */,
@@ -421,6 +429,8 @@
 				01DBF3CD1541E1CF009B6FAE /* UpdateClient.m */,
 				01DBF3AC15409AB1009B6FAE /* WeatherSelect.h */,
 				01DBF3AD15409AB1009B6FAE /* WeatherSelect.m */,
+				01BD2FBC155B11C7006043D2 /* ToolsMenu.h */,
+				01BD2FBD155B11C8006043D2 /* ToolsMenu.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -430,8 +440,6 @@
 			children = (
 				3546A3CC15248C4B00A3D284 /* CrewMemberData.h */,
 				3546A3CD15248C4B00A3D284 /* CrewMemberData.m */,
-				358D944314BB399E007F4335 /* NotesView.h */,
-				358D944414BB399E007F4335 /* NotesView.m */,
 				35F2C7F3147C5DF400DBC988 /* ProjectData.h */,
 				35F2C7F4147C5DF400DBC988 /* ProjectData.m */,
 				01BD2F6715586781006043D2 /* UserData.h */,
@@ -459,6 +467,8 @@
 				01DBF388153F1FBD009B6FAE /* RoundedUIView.m */,
 				01DBF392153F4623009B6FAE /* RoundedUITableView.h */,
 				01DBF393153F4623009B6FAE /* RoundedUITableView.m */,
+				0165965A155BF7AD00DFB419 /* ToolsMenuCell.h */,
+				0165965B155BF7AD00DFB419 /* ToolsMenuCell.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -630,6 +640,8 @@
 				01BD2FAD155AB357006043D2 /* DbModel.xcdatamodeld in Sources */,
 				01BD2FAE155AB357006043D2 /* MaterialsEn.m in Sources */,
 				01BD2FAF155AB357006043D2 /* ReportsEn.m in Sources */,
+				01BD2FBE155B11C9006043D2 /* ToolsMenu.m in Sources */,
+				0165965C155BF7AD00DFB419 /* ToolsMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
