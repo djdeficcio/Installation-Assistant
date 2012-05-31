@@ -11,11 +11,12 @@
 
 @implementation SiteViews
 
+// Loads the overhead map of the user's current location in a webview. This is pretty much
+// everything that this controller does.
 - (void)displayCurrentLocation
 {
     
     NSString *url = @"http://173.61.46.253/ios/googleView.html";
-    //NSString *url = @"http://10.1.10.190/ios/googleView.html";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [googleView loadRequest:request];
     
@@ -56,6 +57,7 @@
     UIColor *background = [UIColor colorWithPatternImage:[UIImage imageNamed:@"brushedmetal.png"]];
     self.view.backgroundColor = background;
     
+    // Creates a refresh button
     UIBarButtonItem *refresh = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStyleBordered target:self action:@selector(displayCurrentLocation)];
     self.navigationItem.rightBarButtonItem = refresh;
     

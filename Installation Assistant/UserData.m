@@ -18,6 +18,7 @@ static UserData *_instance;
 
 #pragma mark Custom Methods
 
+// Saves the information for the currently logged in user, after they've been authenticated.
 - (void)assignUsername:(NSString *)username withFirstName:(NSString *)firstname andLastName:(NSString *)lastname andCtid:(NSString *)ctid
 {
     _username = username;

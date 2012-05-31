@@ -11,6 +11,9 @@
 
 @implementation DBGateway
 
+// Executes a given script.  Expects the value passed to be the name of the file in question,
+// and will add the rest of the url required to make the call.  This method expects that a 
+// response will be returned.
 - (NSMutableArray *)executeScript:(NSString *)script
 {
     NSString *urlString = [NSString stringWithFormat:@"%@%@", scriptUrl, script];
@@ -28,6 +31,8 @@
     return result;
 }
 
+// The same as the "executeScript" method, although this also adds POST data.  This method expects
+// that a response will be returned.
 - (NSMutableArray *)executeScript:(NSString *)script withPOSTData:(NSData *)data
 {
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@", scriptUrl, script]];
@@ -49,6 +54,8 @@
     return returnedArray;
 }
 
+// The same as the "executeScript" method, except that this method does not accept
+// returned data.  
 - (void)executeNonReturningScript:(NSString *)script
 {
     NSString *urlString = [NSString stringWithFormat:@"%@%@", scriptUrl, script];
@@ -65,6 +72,7 @@
     
 }
 
+// The same as the "executeNonReturningScript," although this also adds POST data.  
 - (void)executeNonReturningScript:(NSString *)script withPOSTData:(NSData *)data
 {
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%@", scriptUrl, script]];
@@ -81,12 +89,10 @@
         if (error) {
             NSLog(@"Error: %@", error);
         }
-    }];    
-    
-    
-    
+    }];      
 }
 
+// Accepts an NSDictionary and a script to execute, and returns the response.
 - (NSMutableArray *)getJSONDataForDict:(NSDictionary *)jsonDict fromScriptFile:(NSString *)scriptFile
 {
     NSError *error;
@@ -97,6 +103,8 @@
     return returnedData;
 }
 
+// Returns the crew leaders for a given state.  The crew leaders are selected from the "Crew 
+// Tracker" web applications.
 - (NSMutableArray *)getCrewLeadersForState:(NSString *)state
 {
     NSString *scriptString = [NSString stringWithFormat:@"retrieveCrewLeaders.php"];
@@ -108,6 +116,8 @@
     return crewLeaders;
 }
 
+// Returns the crew members for a given state.  The crew members are selected from the "Crew
+// Tracker" web applications.
 - (NSMutableArray *)getCrewMembersForState:(NSString *)state
 {
     NSString *scriptString = [NSString stringWithFormat:@"retrieveCrewMembers.php"];
@@ -119,6 +129,8 @@
     return crewMembers;
 }
 
+// Returns both the crew leaders and members for a given state.  These folks are selected 
+// from the "Crew Tracker" web application.
 - (NSMutableArray *)getAllFieldCrewForState:(NSString *)state
 {
     NSString *scriptString = [NSString stringWithFormat:@"retrieveFieldCrew.php"];
@@ -132,6 +144,7 @@
     return fieldCrew;
 }
 
+// Submits a report generated from the project reports screen, which is actually named "SiteLocation."
 - (void)submitReport:(NSDictionary *)report
 {
     NSString *scriptString = [NSString stringWithFormat:@"submitReport.php"];
@@ -141,6 +154,7 @@
     [self executeNonReturningScript:scriptString withPOSTData:jsonData];
 }
 
+// Returns an NSURLRequest for the S1 for the given project.  This is then loaded into a UIWebView.
 - (NSURLRequest *)getProjectS1Request:(NSString *)projectID
 {
     NSString *urlString = [NSString stringWithFormat:@"%@retrieveS1.php?id=%@", scriptUrl, projectID];
@@ -152,6 +166,7 @@
     return request;
 }
 
+// Returns an NSURLRequest for the E1 for the given project.  This is then loaded into a UIWebView.
 - (NSURLRequest *)getProjectE1Request:(NSString *)projectID
 {
     NSString *urlString = [NSString stringWithFormat:@"%@retrieveE1.php?id=%@", scriptUrl, projectID];
@@ -163,6 +178,7 @@
     return request;
 }
 
+// Inserts a new note into the database.
 - (void)enterNewNote:(NSDictionary *)note
 {
     NSError *error = nil;
@@ -171,6 +187,7 @@
     [self executeNonReturningScript:@"notesViewNewEntry.php" withPOSTData:jsonData];
 }
 
+// Returns the notes for a given project.
 - (NSArray *)getNotesForProject:(NSString *)projectID
 {
     NSString *urlString = [NSString stringWithFormat:@"notesViewNoteRetrieval.php?id=%@", projectID];

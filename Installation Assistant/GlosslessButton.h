@@ -5,6 +5,7 @@
 //  Created by DJ DeFiccio on 11/28/11.
 //  Copyright (c) 2011 Solular, LLC. All rights reserved.
 //
+//  A glossless gradient-colored button based off of the Ray Wenderlich tutorial.
 
 #import <UIKit/UIKit.h>
 

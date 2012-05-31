@@ -5,6 +5,10 @@
 //  Created by DJ DeFiccio on 11/29/11.
 //  Copyright (c) 2011 Solular, LLC. All rights reserved.
 //
+//  This is the app's home screen.  It uses Core Data to provide a 
+//  network agnostic way of logging in.  The user information stored is also
+//  used as a replacement for Device ID's, since Apple felt the need to get
+//  rid of those.
 
 #import <UIKit/UIKit.h>
 

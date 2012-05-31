@@ -48,6 +48,8 @@ static ProjectData *_instance;
 {
     self = [super init];
     
+    // The following variables are used in the "Project Information" screen to populate the double column tables.
+    
     dataPackage = [[NSMutableArray alloc] init];
     
     dataLabelPackage = [[NSArray alloc] initWithObjects:@"Contact:", @"Phone:", @"Township:", @"Site \nAddress:", @"Utility Company:", @"Township Phone:", nil];
@@ -59,6 +61,7 @@ static ProjectData *_instance;
     return self;
 }
 
+// Populates the data and tech packages, which are then used to populate the dual column tables on the "Information" page.
 - (void)packageData
 {
     dataPackage = [NSMutableArray arrayWithObjects:primaryContact, contactPhoneNumber, township, siteAddress, utilityCompany, townshipPhoneNumber, nil];

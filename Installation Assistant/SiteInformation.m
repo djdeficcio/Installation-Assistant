@@ -44,15 +44,21 @@
 {
     [super viewDidLoad];
     
+    // Saves the ProjectData singleton as a local variable.  Some tutorials told me to do this, but I'm not convinced
+    // that it's necessary.
     ProjectData *projectData = [ProjectData sharedInstance];
     
+    // Creating an array of the information displayed in the top dual column view. 
+    // This includes the contact person, their phone number, the site address, utility company, township, and township phone number.
     dataPackage = [NSArray arrayWithArray:[projectData dataPackage]];
     
+    // Creating the table and populating it.
     DualColumnTable *dataTable = [[DualColumnTable alloc] initWithFrame:CGRectMake(50, 50, 668, 300) AndNumberOfRows:3 WithRowHeight:100];
     [dataTable populateCellsWithLabels:[projectData dataLabelPackage] AndValues:[projectData dataPackage]];
     
     [self.view addSubview:dataTable];
     
+    // Creating the bottom table and populating it.
     techTable = [[DualColumnTable alloc] initWithFrame:CGRectMake(50, 400, 668, 460) AndNumberOfRows:8 WithRowHeight:100];
     [techTable populateCellsWithLabels:[projectData techLabelPackage] AndValues:[projectData techPackage]];
     

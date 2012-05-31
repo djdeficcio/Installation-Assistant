@@ -103,6 +103,7 @@
         return __persistentStoreCoordinator;
     }
     
+    //Core data is primarily used to store the login information in an sqlite file.
     NSURL *storeURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"AssistantUsers" ofType:@"sqlite"]];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {

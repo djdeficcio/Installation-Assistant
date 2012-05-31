@@ -17,6 +17,7 @@
     [self.delegate editMaterialControllerDidCancel:self];
 }
 
+// This gets the current input values for the material name, quantity, and date, and sends them back to the delegate.
 - (IBAction)save:(id)sender
 {
     NSString *materialName = [name text];
@@ -58,6 +59,7 @@
 {
     [super viewDidLoad];
     
+    // Loading the current values for the material that's being edited.
     self.name.text = [_selectedMaterial objectForKey:@"name"];
     self.quantity.text = [_selectedMaterial objectForKey:@"quantity"];    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

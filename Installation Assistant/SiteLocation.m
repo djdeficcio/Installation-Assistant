@@ -31,7 +31,11 @@
 #pragma mark Custom Methods
 
 - (IBAction)submit:(id)sender {
+    // The reachability object is provided by apple, and is used to check the internet connection
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    
+    // If we have an internet connection, the report is saved as an NSMutableDictionary and sent via the Gateway.
+    // All report fields are then cleared.
     if ([reachability currentReachabilityStatus] != NotReachable) {
         NSMutableDictionary *dataPackage = [self packageReport];
         NSLog(@"Data Package: %@", dataPackage);
@@ -41,12 +45,15 @@
         [alert show];
         [self clearReportForm];
     }
+    
+    // If there is no connection, display an alert stating as much.  
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You do not have a valid internet connection.  Please try again later." delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil];
         [alert show];
     }
 }
 
+// Collects the report information from the various UI elements and saves it as a dictionary.
 - (NSMutableDictionary *)packageReport
 {
     NSMutableDictionary *report = [[NSMutableDictionary alloc] init];
@@ -93,6 +100,7 @@
     return report;    
 }
 
+// Once a report is successfully submitted, all of the relevant UI fields and class variables are cleared/reset/murdered horribly.
 - (void)clearReportForm
 {
     self.noteTextView.text = nil;
@@ -113,6 +121,7 @@
     }
 }
 
+// Refreshes the current location.  Displays a pretty blue animation too.
 - (void)refreshLocation
 {
     self.currentLocationView.backgroundColor = [UIColor colorWithRed:134.0/255.0 green:212.0/255.0 blue:253.0/255.0 alpha:1.0];
@@ -123,12 +132,14 @@
     [locationManager startUpdatingLocation];
 }
 
+// Changes the table accessory for a given row and table section.
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
     [[self.TaskList cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
 }
 
+// Changes the table accessory and detail text for a given row and table section.
 - (void)updateTableCellAccessoryAtRow:(NSInteger)row inSection:(NSInteger)section withDetail:(NSString *)detail
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];

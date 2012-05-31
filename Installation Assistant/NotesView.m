@@ -20,6 +20,8 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+// Uses the Gateway to retrieve a list of notes for the project, and saves them to the
+// relevant class variable.
 - (void)retrieveNotes:(NSString *)projectID
 {    
     DBGateway *gateway = [[DBGateway alloc] init];
@@ -29,6 +31,7 @@
     NSLog(@"Notes: %@", _notes);
 }
 
+// Re-downloads the notes for the current project, then updates the note table.
 - (void)refreshNotes:(NSString *)projectID
 {
     [self retrieveNotes:projectID];
@@ -37,11 +40,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // Set the note ID for the new note.
     if ([segue.identifier isEqualToString:@"NewNote"]) {
         NotesNewViewController *controller = segue.destinationViewController;
         controller.noteID = [NSString stringWithFormat:@"%d", [_notes count]];
     }
     
+    // Populate the views for the selected note.
     if ([segue.identifier isEqualToString:@"FullNote"]) {
         NotesFullViewController *controller = segue.destinationViewController;
         NotesViewCell *cell = (NotesViewCell *)[self.tableView cellForRowAtIndexPath:selectedNotePath];
@@ -104,6 +109,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Save the selected indexpath, and load the FullNote view controller with that note.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     selectedNotePath = indexPath;
     [self performSegueWithIdentifier:@"FullNote" sender:self];

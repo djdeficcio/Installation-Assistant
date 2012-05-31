@@ -39,6 +39,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Styles the text view a bit.  In the event that a message has already been saved, it
+    // prepopulates the text view with that message.
     self.updateTextView.layer.cornerRadius = 10;
     self.updateTextView.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.updateTextView.layer.borderWidth = 2;

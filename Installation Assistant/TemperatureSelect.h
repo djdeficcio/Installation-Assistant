@@ -5,6 +5,9 @@
 //  Created by Solular on 4/20/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  Part of the reports feature, this is the view controller used for selecting the temperature.
+//  It declares a protocol used to pass the selected temperature back to the view controller
+//  that called it.
 
 #import <UIKit/UIKit.h>
 

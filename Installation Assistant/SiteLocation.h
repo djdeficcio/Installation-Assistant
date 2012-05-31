@@ -5,6 +5,9 @@
 //  Created by Solular on 4/10/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  Don't let the class name fool you, this view controller is responsible for the reports feature.
+//  It uses the Gateway to send the report to the server, with the information for the report being 
+//  taken from a lot of different UI elements.
 
 #import <UIKit/UIKit.h>
 #import "CoreLocation/CoreLocation.h"

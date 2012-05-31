@@ -5,6 +5,10 @@
 //  Created by DJ DeFiccio on 2/3/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  The view controller used for entering new notes.  Provides an
+//  interface for the user to type the note information into, and then
+//  sends the finished note and other relevant data to the server via
+//  the gateway.
 
 #import <UIKit/UIKit.h>
 

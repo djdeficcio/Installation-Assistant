@@ -14,6 +14,7 @@
 @implementation CrewMembers
 @synthesize delegate;
 
+// Adds all currently selected crew members to the "CrewMemberData" singleton.
 - (void)confirmSelection
 {
     [[CrewMemberData sharedInstance] resetCrewMembers];
@@ -72,6 +73,8 @@
     [self.delegate crewMembersControllerDidCancel:self];
 }
 
+// Saves all currently selected crew members to the "CrewMemberData" singleton, and calls
+// a delegate method.
 - (IBAction)save:(id)sender {
     [self confirmSelection];
     [self.delegate crewMembersControllerDidSave:self];

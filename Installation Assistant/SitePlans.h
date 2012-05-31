@@ -5,6 +5,7 @@
 //  Created by DJ DeFiccio on 12/1/11.
 //  Copyright (c) 2011 Solular, LLC. All rights reserved.
 //
+//  Loads the site plans for the selected project into a web view.
 
 #import <UIKit/UIKit.h>
 

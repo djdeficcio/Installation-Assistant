@@ -5,6 +5,7 @@
 //  Created by Solular on 4/12/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  The cell used for the material lists.  Contains labels for the name, quantity ordered, and date requested for.
 
 #import <UIKit/UIKit.h>
 

@@ -26,6 +26,7 @@
     [popoverController presentPopoverFromRect:CGRectMake(730, 0, toolsButton.width, 1) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 }
 
+// Performs a segue based on the option selected, and dismisses the popover.
 - (void)toolsMenuToolSelected:(NSInteger)toolRow
 {
     [popoverController dismissPopoverAnimated:YES];

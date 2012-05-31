@@ -5,6 +5,11 @@
 //  Created by DJ DeFiccio on 3/29/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  The view controller used for selecting the crew leader.  This is most
+//  commonly used as part of the reports screen, although it is fairly modular
+//  and can be pretty safely used elsewhere.  It delcares a delegate method that
+//  sends the selected crew leader (including name and ID) back to the view controller
+//  that called it.
 
 #import <UIKit/UIKit.h>
 

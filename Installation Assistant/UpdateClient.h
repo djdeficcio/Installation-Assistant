@@ -5,6 +5,9 @@
 //  Created by Solular on 4/20/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  The view controller that controls the client update part of the reports feature.
+//  Declares a protocol used to pass the information entered back to the view 
+//  controller that called it.
 
 #import <UIKit/UIKit.h>
 
@@ -25,7 +28,6 @@
 @property (weak, nonatomic) id <updateClientControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *updatedControl;
 @property (strong, nonatomic) IBOutlet UITextView *notesTextView;
-
 @property (assign, nonatomic) NSInteger updatedIndex;
 @property (retain, nonatomic) NSString *updatedNotes;
 

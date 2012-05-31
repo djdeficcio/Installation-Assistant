@@ -5,6 +5,7 @@
 //  Created by Solular on 5/7/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  This singleton contains information about the currently logged in user.
 
 #import <Foundation/Foundation.h>
 

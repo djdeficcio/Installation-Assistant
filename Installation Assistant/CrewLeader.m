@@ -88,6 +88,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// Saves the selected crew member to the "CrewMemberData" singleton, and calls a delegate method
+// that dismisses itself.
 - (IBAction)save:(id)sender {
     if ([selectedLeader count] > 0) {
         [[CrewMemberData sharedInstance] setCrewLeaderWithFirstName:[selectedLeader objectForKey:@"first_name"] LastName:[selectedLeader objectForKey:@"last_name"] AndId:[selectedLeader objectForKey:@"member_id"]];
@@ -106,6 +108,8 @@
         
         DBGateway *gateway = [[DBGateway alloc] init];
         
+        // Populates two arrays with the crew leaders and members returned from the "Crew Tracker"
+        // web application.
         crewLeaders = [gateway getCrewLeadersForState:[[ProjectData sharedInstance] siteState]];
         crewMembers = [gateway getCrewMembersForState:[[ProjectData sharedInstance] siteState]];
     }

@@ -5,6 +5,11 @@
 //  Created by Solular on 4/11/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  The view controller used for displaying the current list of selected materials.
+//  This class is used primarily for selecting a list of materials to request as part
+//  of the reports feature.
+//  Declares delegate methods for saving the list of materials back to the view
+//  controller that called it.
 
 #import <UIKit/UIKit.h>
 #import "AddMaterial.h"

@@ -5,6 +5,8 @@
 //  Created by DJ DeFiccio on 4/2/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+// The view controller used for selecting crew members.  Declares delegate
+// methods used to return the selected crew members to the view controller that called it.
 
 #import <UIKit/UIKit.h>
 

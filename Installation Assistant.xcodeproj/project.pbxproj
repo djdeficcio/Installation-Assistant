@@ -56,7 +56,6 @@
 		3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3CD15248C4B00A3D284 /* CrewMemberData.m */; };
 		3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D31524BDDC00A3D284 /* CrewLeader.m */; };
 		3546A3DA1529D33A00A3D284 /* CrewMembers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3546A3D91529D33A00A3D284 /* CrewMembers.m */; };
-		35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35655EA215238C0700E7BAEB /* HomeScreenView.m */; };
 		3579D2F014D868B100D2E37F /* NotesFullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2EF14D868B100D2E37F /* NotesFullViewController.m */; };
 		3579D2F314DC6EC400D2E37F /* NotesNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3579D2F214DC6EC400D2E37F /* NotesNewViewController.m */; };
 		3579D2F814E1796500D2E37F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3579D2F714E1796500D2E37F /* MessageUI.framework */; };
@@ -81,7 +80,6 @@
 		358D944214B626AB007F4335 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 358D944114B626AB007F4335 /* CoreLocation.framework */; };
 		358D944514BB399F007F4335 /* NotesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358D944414BB399E007F4335 /* NotesView.m */; };
 		35A1A71F14CF3F6F009A604F /* NotesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A1A71E14CF3F6E009A604F /* NotesViewCell.m */; };
-		35B8A3C41483C3FE000411D0 /* MenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8A3C31483C3FE000411D0 /* MenuBar.m */; };
 		35B8A3CC1483D3A2000411D0 /* GlosslessButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8A3CB1483D3A2000411D0 /* GlosslessButton.m */; };
 		35B8A3CF1485792D000411D0 /* HomeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8A3CE1485792D000411D0 /* HomeScreen.m */; };
 		35B8A3D51488300F000411D0 /* SiteInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B8A3D41488300F000411D0 /* SiteInformation.m */; };
@@ -174,8 +172,6 @@
 		3546A3D31524BDDC00A3D284 /* CrewLeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewLeader.m; sourceTree = "<group>"; };
 		3546A3D81529D33900A3D284 /* CrewMembers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrewMembers.h; sourceTree = "<group>"; };
 		3546A3D91529D33A00A3D284 /* CrewMembers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrewMembers.m; sourceTree = "<group>"; };
-		35655EA115238C0700E7BAEB /* HomeScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreenView.h; sourceTree = "<group>"; };
-		35655EA215238C0700E7BAEB /* HomeScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeScreenView.m; sourceTree = "<group>"; };
 		3579D2EE14D868B100D2E37F /* NotesFullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesFullViewController.h; sourceTree = "<group>"; };
 		3579D2EF14D868B100D2E37F /* NotesFullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesFullViewController.m; sourceTree = "<group>"; };
 		3579D2F114DC6EC400D2E37F /* NotesNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesNewViewController.h; sourceTree = "<group>"; };
@@ -211,8 +207,6 @@
 		358D944414BB399E007F4335 /* NotesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesView.m; sourceTree = "<group>"; };
 		35A1A71D14CF3F6E009A604F /* NotesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesViewCell.h; sourceTree = "<group>"; };
 		35A1A71E14CF3F6E009A604F /* NotesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewCell.m; sourceTree = "<group>"; };
-		35B8A3C21483C3FE000411D0 /* MenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBar.h; sourceTree = "<group>"; };
-		35B8A3C31483C3FE000411D0 /* MenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBar.m; sourceTree = "<group>"; };
 		35B8A3CA1483D3A2000411D0 /* GlosslessButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlosslessButton.h; sourceTree = "<group>"; };
 		35B8A3CB1483D3A2000411D0 /* GlosslessButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlosslessButton.m; sourceTree = "<group>"; };
 		35B8A3CD1485792D000411D0 /* HomeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScreen.h; sourceTree = "<group>"; };
@@ -463,8 +457,6 @@
 				35F2C7EA147565EC00DBC988 /* GlossyButton.m */,
 				35B8A3CA1483D3A2000411D0 /* GlosslessButton.h */,
 				35B8A3CB1483D3A2000411D0 /* GlosslessButton.m */,
-				35B8A3C21483C3FE000411D0 /* MenuBar.h */,
-				35B8A3C31483C3FE000411D0 /* MenuBar.m */,
 				35B8A3E3148EBF8A000411D0 /* DualColumnTable.h */,
 				35B8A3E4148EBF8A000411D0 /* DualColumnTable.m */,
 				35B8A3E6148FE5CD000411D0 /* DualColumnCell.h */,
@@ -500,8 +492,6 @@
 		35E8E6D61517C8A100B62B2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				35655EA115238C0700E7BAEB /* HomeScreenView.h */,
-				35655EA215238C0700E7BAEB /* HomeScreenView.m */,
 				01EAEA40153763170047842F /* MaterialListCell.h */,
 				01EAEA41153763170047842F /* MaterialListCell.m */,
 				01DBF3C91541E0CA009B6FAE /* RoundedUIButton.h */,
@@ -609,7 +599,6 @@
 				358876FF146C3DF3007A157E /* Common.m in Sources */,
 				35F2C7EB147565EC00DBC988 /* GlossyButton.m in Sources */,
 				35F2C7F5147C5DF400DBC988 /* ProjectData.m in Sources */,
-				35B8A3C41483C3FE000411D0 /* MenuBar.m in Sources */,
 				35B8A3CC1483D3A2000411D0 /* GlosslessButton.m in Sources */,
 				35B8A3CF1485792D000411D0 /* HomeScreen.m in Sources */,
 				35B8A3D51488300F000411D0 /* SiteInformation.m in Sources */,
@@ -623,7 +612,6 @@
 				35A1A71F14CF3F6F009A604F /* NotesViewCell.m in Sources */,
 				3579D2F014D868B100D2E37F /* NotesFullViewController.m in Sources */,
 				3579D2F314DC6EC400D2E37F /* NotesNewViewController.m in Sources */,
-				35655EA315238C0700E7BAEB /* HomeScreenView.m in Sources */,
 				3546A3CB15239CFD00A3D284 /* DBGateway.m in Sources */,
 				3546A3CE15248C4C00A3D284 /* CrewMemberData.m in Sources */,
 				3546A3D41524BDDC00A3D284 /* CrewLeader.m in Sources */,

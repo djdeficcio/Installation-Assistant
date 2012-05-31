@@ -5,6 +5,9 @@
 //  Created by Solular on 4/19/12.
 //  Copyright (c) 2012 Solular, LLC. All rights reserved.
 //
+//  The view controller that controls the weather selection part of the reports feature.
+//  Declares a protocol used to pass the selected weather back to the view controller
+//  that called it.
 
 #import <UIKit/UIKit.h>
 

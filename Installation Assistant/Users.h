@@ -5,6 +5,7 @@
 //  Created by Solular on 5/7/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
+//  The core data object used to store the login information to get into the app.
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>

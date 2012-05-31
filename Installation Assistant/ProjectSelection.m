@@ -22,6 +22,7 @@
     [self loadProjectNames];
 }
 
+// Retrieves a list of the currently active projects from Redmine on the server.
 - (void)loadProjectNames
 {
     NSLog(@"Loading projects...");
@@ -42,6 +43,7 @@
     });
 }
 
+// Saves the retrieved list of projects to a class variable and reloads the table displaying them.
 - (void)processProjectNames:(NSData *)responseData {
     NSError* error;
     
@@ -56,6 +58,7 @@
 
 }
 
+// Retrieves the data for a specific project.
 - (void)loadProjectData:(NSInteger)projectRow
 {
     NSLog(@"Loading project data...");
@@ -78,6 +81,7 @@
     });
 }
 
+// Saves the retrieved project data to the ProjectData singleton.
 - (void)processProjectData:(NSData *)responseData
 {
     ProjectData *projectData = [ProjectData sharedInstance];

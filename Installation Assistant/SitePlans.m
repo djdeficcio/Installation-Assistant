@@ -28,6 +28,7 @@
     }
 }
 
+// Handles showing and hiding the segmented control used for selecting plans.
 - (void)showOrHideMenu
 {
     if (self.planSelector.hidden == YES) {
@@ -46,12 +47,14 @@
     }
 }
 
+// Shows the S1 plan, and hides the E1.
 - (void)showS1View
 {
     [self.s1View setHidden:NO];
     [self.e1View setHidden:YES];
 }
 
+// Shows the E1 plan, and hides the S1.
 - (void)showE1View
 {
     [self.e1View setHidden:NO];
@@ -95,9 +98,11 @@
 {
     [super viewDidLoad];
     
+    // Add the gesture recognizor that shows/hides the segmented control.
     UITapGestureRecognizer *manageMenu = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showOrHideMenu)];
     [self.mainView addGestureRecognizer:manageMenu];
     
+    // Populate our plan views.
     DBGateway *gateway = [[DBGateway alloc] init];
     NSURLRequest *s1Request = [gateway getProjectS1Request:[[ProjectData sharedInstance]projectID]];
     [self.s1View loadRequest:s1Request];

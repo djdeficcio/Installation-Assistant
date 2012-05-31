@@ -19,6 +19,7 @@
     [self.delegate addMaterialControllerDidCancel:self];
 }
 
+// Saves the currently input material, and passes it back to the delegate.
 - (IBAction)save:(id)sender
 {
     NSString *materialName = [name text];

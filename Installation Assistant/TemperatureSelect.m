@@ -25,6 +25,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+        // Unfortunately, this view is created entirely from code.  
         self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.view.backgroundColor = [UIColor lightTextColor];
         

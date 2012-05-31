@@ -5,6 +5,7 @@
 //  Created by Ray Wenderlich on 9/29/10.
 //  Copyright 2010 Ray Wenderlich. All rights reserved.
 //
+//A file of commonly used functions.  God bless Ray Wenderlich.
 
 #import <Foundation/Foundation.h>
 

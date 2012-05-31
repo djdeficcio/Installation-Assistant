@@ -5,6 +5,9 @@
 //  Created by DJ DeFiccio on 11/9/11.
 //  Copyright (c) 2011 Solular, LLC. All rights reserved.
 //
+//  The view controller that handles project selection.  The only part of the app that
+//  makes calls to the server without using the Gateway, this first retrieves a list of projects and their IDs 
+//  and populates a tableview with them.  When one is selected, it retrieves all of the data for that project.
 
 
 #define serverQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
