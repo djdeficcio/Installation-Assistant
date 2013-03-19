@@ -8,7 +8,6 @@
 
 
 #import "ProjectSelection.h"
-#import "MenuBar.h"
 #import "GlosslessButton.h"
 #import "Quartzcore/Quartzcore.h"
 #import "Common.h"
@@ -66,7 +65,7 @@
     [[ProjectData sharedInstance] setProjectID:[[projects valueForKey:@"id"] objectAtIndex:projectRow]];
     
     dispatch_sync(serverQueue, ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://173.61.46.253/ios/retrieveProjectData.php?id=%@", [[ProjectData sharedInstance] projectID]]]];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://173.61.254.66/ios/retrieveProjectData.php?id=%@", [[ProjectData sharedInstance] projectID]]]];
         
         if (data != NULL && data != nil) 
         {

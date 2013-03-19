@@ -16,7 +16,7 @@
 - (void)displayCurrentLocation
 {
     
-    NSString *url = @"http://173.61.46.253/ios/googleView.html";
+    NSString *url = @"http://173.61.254.66/ios/googleView.html";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [googleView loadRequest:request];
     

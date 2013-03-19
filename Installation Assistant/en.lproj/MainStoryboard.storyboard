@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="40J-GD-NjT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="40J-GD-NjT">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Home Screen-->
         <scene sceneID="pSV-wr-WwJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AYS-M7-DqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3yd-YX-Fg7" customClass="HomeScreen" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Naw-st-ydA">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -96,13 +93,13 @@
                         <segue destination="ojG-or-INy" kind="push" identifier="selectProjectSegue" id="Agl-Oy-bhZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AYS-M7-DqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-318" y="-236"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lK4-d4-kaD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GXb-yg-PXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="40J-GD-NjT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="44O-LA-uZP">
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,13 +108,13 @@
                         <segue destination="3yd-YX-Fg7" kind="relationship" relationship="rootViewController" id="lsR-QN-Lek"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXb-yg-PXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1294" y="-236"/>
         </scene>
         <!--Project Selection-->
         <scene sceneID="BHZ-U5-D39">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ie-VK-rVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ojG-or-INy" userLabel="Project Selection" customClass="ProjectSelection" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6VE-CB-LFg">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -152,13 +149,13 @@
                         <segue destination="rYz-qu-Fyw" kind="push" identifier="mainScreenSegue" id="Bev-2M-tcm"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ie-VK-rVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="654" y="-236"/>
         </scene>
         <!--Site Views - Views-->
         <scene sceneID="Qiw-aN-Nc1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n3d-gY-R4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="CyR-t8-sZT" customClass="SiteViews" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jgf-j5-xVD">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
@@ -177,13 +174,13 @@
                         <outlet property="googleView" destination="Udw-2p-Y2k" id="PSI-e4-X2o"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3d-gY-R4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3235" y="-236"/>
         </scene>
         <!--Site Plans - Plans-->
         <scene sceneID="IkK-8Y-NxS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7cA-wK-BFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2hP-W3-fnq" customClass="SitePlans" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="siS-hB-tGh">
                         <rect key="frame" x="0.0" y="64" width="768" height="916"/>
@@ -223,20 +220,20 @@
                         <outlet property="s1View" destination="2dR-io-WhV" id="efi-Wk-uc0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cA-wK-BFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3235" y="1007"/>
         </scene>
         <!--Notes New View Controller-->
         <scene sceneID="wpr-yf-0E6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GpW-lO-fsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hUM-3x-fjr" customClass="NotesNewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5TG-6i-TJg">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="GpQ-In-b8F" customClass="RoundedUIView">
-                                <rect key="frame" x="20" y="20" width="200" height="110"/>
+                                <rect key="frame" x="20" y="20" width="200" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entered By:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Dtf-fa-gcI">
@@ -257,7 +254,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="2cd-Uz-0da" customClass="RoundedUIView">
-                                <rect key="frame" x="320" y="20" width="200" height="110"/>
+                                <rect key="frame" x="320" y="20" width="200" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entered On:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7qV-o6-hY5">
@@ -307,20 +304,20 @@
                         <outlet property="userLabel" destination="XIj-G0-ekO" id="MtO-Ox-jt6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GpW-lO-fsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3419" y="-3186"/>
         </scene>
         <!--Notes Full View Controller-->
         <scene sceneID="RYS-2o-P3V">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Keu-De-zyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jcd-iu-XIA" customClass="NotesFullViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyO-F2-fhV">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="dm8-jr-v9U" customClass="RoundedUIView">
-                                <rect key="frame" x="20" y="20" width="200" height="110"/>
+                                <rect key="frame" x="20" y="20" width="200" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entered By:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="OUr-mW-pgI">
@@ -341,7 +338,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="fmD-IL-Cuc" customClass="RoundedUIView">
-                                <rect key="frame" x="320" y="20" width="200" height="110"/>
+                                <rect key="frame" x="320" y="20" width="200" height="90"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Entered On:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Jh3-H4-ABj">
@@ -385,13 +382,13 @@
                         <outlet property="userLabel" destination="0Jr-nM-gc5" id="sm6-MF-QLn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Keu-De-zyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3419" y="-2420"/>
         </scene>
         <!--Site Location - Reports-->
         <scene sceneID="2gJ-6D-mFy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sEe-eH-piE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sHs-hq-4xs" customClass="SiteLocation" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ca-gD-jsb">
                         <rect key="frame" x="0.0" y="64" width="768" height="916"/>
@@ -569,13 +566,13 @@
                         <segue destination="AvG-IM-xh9" kind="modal" identifier="UpdateManager" modalPresentationStyle="formSheet" id="OzO-7n-ZT3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEe-eH-piE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4232" y="-3781"/>
         </scene>
         <!--Crew Members-->
         <scene sceneID="fus-nZ-4Hv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U61-7e-G0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wYC-L3-cJh" customClass="CrewMembers" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q09-Ln-aXS">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
@@ -624,16 +621,16 @@
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U61-7e-G0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5464" y="-2727"/>
         </scene>
         <!--Material Select - Materials-->
         <scene sceneID="6DZ-0t-LSx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-sS-xGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="eNs-ri-Snd" customClass="MaterialSelect" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="X04-gc-vsu">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -697,16 +694,16 @@
                         <segue destination="QDE-Kn-lba" kind="push" identifier="EditMaterial" id="OSN-sC-3oy"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-sS-xGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6438" y="-4309"/>
         </scene>
         <!--Add Material - Add a Material-->
         <scene sceneID="6wD-Vs-aaU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hq1-qf-hmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="CtK-VA-DYp" customClass="AddMaterial" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxp-50-H13">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" id="EGd-Gy-1mB">
@@ -787,13 +784,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="quantity" destination="dgT-b3-MT2" id="Rei-Gz-CMU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hq1-qf-hmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7624" y="-4781"/>
         </scene>
         <!--Site Information - Information-->
         <scene sceneID="vCu-sh-9Xf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ElW-vC-T1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KXF-Bc-FD2" customClass="SiteInformation" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="udf-Ei-UyK">
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
@@ -808,13 +805,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <tabBarItem key="tabBarItem" title="Information" image="33-cabinet.png" id="VIN-13-XTo"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ElW-vC-T1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3235" y="-1466"/>
         </scene>
         <!--Compass View-->
         <scene sceneID="3EL-n8-PdF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmf-Jn-C8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Oj5-rQ-wdi" customClass="CompassView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALp-HV-96S">
                         <rect key="frame" x="0.0" y="20" width="540" height="600"/>
@@ -874,16 +871,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="targetLabel" destination="I2Y-h9-Pav" id="VO8-7e-7v9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmf-Jn-C8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1100" y="-2694"/>
         </scene>
         <!--Notes View - All Notes-->
         <scene sceneID="LdV-oG-4SF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="74e-CB-X9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="TQR-KL-S6o" customClass="NotesView" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" id="6TB-iM-tvI">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -953,13 +950,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="jcd-iu-XIA" kind="push" identifier="FullNote" id="FiO-mS-Tor"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74e-CB-X9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2646" y="-2694"/>
         </scene>
         <!--Site Tab Controller - Project-->
         <scene sceneID="izI-ac-AOq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dZ3-x1-2kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="rYz-qu-Fyw" customClass="SiteTabController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Project" id="I62-FU-cS3">
                         <barButtonItem key="rightBarButtonItem" title="Tools" id="yeq-Ra-CHW">
@@ -983,13 +980,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="HyW-80-ExF" kind="modal" identifier="NotesSegue" modalPresentationStyle="formSheet" id="XMk-JZ-VIU"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZ3-x1-2kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1867" y="-236"/>
         </scene>
         <!--Crew Leader-->
         <scene sceneID="hwv-4d-C2P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WzT-mX-2g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="HCP-WX-Ded" customClass="CrewLeader" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Yz-mr-57W">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
@@ -1041,13 +1038,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="crewLeaderList" destination="p1K-XD-avy" id="LQo-Qu-Z5t"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WzT-mX-2g2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5464" y="-3495"/>
         </scene>
         <!--Update Client-->
         <scene sceneID="Rla-CK-GJT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vBu-CO-Cv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LIg-sO-Ivp" customClass="UpdateClient" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tcn-Wj-sH2">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
@@ -1101,13 +1098,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="updatedControl" destination="DdH-Hp-gxV" id="xKz-q4-Gfw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBu-CO-Cv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5464" y="-5879"/>
         </scene>
         <!--Manager Update-->
         <scene sceneID="Ppo-fI-QUB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-Y9-M8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="AvG-IM-xh9" customClass="ManagerUpdate" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HcP-38-ePN">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
@@ -1145,16 +1142,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="updateTextView" destination="pIY-Ug-wE4" id="fC8-MS-Wpe"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-Y9-M8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5464" y="-5106"/>
         </scene>
         <!--Edit Material - Edit a Material-->
         <scene sceneID="9Ld-AF-bzB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ET0-WY-fOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QDE-Kn-lba" customClass="EditMaterial" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAJ-f1-iP3">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" minimumFontSize="10" id="Um2-HO-71r">
@@ -1235,13 +1232,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="quantity" destination="bbH-F1-Jlt" id="Eqx-fX-3pf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ET0-WY-fOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7624" y="-3900"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zUA-rk-JXL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmd-P5-zfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="vHw-tc-cCo" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1dm-Cz-Alx">
@@ -1253,13 +1250,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="eNs-ri-Snd" kind="relationship" relationship="rootViewController" id="LIn-rz-kCc"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmd-P5-zfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5464" y="-4309"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7dl-eA-Q7J">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyl-gY-edD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="HyW-80-ExF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fBq-vt-o3M">
@@ -1271,6 +1268,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="TQR-KL-S6o" kind="relationship" relationship="rootViewController" id="4dY-ov-KBa"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyl-gY-edD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1968" y="-2694"/>
         </scene>
@@ -1285,176 +1283,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="compassrose.png" width="300" height="300"/>
         <image name="solular logo.png" width="689" height="378"/>
     </resources>
-    <classes>
-        <class className="AddMaterial" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddMaterial.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="quantity" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CompassView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassView.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-                <relationship kind="outlet" name="compassImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="currentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="targetLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CrewLeader" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CrewLeader.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="crewLeaderList" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CrewMembers" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CrewMembers.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-            </relationships>
-        </class>
-        <class className="EditMaterial" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditMaterial.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="date" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="quantity" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HomeScreen" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeScreen.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ManagerUpdate" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ManagerUpdate.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="updateTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MaterialListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MaterialListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="quantity" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MaterialSelect" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MaterialSelect.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-            </relationships>
-        </class>
-        <class className="NotesFullViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotesFullViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NotesNewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotesNewViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteText" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NotesView" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotesView.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
-        </class>
-        <class className="NotesViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NotesViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ProjectSelection" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProjectSelection.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-                <relationship kind="outlet" name="projectTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="RoundedUIButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedUIButton.h"/>
-        </class>
-        <class className="RoundedUITableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedUITableView.h"/>
-        </class>
-        <class className="RoundedUIView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedUIView.h"/>
-        </class>
-        <class className="SiteInformation" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteInformation.h"/>
-        </class>
-        <class className="SiteLocation" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteLocation.h"/>
-            <relationships>
-                <relationship kind="action" name="submit:"/>
-                <relationship kind="outlet" name="TaskList" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="crewListTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="currentLocationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentLocationView" candidateClass="RoundedUIView"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="SitePlans" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SitePlans.h"/>
-            <relationships>
-                <relationship kind="action" name="changePlanView:"/>
-                <relationship kind="outlet" name="e1View" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="mainView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="planSelector" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="s1View" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="SiteTabController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteTabController.h"/>
-            <relationships>
-                <relationship kind="action" name="showToolsMenu:"/>
-                <relationship kind="outlet" name="toolsButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="SiteViews" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SiteViews.h"/>
-            <relationships>
-                <relationship kind="outlet" name="googleView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="UpdateClient" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdateClient.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="notesTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="updatedControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

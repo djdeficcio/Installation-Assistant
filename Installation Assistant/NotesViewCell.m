@@ -7,7 +7,6 @@
 //
 
 #import "NotesViewCell.h"
-#import "MenuBar.h"
 
 @implementation NotesViewCell
 @synthesize userLabel = _userLabel, dateLabel = _dateLabel, noteLabel = _noteLabel, noteID = _noteID;

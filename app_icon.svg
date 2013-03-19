@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3873">
+      <stop
+         style="stop-color:#11c2ed;stop-opacity:1;"
+         offset="0"
+         id="stop3875" />
+      <stop
+         style="stop-color:#f3f3f3;stop-opacity:1;"
+         offset="1"
+         id="stop3877" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3849">
+      <stop
+         style="stop-color:#f7e63b;stop-opacity:1;"
+         offset="0"
+         id="stop3851" />
+      <stop
+         style="stop-color:#f9efa5;stop-opacity:1;"
+         offset="1"
+         id="stop3853" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3755">
+      <stop
+         style="stop-color:#00ff36;stop-opacity:1;"
+         offset="0"
+         id="stop3757" />
+      <stop
+         style="stop-color:#0faa88;stop-opacity:1;"
+         offset="1"
+         id="stop3759" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3755"
+       id="linearGradient3761"
+       x1="195"
+       y1="326.64789"
+       x2="195.71428"
+       y2="423.07648"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       id="filter3837">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.7988676"
+         id="feGaussianBlur3839" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3849"
+       id="linearGradient3847"
+       x1="521.66803"
+       y1="-743.86584"
+       x2="523.43579"
+       y2="-799.90405"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       id="filter3855"
+       inkscape:label="Inner Shadow"
+       inkscape:menu="Shadows and Glows"
+       inkscape:menu-tooltip="Adds a colorizable drop shadow inside"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.2693325"
+         id="feGaussianBlur3857"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix3859" />
+      <feGaussianBlur
+         id="feGaussianBlur3861"
+         stdDeviation="4"
+         result="result8"
+         in="fbSourceGraphic" />
+      <feOffset
+         id="feOffset3863"
+         dx="4"
+         dy="4"
+         result="result11" />
+      <feComposite
+         id="feComposite3865"
+         in2="result11"
+         result="result6"
+         in="fbSourceGraphic"
+         operator="in" />
+      <feFlood
+         id="feFlood3867"
+         result="result10"
+         in="result6"
+         flood-opacity="1"
+         flood-color="rgb(0,0,0)" />
+      <feBlend
+         id="feBlend3869"
+         in2="result10"
+         mode="normal"
+         in="result6"
+         result="result12" />
+      <feComposite
+         id="feComposite3871"
+         in2="fbSourceGraphic"
+         result="result2"
+         operator="in" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3873"
+       id="linearGradient3879"
+       x1="520.96094"
+       y1="-733.43597"
+       x2="488.43402"
+       y2="-823.76886"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.93506495,0,0,0.93506497,31.307976,-47.583136)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3849"
+       id="linearGradient3881"
+       gradientUnits="userSpaceOnUse"
+       x1="521.66803"
+       y1="-743.86584"
+       x2="523.43579"
+       y2="-799.90405" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3849"
+       id="linearGradient3883"
+       gradientUnits="userSpaceOnUse"
+       x1="521.66803"
+       y1="-743.86584"
+       x2="523.43579"
+       y2="-799.90405" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.28"
+     inkscape:cx="639.73055"
+     inkscape:cy="1835.8657"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1436"
+     inkscape:window-height="856"
+     inkscape:window-x="4"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient3761);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-opacity:1"
+       id="rect2985"
+       width="320"
+       height="96"
+       x="40"
+       y="326.64789"
+       rx="10"
+       inkscape:export-filename="/Users/Solular/Dropbox/Installation Assistant/Installation Assistant/button_back.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:url(#linearGradient3879);fill-opacity:1;stroke:none"
+       id="rect3763"
+       width="72"
+       height="72"
+       x="482.14285"
+       y="-804.78064"
+       inkscape:export-filename="/Users/Solular/app_icon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3781"
+       style="fill:#11c2ed;fill-opacity:1"
+       inkscape:export-filename="/Users/Solular/app_icon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(0.93506495,0,0,0.93506497,31.307976,-47.583136)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3769"
+         y="-762.60413"
+         x="494.62119"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#11c2ed;fill-opacity:1;stroke:none;font-family:Kefa;-inkscape-font-specification:Kefa Bold"
+         xml:space="preserve"><tspan
+           id="tspan3773"
+           y="-762.60413"
+           x="494.62119"
+           sodipodi:role="line">I</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3777"
+         y="-743.51227"
+         x="508.58655"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#11c2ed;fill-opacity:1;stroke:none;font-family:Kefa;-inkscape-font-specification:Kefa Bold"
+         xml:space="preserve"><tspan
+           y="-743.51227"
+           x="508.58655"
+           id="tspan3779"
+           sodipodi:role="line">A</tspan></text>
+    </g>
+    <g
+       id="g3823"
+       style="fill:#ffffff;fill-opacity:1;filter:url(#filter3837)"
+       transform="matrix(0.93506495,0,0,0.93506497,32.242606,-46.647651)"
+       inkscape:export-filename="/Users/Solular/app_icon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3825"
+         y="-762.60413"
+         x="494.62119"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Kefa;-inkscape-font-specification:Kefa Bold"
+         xml:space="preserve"><tspan
+           id="tspan3827"
+           y="-762.60413"
+           x="494.62119"
+           sodipodi:role="line">I</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3829"
+         y="-743.51227"
+         x="508.58655"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Kefa;-inkscape-font-specification:Kefa Bold"
+         xml:space="preserve"><tspan
+           y="-743.51227"
+           x="508.58655"
+           id="tspan3831"
+           sodipodi:role="line">A</tspan></text>
+    </g>
+    <g
+       id="g3813"
+       style="fill:url(#linearGradient3847);fill-opacity:1;filter:url(#filter3855)"
+       inkscape:export-filename="/Users/Solular/app_icon.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(0.93506495,0,0,0.93506497,31.307976,-47.583136)">
+      <text
+         xml:space="preserve"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient3881);fill-opacity:1;stroke:none;font-family:Kefa;-inkscape-font-specification:Kefa Bold"
+         x="494.62119"
+         y="-762.60413"
+         id="text3815"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="494.62119"
+           y="-762.60413"
+           id="tspan3817"
+           style="fill:url(#linearGradient3881);fill-opacity:1">I</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient3883);fill-opacity:1;stroke:none;font-family:Kefa;-inkscape-font-specification:Kefa Bold"
+         x="508.58655"
+         y="-743.51227"
+         id="text3819"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan3821"
+           x="508.58655"
+           y="-743.51227"
+           style="fill:url(#linearGradient3883);fill-opacity:1">A</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -9,7 +9,6 @@
 //  Allows the user to either view a note in full or create a new note.
 
 #import <UIKit/UIKit.h>
-#import "MenuBar.h"
 #import "NotesFullViewController.h"
 #import "NotesNewViewController.h"
 

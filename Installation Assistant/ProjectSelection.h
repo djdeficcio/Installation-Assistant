@@ -11,8 +11,8 @@
 
 
 #define serverQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-#define requestProjects [NSURL URLWithString:@"http://173.61.46.253/ios/retrieveProjects.php"]
-#define requestProjectData [NSURL URLWithString:@"http://173.61.46.253/ios/retrieveProjectData.php"]
+#define requestProjects [NSURL URLWithString:@"http://173.61.254.66/ios/retrieveProjects.php"]
+#define requestProjectData [NSURL URLWithString:@"http:/173.61.254.66/ios/retrieveProjectData.php"]
 
 #import <UIKit/UIKit.h>
 

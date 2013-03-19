@@ -7,7 +7,6 @@
 //
 
 #import "NotesFullViewController.h"
-#import "MenuBar.h"
 #import "QuartzCore/QuartzCore.h"
 
 @implementation NotesFullViewController
